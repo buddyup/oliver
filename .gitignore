@@ -1,1 +1,7 @@
+
+*.xcscheme
+
+*.plist
+
+*.xcuserstate
 node_modules
