@@ -22,13 +22,23 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/lib/ionic/scss/ionic";
 
 .mini-cards {
-	.item-complex {
-		.item-content {
-			padding: 0;
+	.row {
+		.col {
+			.item {
+				border: none;
+				&.item-complex {
+					.item-content {
+						padding: 0;
 
-			h2 {
-				padding: 6px;
+						h2 {
+							padding: 6px;
+						}
+					}
+				}
 			}
 		}
+	}
+	a.more {
+		border-top: none;
 	}
 }

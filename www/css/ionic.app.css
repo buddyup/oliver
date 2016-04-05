@@ -9731,7 +9731,12 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.mini-cards .item-complex .item-content {
-  padding: 0; }
-  .mini-cards .item-complex .item-content h2 {
-    padding: 6px; }
+.mini-cards .row .col .item {
+  border: none; }
+  .mini-cards .row .col .item.item-complex .item-content {
+    padding: 0; }
+    .mini-cards .row .col .item.item-complex .item-content h2 {
+      padding: 6px; }
+
+.mini-cards a.more {
+  border-top: none; }
