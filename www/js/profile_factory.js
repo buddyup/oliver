@@ -8,12 +8,14 @@ angular.module('app.services')
         lastName: 'Smith',
         loaded: false,
     };
-    console.log('inside profileFactory');
 
     $http.get('profiles.json').success(function(data) {
-       profile.buddyRecommendations = data.pics || [];
-       profile.loaded = true;
-       console.log(data);
+        profile.buddyRecommendations = data.pics || [];
+        profile.buddyRecommendationsMedium = profile.buddyRecommendations.map(function (s3link) {
+            return s3link.replace("tiny", "medium");
+        });
+        profile.loaded = true;
+        console.log(data);
     });
 
     return profile;
