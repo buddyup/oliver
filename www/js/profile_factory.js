@@ -1,5 +1,13 @@
 angular.module('app.services')
 
+/**
+ * A model for the current profile and buddy recommendations.
+ *
+ * proposed data model for buddyRecommendations:
+ *     [{
+ *         first_name, last_name, profile_pic_medium, profile_pic_tiny, bio, year, major, interests
+ *      }, ... ]
+ */
 .factory('profileFactory', ['$http', function ($http) {
     var profile = {
         buddyRecommendations: [],
@@ -7,6 +15,8 @@ angular.module('app.services')
         buddies: [],
         firstName: 'Chris',
         lastName: 'Smith',
+        bio: 'A freshman',
+        year: 2020,
         loaded: false,
     };
 
