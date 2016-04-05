@@ -16,7 +16,7 @@ angular.module('app.controllers', [])
     var pic_index;
     $scope.data.pics = [];
     $scope.data.profile = profileFactory;
-    for (var i = 0; i <= 7; i++) {
+    for (var i = 0; i <= 16; i++) {
       // hacky
       pic_index = Math.floor(Math.random() * 539);
       $scope.data.pics.push(pic_index);

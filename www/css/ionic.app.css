@@ -9730,3 +9730,8 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.mini-cards .item-complex .item-content {
+  padding: 0; }
+  .mini-cards .item-complex .item-content h2 {
+    padding: 6px; }
