@@ -12,13 +12,8 @@ profiles.json
 
 
 .DS_Store
-platforms/ios
 
-
-platforms/ios/www/templates/home.html
-
-platforms/ios/www/js/controllers.js
-
-platforms/ios/oliver/config.xml
-
-platforms/ios/www/index.html
+platforms/
+plugins/
+resources/
+bower_components/
