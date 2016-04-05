@@ -19,3 +19,5 @@ resources/
 bower_components/
 
 www/names.json
+
+platforms/ios/www/css/ionic.app.min.css
