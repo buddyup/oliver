@@ -3,6 +3,7 @@ var webpack = require('webpack')
 var BundleTracker = require('webpack-bundle-tracker')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 var sassLoaders = [
@@ -19,10 +20,8 @@ module.exports = {
   },
 
   output: {
-      // path: path.resolve('./assets/bundles/'),
       path: path.resolve('./www/assets/bundles/'),
-      // filename: "[name]-[hash].js",
-      filename: "[name].js",
+      filename: "[name]-[hash].js",
   },
 
   plugins: [
@@ -35,7 +34,12 @@ module.exports = {
     new ExtractTextPlugin('[name]-[hash].css'),
     new webpack.ResolverPlugin(
         new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
-    )
+    ),
+    new HtmlWebpackPlugin({
+      filename: path.resolve('./www/index.html'),
+      template: path.resolve('./www/webpack-template-index.html'),
+      inject: false,
+    })
   ],
 
   module: {
