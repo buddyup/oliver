@@ -4,7 +4,7 @@ var BundleTracker = require('webpack-bundle-tracker')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
+var pkg = require('./package.json');
 
 var sassLoaders = [
   'css-loader',
@@ -44,6 +44,14 @@ module.exports = {
 
   module: {
     loaders: [
+      {
+          test: /\.html$/,
+          loader: 'html'
+      },
+      {
+          test: /\.json$/,
+          loader: "json"
+      },
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader'}, // to transform JSX into JS
       { test: /\.js$/, exclude: /node_modules|bower_components/, loader: "ng-annotate!babel-loader"},
       // Extract css files
@@ -54,8 +62,12 @@ module.exports = {
       // Optionally extract less files
       // or any other compile-to-css language
       {
-          test: /\.sass$/,
+          test: /\.scss$/,
           loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'))
+      },
+      {
+          test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
+          loader: 'file?name=fonts/[name].[ext]'
       },
       {
           test: /\.(jpe?g|png|gif|svg)$/i,
@@ -63,12 +75,13 @@ module.exports = {
             'file?hash=sha512&digest=hex&name=[hash].[ext]',
             'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
           ]
-      }
+      },
     ],
   },
 
   resolve: {
     modulesDirectories: ['node_modules', 'bower_components'],
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', 'scss'],
+    pkg: pkg,
   },
 }

@@ -1,8 +1,3 @@
-/**
- * DO NOT USE THIS, LEGACY FOR GULP, EDIT www/scss/app.scss instead
- */
-
-
 /*
 To customize the look and feel of Ionic, you can override the variables
 in ionic's _variables.scss file.
@@ -24,10 +19,10 @@ $dark:                            #444 !default;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
-@import "www/lib/ionic/scss/ionic";
+@import "../lib/ionic/scss/ionic";
 
 $teal:                        #3abcd3 !default;
-$white:							#fff;
+$white:                         #fff;
 
 .bar {
     border-top: 0;
@@ -48,29 +43,29 @@ $white:							#fff;
     }
 }
 .mini-cards {
-	.row {
-		.col {
-			.item {
-				border: none;
-				padding-bottom: 8px;
-				&.item-complex {
-					.item-content {
-						padding: 0;
+    .row {
+        .col {
+            .item {
+                border: none;
+                padding-bottom: 8px;
+                &.item-complex {
+                    .item-content {
+                        padding: 0;
 
-						h2, p {
-							padding: 2px 6px 1px 6px;
-							font-size: 13px;
-						}
-						p {
-							padding-top: 0;
-						}
-					}
-				}
-			}
-		}
-	}
-	a.more {
-		border-top: none;
-		font-size: 18px;
-	}
+                        h2, p {
+                            padding: 2px 6px 1px 6px;
+                            font-size: 13px;
+                        }
+                        p {
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    a.more {
+        border-top: none;
+        font-size: 18px;
+    }
 }

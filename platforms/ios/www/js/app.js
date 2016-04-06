@@ -2,6 +2,9 @@ import 'ionic-sdk/release/js/ionic.bundle';
 import modRoutes from './routes';
 import modControllers from './controllers';
 
+// styles
+import '../scss/app.scss';
+
 let mod = angular.module('app', [
   'ionic',
   modControllers,
