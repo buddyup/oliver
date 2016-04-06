@@ -13,3 +13,10 @@
 
 http://gonehybrid.com/build-your-first-mobile-app-with-the-ionic-framework-part-4/
 
+
+# webpack
+
+    npm run devserver
+
+
+Open your browser to http://localhost:8080

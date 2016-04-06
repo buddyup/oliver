@@ -21,3 +21,6 @@ bower_components/
 www/names.json
 
 platforms/ios/www/css/ionic.app.min.css
+assets/bundles/
+assets/dist/
+webpack-stats.json
