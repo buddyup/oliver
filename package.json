@@ -4,7 +4,7 @@
   "description": "oliver: An Ionic project",
   "scripts": {
     "devserver": "webpack-dev-server --content-base www/",
-    "build": "webpack --config webpack.config.js --progress --colors"
+    "build-assets": "webpack --config webpack.config.js --progress --colors"
   },
   "dependencies": {
     "gulp": "^3.5.6",

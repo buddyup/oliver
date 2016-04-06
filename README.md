@@ -17,6 +17,7 @@ http://gonehybrid.com/build-your-first-mobile-app-with-the-ionic-framework-part-
 # webpack
 
     npm run devserver
+    npm run build-assets
 
 
 Open your browser to http://localhost:8080
