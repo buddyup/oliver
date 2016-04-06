@@ -47,12 +47,17 @@ $white:							#fff;
 		.col {
 			.item {
 				border: none;
+				padding-bottom: 8px;
 				&.item-complex {
 					.item-content {
 						padding: 0;
 
-						h2 {
-							padding: 6px;
+						h2, p {
+							padding: 2px 6px 1px 6px;
+							font-size: 13px;
+						}
+						p {
+							padding-top: 0;
 						}
 					}
 				}
@@ -61,5 +66,6 @@ $white:							#fff;
 	}
 	a.more {
 		border-top: none;
+		font-size: 18px;
 	}
 }
