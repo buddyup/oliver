@@ -1,4 +1,4 @@
-angular.module('app.services')
+let mod = angular.module('home.profileService', []);
 
 /**
  * A model for the current profile and buddy recommendations.
@@ -8,7 +8,7 @@ angular.module('app.services')
  *         first_name, last_name, profile_pic_medium, profile_pic_tiny, bio, year, major, interests
  *      }, ... ]
  */
-.factory('profileFactory', ['$http', function ($http) {
+mod.factory('profileFactory', ['$http', function ($http) {
     var profile = {
         buddyRecommendations: [],
         names: [],
@@ -39,3 +39,5 @@ angular.module('app.services')
     return profile;
 
 }]);
+
+export default mod = mod.name;
