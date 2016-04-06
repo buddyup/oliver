@@ -2,10 +2,11 @@
 
 ## Quick start
     npm install
+    npm run build-assets
     ionic serve  # run in browser
     ionic serve --lab  # run ios and android view in browser
+    ionic build ios  # then open the project in xcode to install to iPhone
     ionic run ios  # run in ios emulator
-    ionic build  # then open the project in xcode to install to iPhone
 
 ### Android
 Install the android dependencies, you'll need the android SDK manager installed if they aren't already (`brew install android-sdk`).

@@ -1,5 +1,7 @@
 import modServices from './profile_factory';
-import './home/home.scss';
+
+// styles for a given page can be loaded this way
+// import './home/home.scss';
 
 let mod = angular.module('app.controllers', [modServices]);
 
