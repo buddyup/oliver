@@ -72,13 +72,24 @@ $white:							#fff;
         					background-image: none;
         					color: $white;
         					text-align: center;
-        					padding-top: 30%;
-        					padding-bottom: 30%;
+        					padding-top: 40%;
+        					padding-bottom: 40%;
+        					margin-bottom: 4px;
         					box-sizing: border-box;
         					position: relative;
         					overflow: hidden;
     						text-overflow: ellipsis;
-    						white-space: normal;
+    						white-space: nowrap;
+
+    						&.interest {
+    							font-size: 60px;
+    							font-weight: normal;
+    							background: $white;
+        						background-color: $white;
+        						background-image: none;
+        						border: 1px solid #eeeeee;
+
+    						}
 						}
 					}
 				}
@@ -88,23 +99,21 @@ $white:							#fff;
 	a.more {
 		border-top: none;
 		font-size: 18px;
+		border-bottom-width: 6px;
 	}
 }
 .card {
 	.item {
 
 		&.emote {
-					padding-top: 6px;
-					padding-bottom: 6px;
-					padding-left: 16px;
-					h2 {
-
-					}
-					span {
-						font-size: 39px;
-    					vertical-align: middle;
-    					line-height: 1;
-					}
-				}
+			span {
+				// font-size: 39px;
+				vertical-align: middle;
+				line-height: 1;
+			}
+			i.icon {
+				color: $teal;
+			}
+		}
 	}
 }

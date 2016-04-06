@@ -9766,23 +9766,30 @@ a.button {
       background-image: none;
       color: #fff;
       text-align: center;
-      padding-top: 30%;
-      padding-bottom: 30%;
+      padding-top: 40%;
+      padding-bottom: 40%;
+      margin-bottom: 4px;
       box-sizing: border-box;
       position: relative;
       overflow: hidden;
       text-overflow: ellipsis;
-      white-space: normal; }
+      white-space: nowrap; }
+      .mini-cards .row .col .item.item-complex .item-content .mini-box.interest {
+        font-size: 60px;
+        font-weight: normal;
+        background: #fff;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #eeeeee; }
 
 .mini-cards a.more {
   border-top: none;
-  font-size: 18px; }
+  font-size: 18px;
+  border-bottom-width: 6px; }
 
-.card .item.emote {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 16px; }
-  .card .item.emote span {
-    font-size: 39px;
-    vertical-align: middle;
-    line-height: 1; }
+.card .item.emote span {
+  vertical-align: middle;
+  line-height: 1; }
+
+.card .item.emote i.icon {
+  color: #3abcd3; }
