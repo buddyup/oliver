@@ -3,17 +3,40 @@
       <ion-slide-page>
         <ion-content overflow-scroll="true">
         <ion-list>
-            <!-- <ion-item class="item-avatar">
-                <img ng-src="img/carol-120-120.png">
+            <ion-item class="item-avatar">
+                <img ng-src="{{data.profile.buddyRecommendations[data.pics[0]]}}">
                 <h2>University of Oregon</h2>
                 <p>person last spoke: text of chat</p>
-            </ion-item> -->
-            <ion-item >Chem 102</ion-item>
-            <ion-item >Susan Williams</ion-item>
-            <ion-item>Marc Kryntsik</ion-item>
+                <span class="badge badge-assertive">17</span>
+            </ion-item>
+            <ion-item class="item-avatar">
+                <img ng-src="{{data.profile.buddyRecommendations[data.pics[1]]}}">
+                <h2>Chem 102</h2>
+                <p>person last spoke: text of chat</p>
+                <span class="badge badge-assertive">1</span>
+            </ion-item>
+            <ion-item class="item-avatar">
+                <img ng-src="{{data.profile.buddyRecommendations[data.pics[2]]}}">
+                <h2>Sara McKinnly</h2>
+                <p>person last spoke: text of chat</p>
+                <span class="badge badge-assertive">3</span>
+            </ion-item>
+            <ion-item class="item-avatar">
+                <img ng-src="{{data.profile.buddyRecommendations[data.pics[3]]}}">
+                <h2>Marc Kryntsik</h2>
+                <p>person last spoke: text of chat</p>
+            </ion-item>
             <ion-item class="item-divider">New Invites</ion-item>
-            <ion-item>Krystal Brown</ion-item>
-            <ion-item>D&amp;D Fridays</ion-item>
+            <ion-item class="item-avatar">
+                <img ng-src="{{data.profile.buddyRecommendations[data.pics[4]]}}">
+                <h2>Krystal Brown</h2>
+                <p>person last spoke: text of chat</p>
+            </ion-item>
+            <ion-item class="item-avatar">
+                <img ng-src="{{data.profile.buddyRecommendations[data.pics[5]]}}">
+                <h2>D&amp;D Fridays</h2>
+                <p>person last spoke: text of chat</p>
+            </ion-item>
         </ion-list>
         </ion-content>
       </ion-slide-page>
