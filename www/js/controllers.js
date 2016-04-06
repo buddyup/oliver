@@ -1,4 +1,5 @@
 import modServices from './profile_factory';
+import './home/home.scss';
 
 let mod = angular.module('app.controllers', [modServices]);
 
