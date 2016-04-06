@@ -9793,3 +9793,9 @@ a.button {
 
 .card .item.emote i.icon {
   color: #3abcd3; }
+
+.chat-light {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 9999; }
