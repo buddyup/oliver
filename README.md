@@ -7,6 +7,18 @@
     ionic run ios  # run in ios emulator
     ionic build  # then open the project in xcode to install to iPhone
 
+### Android
+Install the android dependencies, you'll need the android SDK manager installed if they aren't already (`brew install android-sdk`).
+
+    /usr/local/Cellar/android-sdk/24.4.1_1/bin/android
+    ionic platform add android
+    ionic build android
+    ionic run android
+
+You may need to create a virtual android device if you don't already have one. You'll also want to install the [Intel HAXM](https://software.intel.com/en-us/android/articles/installation-instructions-for-intel-hardware-accelerated-execution-manager-mac-os-x), which involves installing the HAXM from the sdk, then installing the `dmg` from the extras folder. (e.g. `/usr/local/Cellar/android-sdk/24.4.1_1/extras/intel/Hardware_Accelerated_Execution_Manager/IntelHAXM_6.0.1.dmg`)
+    
+    /usr/local/Cellar/android-sdk/24.4.1_1/bin/android sdk
+    /usr/local/Cellar/android-sdk/24.4.1_1/bin/android avd
 
 
 # refs

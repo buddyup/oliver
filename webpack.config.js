@@ -2,7 +2,8 @@ var path = require("path")
 var webpack = require('webpack')
 var BundleTracker = require('webpack-bundle-tracker')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var CompressionPlugin = require("compression-webpack-plugin");
+var CleanWebpackPlugin = require('clean-webpack-plugin');
+
 
 var sassLoaders = [
   'css-loader',
@@ -18,20 +19,20 @@ module.exports = {
   },
 
   output: {
-      path: path.resolve('./assets/bundles/'),
-      filename: "[name]-[hash].js",
+      // path: path.resolve('./assets/bundles/'),
+      path: path.resolve('./www/assets/bundles/'),
+      // filename: "[name]-[hash].js",
+      filename: "[name].js",
   },
 
   plugins: [
+    new CleanWebpackPlugin(['bundles'], {
+      root: path.resolve('./www/assets/'),
+      verbose: true,
+      dry: false
+    }),
     new BundleTracker({filename: './webpack-stats.json'}),
     new ExtractTextPlugin('[name]-[hash].css'),
-    new CompressionPlugin({
-        asset: "{file}.gz",
-        algorithm: "gzip",
-        regExp: /\.js$|\.css$/,
-        threshold: 10240,
-        minRatio: 0.8
-    }),
     new webpack.ResolverPlugin(
         new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
     )
