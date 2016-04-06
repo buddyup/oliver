@@ -9731,6 +9731,19 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.bar {
+  border-top: 0;
+  border-bottom: 0; }
+  .bar.bar-stable, .bar.bar-header {
+    background: #3abcd3;
+    background-color: #3abcd3;
+    background-image: none;
+    color: #fff; }
+    .bar.bar-stable .title, .bar.bar-header .title {
+      color: #fff;
+      font-weight: bold;
+      top: 2px; }
+
 .mini-cards .row .col .item {
   border: none; }
   .mini-cards .row .col .item.item-complex .item-content {

@@ -21,12 +21,26 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-$buddyup_blue:                        #3abcd3 !default;
+$teal:                        #3abcd3 !default;
+$white:							#fff;
 
 .bar {
-	.bar-stable {
+    border-top: 0;
+    border-bottom: 0;
 
-	}
+    &.bar-stable,
+    &.bar-header {
+        background: $teal;
+        background-color: $teal;
+        background-image: none;
+        color: $white;
+
+        .title {
+            color: $white;
+            font-weight: bold;
+            top: 2px;
+        }
+    }
 }
 .mini-cards {
 	.row {

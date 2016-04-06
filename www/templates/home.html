@@ -1,7 +1,7 @@
-<ion-view title="Home" id="page3">
-    <ion-content overflow-scroll="true">
+<ion-view title="BuddyUp" id="page3">
     <ion-slides  options="options" slider="data.slider">
       <ion-slide-page>
+        <ion-content overflow-scroll="true">
         <ion-list>
             <!-- <ion-item class="item-avatar">
                 <img ng-src="img/carol-120-120.png">
@@ -15,8 +15,10 @@
             <ion-item>Krystal Brown</ion-item>
             <ion-item>D&amp;D Fridays</ion-item>
         </ion-list>
+        </ion-content>
       </ion-slide-page>
       <ion-slide-page>
+        <ion-content overflow-scroll="true">
         <ion-list class="mini-cards">
             <div class="row">
                 <div class="col col-33">
@@ -83,8 +85,36 @@
                 <i class="icon ion-ios-arrow-right"></i>
             </a>
         </ion-list>
+        <ion-list class="mini-cards">
+            <div class="row">
+                <div class="col col-33">
+                    <ion-item ui-sref="profile">
+                        <img ng-src="{{data.profile.buddyRecommendationsMedium[data.pics[6]]}}">
+                        <h2>Freshman</h2>
+                    </ion-item>
+                </div>
+                <div class="col col-33">
+                    <ion-item ui-sref="profile">
+                        <img ng-src="{{data.profile.buddyRecommendationsMedium[data.pics[7]]}}">
+                        <h2>Sophomore</h2>
+                    </ion-item>
+                </div>
+                <div class="col col-33">
+                    <ion-item ui-sref="profile">
+                        <img ng-src="{{data.profile.buddyRecommendationsMedium[data.pics[8]]}}">
+                        <h2>Junior</h2>
+                    </ion-item>
+                </div>
+            </div>
+            <a class="item item-icon-right more" ion-item>
+                Class standing
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+        </ion-list>
+        </ion-content>
       </ion-slide-page>
       <ion-slide-page>
+        <ion-content overflow-scroll="true">
         <ion-list>
             <ion-item class="item-thumbnail-left" ui-sref="profile">
                 <img>
@@ -102,7 +132,7 @@
                 <p>Item</p>
             </ion-item>
         </ion-list>
+        </ion-content>
       </ion-slide-page>
     </ion-slides>
-    </ion-content>
 </ion-view>
