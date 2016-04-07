@@ -8,6 +8,10 @@
     ionic build ios  # then open the project in xcode to install to iPhone
     ionic run ios  # run in ios emulator
 
+If you want to develop with hot reload
+
+    npm run watch  # open browser to localhost:8080
+
 ### Android
 Install the android dependencies, you'll need the android SDK manager installed if they aren't already (`brew install android-sdk`).
 
@@ -27,10 +31,14 @@ You may need to create a virtual android device if you don't already have one. Y
 http://gonehybrid.com/build-your-first-mobile-app-with-the-ionic-framework-part-4/
 
 
-# webpack
+# build cheat sheet
 
-    npm run devserver
-    npm run build-assets
+| command | description | 
+| ---- | ----- |
+| `npm run devserver` | Run webpack's webserver on port `8080` while updating static assest on disk |
+| `npm run watch` | Run webpack's webserver in hot module reload mode updating assets without a browser refresh |
+| `npm run build-assets` | Build static assets with webpack, for release to iOS or Android |
+| `npm run build` | Build static assets and run ionic build |
 
 
 Open your browser to http://localhost:8080

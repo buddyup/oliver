@@ -5,7 +5,8 @@
   "scripts": {
     "devserver": "webpack-dev-server --content-base www/",
     "watch": "webpack-dev-server --hot --inline --content-base www/",
-    "build-assets": "webpack --config webpack.prod.config.js --progress --colors"
+    "build-assets": "webpack --config webpack.prod.config.js --progress --colors",
+    "build": "./build.sh"
   },
   "dependencies": {
     "gulp": "^3.5.6",
