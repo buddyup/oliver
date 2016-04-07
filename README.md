@@ -41,4 +41,4 @@ http://gonehybrid.com/build-your-first-mobile-app-with-the-ionic-framework-part-
 | `npm run build` | Build static assets and run ionic build |
 
 
-Open your browser to http://localhost:8080
+Open your browser to [http://localhost:8080](http://localhost:8080)
