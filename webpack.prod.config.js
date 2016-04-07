@@ -21,16 +21,27 @@ module.exports = {
 
   output: {
       path: path.resolve('./www/assets/bundles/'),
+      // filename: "[name]-[hash].js",
       filename: "[name].js",
-      publicPath: "/assets/bundles/"
   },
 
   plugins: [
+    new CleanWebpackPlugin(['bundles'], {
+      root: path.resolve('./www/assets/'),
+      verbose: true,
+      dry: false
+    }),
     new BundleTracker({filename: './webpack-stats.json'}),
+    // new ExtractTextPlugin('[name]-[hash].css'),
     new ExtractTextPlugin('[name].css'),
     new webpack.ResolverPlugin(
         new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
-    )
+    ),
+    // new HtmlWebpackPlugin({
+    //   filename: path.resolve('./www/index.html'),
+    //   template: path.resolve('./www/webpack-template-index.html'),
+    //   inject: 'head',
+    // })
   ],
 
   module: {
@@ -43,15 +54,18 @@ module.exports = {
           test: /\.json$/,
           loader: "json"
       },
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader'}, // to transform JSX into JS
       { test: /\.js$/, exclude: /node_modules|bower_components/, loader: "ng-annotate!babel-loader"},
       // Extract css files
       {
           test: /\.css$/,
           loader: "style-loader!css-loader"
       },
+      // Optionally extract less files
+      // or any other compile-to-css language
       {
-          test: /\.scss$/, exclude: /node_modules|bower_components/,
-          loader: 'style!css!sass'
+          test: /\.scss$/,
+          loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'))
       },
       {
           test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
@@ -69,7 +83,7 @@ module.exports = {
 
   resolve: {
     modulesDirectories: ['node_modules', 'bower_components'],
-    extensions: ['', '.js', 'scss'],
+    extensions: ['', '.js', '.jsx', 'scss'],
     pkg: pkg,
   },
 }
