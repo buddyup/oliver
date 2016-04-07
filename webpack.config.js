@@ -2,8 +2,6 @@ var path = require("path")
 var webpack = require('webpack')
 var BundleTracker = require('webpack-bundle-tracker')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var CleanWebpackPlugin = require('clean-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var pkg = require('./package.json');
 
 var sassLoaders = [
@@ -30,7 +28,7 @@ module.exports = {
     new ExtractTextPlugin('[name].css'),
     new webpack.ResolverPlugin(
         new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
-    )
+    ),
   ],
 
   module: {

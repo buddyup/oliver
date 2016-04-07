@@ -21,8 +21,7 @@ module.exports = {
 
   output: {
       path: path.resolve('./www/assets/bundles/'),
-      // filename: "[name]-[hash].js",
-      filename: "[name].js",
+      filename: "[name]-[hash].js",
   },
 
   plugins: [
@@ -32,16 +31,15 @@ module.exports = {
       dry: false
     }),
     new BundleTracker({filename: './webpack-stats.json'}),
-    // new ExtractTextPlugin('[name]-[hash].css'),
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin('[name]-[hash].css'),
     new webpack.ResolverPlugin(
         new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
     ),
-    // new HtmlWebpackPlugin({
-    //   filename: path.resolve('./www/index.html'),
-    //   template: path.resolve('./www/webpack-template-index.html'),
-    //   inject: 'head',
-    // })
+    new HtmlWebpackPlugin({
+      filename: path.resolve('./www/index.html'),
+      template: path.resolve('./www/webpack-template-index.html'),
+      inject: 'head',
+    })
   ],
 
   module: {
