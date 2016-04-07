@@ -8,6 +8,7 @@ src/
             interest-card.directive.js
             interest-card.directive.spec.js
             interest-card.template.html
+            interest-card.module.js
         ...
 
 ```

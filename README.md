@@ -5,7 +5,41 @@
 
 ## Style Guide
 
-This app follows the following style guide: https://github.com/gocardless/angularjs-style-guide/blob/master/README.md
+This app follows the style guide: https://github.com/gocardless/angularjs-style-guide/blob/master/README.md
+
+### Changes to the default style guide
+
+#### Folder-by-Feature directory structure should contain a `.module.js`
+Each folder (route, directive) should have an `xyz.module.js` that is exported and can be imported as a dependency, but allows more complex directives and routes to be composed cleanly. If this feels like too much boiler plate we can adjust. The biggest pain point could be relying on NgAnnotate for the strict DI support.
+
+#### Exporting and importing Modules
+All angular modules should export their `.name`.
+
+```js
+let mod = angular.module('app.service.profile', []);
+...
+export default mod = mod.name;
+```
+
+Imports then don't have to worry about the `.name`.
+
+```js
+import modProfileService from 'services/profile/profile.module';
+
+let mod = angular.module('app.route.home', [modProfileService])
+```
+
+#### Module naming conventions 
+All modules should use the local name `mod` and imported modules should prefix the name with `mod`, (ex. `import modRouteHome from 'routes/home/home.module'`).
+
+Angular module names should be prefixed with `app.` and their type to avoid name space collisions. 
+
+| module type | example |
+| ---- | ---- |
+| routes | `'app.route.XYZ'` |
+| controllers| `'app.route.controller.XYZ'` |
+| services| `'app.service.XYZ'` |
+| directives| `'app.directive.XYZ'` |
 
 Thanks,  
 BuddyUp
