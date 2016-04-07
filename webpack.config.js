@@ -1,6 +1,5 @@
 var path = require("path")
 var webpack = require('webpack')
-var BundleTracker = require('webpack-bundle-tracker')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var pkg = require('./package.json');
 
@@ -24,7 +23,6 @@ module.exports = {
   },
 
   plugins: [
-    new BundleTracker({filename: './webpack-stats.json'}),
     new ExtractTextPlugin('[name].css'),
     new webpack.ResolverPlugin(
         new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])

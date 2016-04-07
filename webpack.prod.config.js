@@ -1,6 +1,5 @@
 var path = require("path")
 var webpack = require('webpack')
-var BundleTracker = require('webpack-bundle-tracker')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -21,7 +20,7 @@ module.exports = {
 
   output: {
       path: path.resolve('./www/assets/bundles/'),
-      filename: "[name]-[hash].min.js",
+      filename: "[name].js",
   },
 
   plugins: [
@@ -30,8 +29,7 @@ module.exports = {
       verbose: true,
       dry: false
     }),
-    new BundleTracker({filename: './webpack-stats.json'}),
-    new ExtractTextPlugin('[name]-[hash].min.css'),
+    new ExtractTextPlugin('[name].css'),
     new webpack.ResolverPlugin(
         new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
     ),
