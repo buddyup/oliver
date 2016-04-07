@@ -23,7 +23,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 $teal:                        #3abcd3 !default;
 $white:							#fff;
+$green:							#36465d;
 
+#page3, #page5 {
+	background-color: $teal;
+	background: $teal;
+}
 .bar {
     border-top: 0;
     border-bottom: 0;
@@ -52,13 +57,13 @@ $white:							#fff;
 		.col {
 			.item {
 				border: none;
-				padding-bottom: 8px;
+				// padding-bottom: 8px;
 				&.item-complex {
 					.item-content {
 						padding: 0;
 
 						h2, p {
-							padding: 2px 6px 1px 6px;
+							padding: 2px 6px 6px 6px;
 							font-size: 13px;
 						}
 						p {
@@ -67,8 +72,8 @@ $white:							#fff;
 						.mini-box {
 							font-size: 13px;
 							font-weight: bold;
-							background: $teal;
-        					background-color: $teal;
+							background: $green;
+        					background-color: $green;
         					background-image: none;
         					color: $white;
         					text-align: center;
@@ -100,6 +105,11 @@ $white:							#fff;
 		border-top: none;
 		font-size: 18px;
 		border-bottom-width: 6px;
+		border-color: $white;
+		background: $teal;
+		background-color: $teal;
+		color: $white;
+
 	}
 }
 .card {

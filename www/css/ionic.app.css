@@ -9731,6 +9731,10 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+#page3, #page5 {
+  background-color: #3abcd3;
+  background: #3abcd3; }
+
 .bar {
   border-top: 0;
   border-bottom: 0; }
@@ -9749,20 +9753,19 @@ a.button {
       border: transparent; }
 
 .mini-cards .row .col .item {
-  border: none;
-  padding-bottom: 8px; }
+  border: none; }
   .mini-cards .row .col .item.item-complex .item-content {
     padding: 0; }
     .mini-cards .row .col .item.item-complex .item-content h2, .mini-cards .row .col .item.item-complex .item-content p {
-      padding: 2px 6px 1px 6px;
+      padding: 2px 6px 6px 6px;
       font-size: 13px; }
     .mini-cards .row .col .item.item-complex .item-content p {
       padding-top: 0; }
     .mini-cards .row .col .item.item-complex .item-content .mini-box {
       font-size: 13px;
       font-weight: bold;
-      background: #3abcd3;
-      background-color: #3abcd3;
+      background: #36465d;
+      background-color: #36465d;
       background-image: none;
       color: #fff;
       text-align: center;
@@ -9785,7 +9788,11 @@ a.button {
 .mini-cards a.more {
   border-top: none;
   font-size: 18px;
-  border-bottom-width: 6px; }
+  border-bottom-width: 6px;
+  border-color: #fff;
+  background: #3abcd3;
+  background-color: #3abcd3;
+  color: #fff; }
 
 .card .item.emote span {
   vertical-align: middle;
