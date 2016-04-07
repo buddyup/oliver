@@ -3,6 +3,10 @@
 ## Release Notes
 **WARNING** you need to run `npm run build-assets` and `ionic build` prior to releasing. `npm run watch` doesn't update the production `index.html` and JavaScript and CSS assets needed for the build.  
 
+## Style Guide
+
+This app follows the following style guide: https://github.com/gocardless/angularjs-style-guide/blob/master/README.md
+
 Thanks,  
 BuddyUp
 
