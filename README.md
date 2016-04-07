@@ -1,5 +1,11 @@
 # Oliver
 
+## Release Notes
+**WARNING** you need to run `npm run build-assets` and `ionic build` prior to releasing. `npm run watch` doesn't update the production `index.html` and JavaScript and CSS assets needed for the build.  
+
+Thanks,  
+BuddyUp
+
 ## Quick start
     npm install
     npm run build-assets
