@@ -1,6 +1,11 @@
-angular.module('app.controllers', [])
+import modServices from './profile_factory';
 
-.controller('homeCtrl', function($scope) {
+// styles for a given page can be loaded this way
+// import './home/home.scss';
+
+let mod = angular.module('app.controllers', [modServices]);
+
+mod.controller('homeCtrl', function($scope, profileFactory) {
     $scope.options = {
       loop: false,
       initialSlide: 1,
@@ -13,10 +18,18 @@ angular.module('app.controllers', [])
     $scope.$watch('data.slider', function(nv, ov) {
       $scope.slider = $scope.data.slider;
     });
-    
+    var pic_index;
+    $scope.data.pics = [];
+    $scope.data.profile = profileFactory;
+    for (var i = 0; i <= 16; i++) {
+      // hacky
+      pic_index = Math.floor(Math.random() * 539);
+      $scope.data.pics.push(pic_index);
+    }
+
 })
-    
-.controller('profileCtrl', function($scope) {
+
+mod.controller('profileCtrl', function($scope) {
     $scope.options = {
       loop: false,
       initialSlide: 1,
@@ -29,6 +42,7 @@ angular.module('app.controllers', [])
     $scope.$watch('data.slider', function(nv, ov) {
       $scope.slider = $scope.data.slider;
     });
-    
+
 });
- 
+
+export default mod = mod.name;
