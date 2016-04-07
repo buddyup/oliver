@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "oliver: An Ionic project",
   "scripts": {
-    "devserver": "webpack-dev-server --content-base www/",
+    "devserver": "cp www/webpack-template-hotreload.html www/index.html && webpack-dev-server --content-base www/",
     "watch": "cp www/webpack-template-hotreload.html www/index.html && webpack-dev-server --hot --inline --content-base www/",
     "build-assets": "webpack --config webpack.prod.config.js --progress --colors",
     "build": "./build.sh"
