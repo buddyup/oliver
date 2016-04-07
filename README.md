@@ -49,6 +49,7 @@ http://gonehybrid.com/build-your-first-mobile-app-with-the-ionic-framework-part-
 | `npm run ios` | Build static assets then `ionic run ios`  |
 | `ionic serve` | Run ionic's webserver (requires `npm run build-assets`) |
 | `ionic serve --lab` | Run ionic's webserver with android and ios styles (requires `npm run build-assets`) |
+| `npm run lint` | Lint the JS against eslint |
 
 
 Open your browser to [http://localhost:8080](http://localhost:8080)

@@ -7,7 +7,8 @@
     "watch": "cp www/webpack-template-hotreload.html www/index.html && webpack-dev-server --hot --inline --content-base www/",
     "build-assets": "webpack --config webpack.prod.config.js --progress --colors",
     "build": "./build.sh",
-    "ios": "./build.sh && ionic run ios"
+    "ios": "./build.sh && ionic run ios",
+    "lint": "eslint --ext .js www/js"
   },
   "dependencies": {
   },
