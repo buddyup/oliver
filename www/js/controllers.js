@@ -1,6 +1,11 @@
-angular.module('app.controllers', [])
+import modServices from './profile_factory';
 
-.controller('homeCtrl', function($scope, profileFactory) {
+// styles for a given page can be loaded this way
+// import './home/home.scss';
+
+let mod = angular.module('app.controllers', [modServices]);
+
+mod.controller('homeCtrl', function($scope, profileFactory) {
     $scope.options = {
       loop: false,
       initialSlide: 1,
@@ -24,7 +29,7 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('profileCtrl', function($scope) {
+mod.controller('profileCtrl', function($scope) {
     $scope.options = {
       loop: false,
       initialSlide: 1,
@@ -40,3 +45,4 @@ angular.module('app.controllers', [])
 
 });
 
+export default mod = mod.name;
