@@ -46,6 +46,7 @@ http://gonehybrid.com/build-your-first-mobile-app-with-the-ionic-framework-part-
 | `npm run watch` | Run webpack's webserver in hot module reload mode updating assets without a browser refresh |
 | `npm run build-assets` | Build static assets with webpack, for release to iOS or Android |
 | `npm run build` | Build static assets and run ionic build |
+| `npm run ios` | Build static assets then `ionic run ios`  |
 | `ionic serve` | Run ionic's webserver (requires `npm run build-assets`) |
 | `ionic serve --lab` | Run ionic's webserver with android and ios styles (requires `npm run build-assets`) |
 
