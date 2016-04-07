@@ -21,7 +21,7 @@ module.exports = {
 
   output: {
       path: path.resolve('./www/assets/bundles/'),
-      filename: "[name]-[hash].js",
+      filename: "[name]-[hash].min.js",
   },
 
   plugins: [
@@ -31,7 +31,7 @@ module.exports = {
       dry: false
     }),
     new BundleTracker({filename: './webpack-stats.json'}),
-    new ExtractTextPlugin('[name]-[hash].css'),
+    new ExtractTextPlugin('[name]-[hash].min.css'),
     new webpack.ResolverPlugin(
         new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
     ),
@@ -39,7 +39,14 @@ module.exports = {
       filename: path.resolve('./www/index.html'),
       template: path.resolve('./www/webpack-template-index.html'),
       inject: 'head',
-    })
+    }),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+        compressor: {
+          warnings: false
+        }
+    }),
+    new webpack.optimize.DedupePlugin(),
   ],
 
   module: {
@@ -84,4 +91,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx', 'scss'],
     pkg: pkg,
   },
+
+  // here's how to add source maps
+  // devtool: 'source-map',
 }
