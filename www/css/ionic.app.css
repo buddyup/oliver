@@ -9753,14 +9753,25 @@ a.button {
       border: transparent; }
 
 .mini-cards .row .col .item {
-  border: none; }
+  border: none;
+  background: #3abcd3;
+  background-color: #3abcd3; }
   .mini-cards .row .col .item.item-complex .item-content {
-    padding: 0; }
+    padding: 0;
+    background: #3abcd3;
+    background-color: #3abcd3;
+    color: #fff;
+    border-color: none;
+    border: none; }
     .mini-cards .row .col .item.item-complex .item-content h2, .mini-cards .row .col .item.item-complex .item-content p {
       padding: 2px 6px 6px 6px;
-      font-size: 13px; }
+      font-size: 13px;
+      color: #fff;
+      text-align: center; }
     .mini-cards .row .col .item.item-complex .item-content p {
       padding-top: 0; }
+    .mini-cards .row .col .item.item-complex .item-content img {
+      border-radius: 60px; }
     .mini-cards .row .col .item.item-complex .item-content .mini-box {
       font-size: 13px;
       font-weight: bold;
@@ -9776,7 +9787,8 @@ a.button {
       position: relative;
       overflow: hidden;
       text-overflow: ellipsis;
-      white-space: nowrap; }
+      white-space: nowrap;
+      border-radius: 60px; }
       .mini-cards .row .col .item.item-complex .item-content .mini-box.interest {
         font-size: 60px;
         font-weight: normal;
