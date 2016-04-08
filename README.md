@@ -1,5 +1,8 @@
 # Oliver
 
+Oliver is the BuddyUp 3.0 mobile app codebase.   It integrates with a firebase and django backend, detailed specs to come.  WIP.
+
+
 ## Style Guide
 
 This app follows the style guide: https://github.com/gocardless/angularjs-style-guide/blob/master/README.md
