@@ -62,12 +62,12 @@ You have full access to ionic under the hood, as well as some dewey-powered shor
 | command | description | 
 | ---- | ----- |
 | `d up` | Sets config, and runs hot module reload webserver |
-| (WIP) `d test | pt` | Runs the full test suite, using polytester |
+| `d test | pt` (WIP) | Runs the full test suite, using polytester |
 | `d bootstrap` | Boots up the databases and services |
 | `d android` | Build and install to any connected android devices. |
 | `d ios` | Build and install to any connected iOS devices (requires provisioning setup.) |
 | `d build` | Create a quick build for iOS or android, suitable for xCode or sideloading. |
-| (WIP) `d release` | Create a full, signed release, including splash screens. |
+| `d release` (WIP) | Create a full, signed release, including splash screens. |
 | -- npm -- | Lower-level commands, from package.json |
 | `npm run devserver` | Run webpack's webserver on port `8080` while updating static assest on disk |
 | `npm run watch` | Run webpack's webserver in hot module reload mode updating assets without a browser refresh |
@@ -75,7 +75,7 @@ You have full access to ionic under the hood, as well as some dewey-powered shor
 | `npm run build` | Build static assets and run ionic build |
 | `npm run ios` | Build static assets then `ionic run ios`  |
 | `npm run lint` | Lint the JS against eslint |
-| -- ionic -- | Lower-level commands, from package.json |
+| -- ionic -- | Ionic-based commands.  Shouldn't be needed often, but there if you want them.
 | `ionic serve` | Run ionic's webserver (requires `npm run build-assets`) |
 | `ionic serve --lab` | Run ionic's webserver with android and ios styles (requires `npm run build-assets`) |
 | `ionic whatever` | Run [any valid ionic command](http://ionicframework.com/docs/cli/). |
@@ -86,15 +86,18 @@ You have full access to ionic under the hood, as well as some dewey-powered shor
 #### Emulator Setup
 
 
-1. If you haven't already, run `android update sdk`, then install "Android SDK Build-tools" for the 23.x.x revs, as well as "Android 6.0 (API 23)".
-2. Set up Genymotion for fast emulation.  Create an account here: https://www.genymotion.com/account/create/
-4. Open the Genymotion.app app, and create and start a new phone.
+1. All android SDK and Genymotion stuff should be installed by `d dev-setup`
+2. Create an account here: https://www.genymotion.com/account/create/
+3. Open the Genymotion.app app, and create and start a new phone.
 
 ### Building
 
-`adb devices` will list any connected android devices.  You should see either a Genymotion phone, or a physical phone in that list.
+`d android` will run to any android devices, and yell if there's not one available.
 
-`npm run android` will build and run on your connected device.
+
+To help debug, 
+
+`adb devices` will list any connected android devices.  You should see either a Genymotion phone, or a physical phone in that list.
 
 # Releases
 
