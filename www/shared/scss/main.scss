@@ -83,13 +83,11 @@ $green:                         #36465d;
                                 background-color: $white;
                                 background-image: none;
                                 border: 1px solid #eeeeee;
-
                             }
                         }
                         &.active, &.activated {
                             background: lighten( $teal, 10% );
                             background-color: lighten( $teal, 10% );
-                            border-radius: 6px;
 
                         }
                     }
@@ -101,10 +99,10 @@ $green:                         #36465d;
         border-top: none;
         font-size: 18px;
         border-bottom-width: 6px;
-        // border-color: $white;
-        // background: $teal;
-        // background-color: $teal;
-        // color: $white;
+        border-color: $white;
+        background: $teal;
+        background-color: $teal;
+        color: $white;
 
         &.active, &.activated {
             background: lighten( $teal, 10% );
