@@ -11,8 +11,7 @@
     "android": "./build.sh && ionic run android",
     "lint": "eslint --ext .js www/js"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "babel-loader": "^6.2.4",
