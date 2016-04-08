@@ -45,35 +45,60 @@ Thanks,
 BuddyUp
 
 ## Quick start
-    npm install
-    npm run build-assets
-    ionic serve  # run in browser
-    ionic serve --lab  # run ios and android view in browser
-    ionic build ios  # then open the project in xcode to install to iPhone
-    ionic run ios  # run in ios emulator
 
-If you want to develop with hot reload
+1. Run the [dev machine setup](https://github.com/buddyup/dev-setup)
+2. `d workon`
+3. `d bootstrap` (in one tab)
+4. `d up`
 
-    npm run watch  # open browser to localhost:8080
+That will give you a full dev setup, with hot reloading, running locally against docker-based data stores.
+
+
+## Advanced commands
+
+You have full access to ionic under the hood, as well as some dewey-powered shortcuts.
+
+
+| command | description | 
+| ---- | ----- |
+| `d up` | Sets config, and runs hot module reload webserver |
+| (WIP) `d test | pt` | Runs the full test suite, using polytester |
+| `d bootstrap` | Boots up the databases and services |
+| `d android` | Build and install to any connected android devices. |
+| `d ios` | Build and install to any connected iOS devices (requires provisioning setup.) |
+| `d build` | Create a quick build for iOS or android, suitable for xCode or sideloading. |
+| (WIP) `d release` | Create a full, signed release, including splash screens. |
+| -- npm -- | Lower-level commands, from package.json |
+| `npm run devserver` | Run webpack's webserver on port `8080` while updating static assest on disk |
+| `npm run watch` | Run webpack's webserver in hot module reload mode updating assets without a browser refresh |
+| `npm run build-assets` | Build static assets with webpack, for release to iOS or Android |
+| `npm run build` | Build static assets and run ionic build |
+| `npm run ios` | Build static assets then `ionic run ios`  |
+| `npm run lint` | Lint the JS against eslint |
+| -- ionic -- | Lower-level commands, from package.json |
+| `ionic serve` | Run ionic's webserver (requires `npm run build-assets`) |
+| `ionic serve --lab` | Run ionic's webserver with android and ios styles (requires `npm run build-assets`) |
+| `ionic whatever` | Run [any valid ionic command](http://ionicframework.com/docs/cli/). |
+
 
 ### Android
 
-#### Setup
+#### Emulator Setup
+
 
 1. If you haven't already, run `android update sdk`, then install "Android SDK Build-tools" for the 23.x.x revs, as well as "Android 6.0 (API 23)".
 2. Set up Genymotion for fast emulation.  Create an account here: https://www.genymotion.com/account/create/
-3. `brew install Caskroom/cask/genymotion`
 4. Open the Genymotion.app app, and create and start a new phone.
 
 ### Building
 
-`adb devices` will make sure you've got things conneced or running.
+`adb devices` will list any connected android devices.  You should see either a Genymotion phone, or a physical phone in that list.
 
 `npm run android` will build and run on your connected device.
 
 # Releases
 
-(Coming soon.   Lots of signing, etc.)
+WIP, but `d release` will do it.
 
 
 
@@ -83,17 +108,5 @@ http://gonehybrid.com/build-your-first-mobile-app-with-the-ionic-framework-part-
 
 
 # build cheat sheet
-
-| command | description | 
-| ---- | ----- |
-| `npm run devserver` | Run webpack's webserver on port `8080` while updating static assest on disk |
-| `npm run watch` | Run webpack's webserver in hot module reload mode updating assets without a browser refresh |
-| `npm run build-assets` | Build static assets with webpack, for release to iOS or Android |
-| `npm run build` | Build static assets and run ionic build |
-| `npm run ios` | Build static assets then `ionic run ios`  |
-| `ionic serve` | Run ionic's webserver (requires `npm run build-assets`) |
-| `ionic serve --lab` | Run ionic's webserver with android and ios styles (requires `npm run build-assets`) |
-| `npm run lint` | Lint the JS against eslint |
-
 
 Open your browser to [http://localhost:8080](http://localhost:8080)

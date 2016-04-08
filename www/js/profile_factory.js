@@ -23,7 +23,9 @@ mod.factory('profileFactory', ['$http', function ($http) {
     $http.get('profiles.json').success(function(data) {
         profile.buddyRecommendations = data.pics || [];
         profile.buddyRecommendationsMedium = profile.buddyRecommendations.map(function (s3link) {
-            return s3link.replace("tiny", "medium");
+            return s3link;
+            // Steven suggestion.
+            // .replace("tiny", "medium");
         });
         profile.loaded = true;
         console.log(data);
