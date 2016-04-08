@@ -26,6 +26,7 @@ www/names.json
 profiles.json
 
 # Webpack
+www/index.html
 www/assets/bundles/
 www/assets/dist/
 assets/bundles/
