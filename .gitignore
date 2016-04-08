@@ -1,18 +1,17 @@
+.DS_Store
 
+# xCode
 *.xcscheme
-
 *.plist
-
 *.xcuserstate
+
+# Libraries
 node_modules
 bower_components
 
-sample_data
-
-profiles.json
 
 
-.DS_Store
+
 
 # Ionic
 platforms/ios
@@ -20,7 +19,13 @@ platforms/android
 platforms/www
 plugins/
 resources/
+
+# App
+sample_data
 www/names.json
+profiles.json
+
+# Webpack
 www/assets/bundles/
 www/assets/dist/
 assets/bundles/
