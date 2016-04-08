@@ -1,12 +1,10 @@
 import homeControllerModule from './home.controller';
 import template from './home.template.html';
 
-let mod = angular.module('app.home.route', [homeControllerModule]);
+let mod = angular.module('homeRouteModule', [homeControllerModule]);
 
 mod.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
-
-  .state('home', {
+  $stateProvider.state('home', {
     url: '/home',
     template: template,
     controller: 'homeController',
