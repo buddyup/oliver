@@ -16,11 +16,12 @@ module.exports = {
 
   entry: {
     app: './www/js/app'
+    // app: './src/app'
   },
 
   output: {
       path: path.resolve('./www/assets/bundles/'),
-      filename: "[name].js",
+      filename: "[name]-[hash].js",
   },
 
   plugins: [
@@ -29,7 +30,7 @@ module.exports = {
       verbose: true,
       dry: false
     }),
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin('[name]-[hash].css'),
     new webpack.ResolverPlugin(
         new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
     ),
