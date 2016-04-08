@@ -87,8 +87,10 @@ $green:                         #36465d;
                             }
                         }
                         &.active, &.activated {
-                            background: darken( $teal, 10% );
-                            background-color: darken( $teal, 10% );
+                            background: lighten( $teal, 10% );
+                            background-color: lighten( $teal, 10% );
+                            border-radius: 6px;
+
                         }
                     }
                 }
@@ -105,8 +107,8 @@ $green:                         #36465d;
         // color: $white;
 
         &.active, &.activated {
-            background: darken( $teal, 10% );
-            background-color: darken( $teal, 10% );
+            background: lighten( $teal, 10% );
+            background-color: lighten( $teal, 10% );
         }
 
     }
