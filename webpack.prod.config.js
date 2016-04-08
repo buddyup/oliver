@@ -35,7 +35,7 @@ module.exports = {
     ),
     new HtmlWebpackPlugin({
       filename: path.resolve('./www/index.html'),
-      template: path.resolve('./www/webpack-template-index.html'),
+      template: path.resolve('./src/webpack-template-index.html'),
       inject: 'head',
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
@@ -57,7 +57,6 @@ module.exports = {
           test: /\.json$/,
           loader: "json"
       },
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader'}, // to transform JSX into JS
       { test: /\.js$/, exclude: /node_modules|bower_components/, loader: "ng-annotate!babel-loader"},
       // Extract css files
       {
@@ -86,7 +85,7 @@ module.exports = {
 
   resolve: {
     modulesDirectories: ['node_modules', 'bower_components'],
-    extensions: ['', '.js', '.jsx', 'scss'],
+    extensions: ['', '.js', 'scss'],
     pkg: pkg,
     root: path.resolve('./src'),
   },
