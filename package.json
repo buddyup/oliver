@@ -8,6 +8,7 @@
     "build-assets": "webpack --config webpack.prod.config.js --progress --colors",
     "build": "./build.sh",
     "ios": "./build.sh && ionic run ios",
+    "android": "./build.sh && ionic run android",
     "lint": "eslint --ext .js www/js"
   },
   "dependencies": {

@@ -57,18 +57,19 @@ If you want to develop with hot reload
     npm run watch  # open browser to localhost:8080
 
 ### Android
-Install the android dependencies, you'll need the android SDK manager installed if they aren't already (`brew install android-sdk`).
 
-    /usr/local/Cellar/android-sdk/24.4.1_1/bin/android
-    ionic platform add android
-    ionic build android
-    ionic run android
-    adb devices
+#### Setup
 
-You may need to create a virtual android device if you don't already have one. You'll also want to install the [Intel HAXM](https://software.intel.com/en-us/android/articles/installation-instructions-for-intel-hardware-accelerated-execution-manager-mac-os-x), which involves installing the HAXM from the sdk, then installing the `dmg` from the extras folder. (e.g. `/usr/local/Cellar/android-sdk/24.4.1_1/extras/intel/Hardware_Accelerated_Execution_Manager/IntelHAXM_6.0.1.dmg`)
-    
-    /usr/local/Cellar/android-sdk/24.4.1_1/bin/android sdk
-    /usr/local/Cellar/android-sdk/24.4.1_1/bin/android avd
+1. If you haven't already, run `android update sdk`, then install "Android SDK Build-tools" for the 23.x.x revs, as well as "Android 6.0 (API 23)".
+2. Set up Genymotion for fast emulation.  Create an account here: https://www.genymotion.com/account/create/
+3. `brew install Caskroom/cask/genymotion`
+4. Open the Genymotion.app app, and create and start a new phone.
+
+### Building
+
+`adb devices` will make sure you've got things conneced or running.
+
+`npm run android` will build and run on your connected device.
 
 
 # refs
