@@ -88,6 +88,7 @@ module.exports = {
     modulesDirectories: ['node_modules', 'bower_components'],
     extensions: ['', '.js', '.jsx', 'scss'],
     pkg: pkg,
+    root: path.resolve('./src'),
   },
 
   // here's how to add source maps

@@ -13,7 +13,7 @@ module.exports = {
   context: __dirname,
 
   entry: {
-    app: './www/js/app'
+    app: './src/app'
   },
 
   output: {
@@ -67,5 +67,8 @@ module.exports = {
     modulesDirectories: ['node_modules', 'bower_components'],
     extensions: ['', '.js', 'scss'],
     pkg: pkg,
+    root: path.resolve('./src'),
   },
+
+  devtool: 'eval',
 }

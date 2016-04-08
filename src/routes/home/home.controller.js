@@ -1,5 +1,4 @@
-// todo use the app path, e.g. from 'src/services/...'
-import modProfileService from '../../services/profile.service';
+import modProfileService from 'services/profile/profile.service';
 let mod = angular.module('homeControllerModule', []);
 
 mod.controller('homeController', function($scope, profileService) {

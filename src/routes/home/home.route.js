@@ -1,5 +1,5 @@
 import homeControllerModule from './home.controller';
-import template from './home.template.html!text';
+import template from './home.template.html';
 
 let mod = angular.module('app.home.route', [homeControllerModule]);
 
