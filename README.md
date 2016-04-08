@@ -9,14 +9,11 @@ This app follows the style guide: https://github.com/gocardless/angularjs-style-
 
 ### Changes to the default style guide
 
-#### Folder-by-Feature directory structure should contain a `.module.js`
-Each folder (route, directive) should have an `xyz.module.js` that is exported and can be imported as a dependency, but allows more complex directives and routes to be composed cleanly. If this feels like too much boiler plate we can adjust. The biggest pain point could be relying on NgAnnotate for the strict DI support.
-
 #### Exporting and importing Modules
 All angular modules should export their `.name`.
 
 ```js
-let mod = angular.module('app.service.profile', []);
+let mod = angular.module('app.profile.service', []);
 ...
 export default mod = mod.name;
 ```
@@ -24,9 +21,9 @@ export default mod = mod.name;
 Imports then don't have to worry about the `.name`.
 
 ```js
-import modProfileService from 'services/profile/profile.module';
+import profileServiceModule from 'services/profile/profile.service';
 
-let mod = angular.module('app.route.home', [modProfileService])
+let mod = angular.module('app.route.home', [profileServiceModule])
 ```
 
 #### Module naming conventions 
@@ -36,10 +33,65 @@ Angular module names should be prefixed with `app.` and their type to avoid name
 
 | module type | example |
 | ---- | ---- |
-| routes | `'app.route.XYZ'` |
-| controllers| `'app.route.controller.XYZ'` |
-| services| `'app.service.XYZ'` |
-| directives| `'app.directive.XYZ'` |
+| modules | `'xyz<Type>module'` (avoids name space collisions)|
+| routes | `'xyzRouteModule'` |
+| controllers| `'xyxController'` |
+| services | `'xyxService'` |
+| directives | `'bu-xyx'` or a name with a dash `'profile-card'`(BuddyUp prefixed or the [name contains a dash](https://github.com/gocardless/angularjs-style-guide/blob/master/README.md#directives)) |
+| filters | `'xyz'` |
+| templates | use es6 imports `import template from './xyz.template.html!text'`
+
+#### Controllers
+In the controller
+```js
+// in src/routes/xyz/xyz.controller.js
+let mod = angular.module('xyzControllerModule', []);
+mod.controller('xyzController', function () {
+    const ctrl = this;
+
+    angular.extend(ctrl, {
+        // controller objects and functions that will be watched
+    });
+})
+export default mod = mod.name;
+```
+
+In the route
+```js
+import template from './xyx.template.html!text';
+import xyzControllerModule from './xyz.controller';
+
+let mod = angular.module('homeRouteModule', [xyzControllerModule]);
+
+mod.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider.state('home', {
+    url: '/home',
+    templateUrl: template,
+    controller: 'xyzController',
+    controllerAs: 'ctrl'
+  })
+});
+
+export default mod = mod.name;
+```
+
+#### Services
+Angular `factory` should be used in place of `service` or `provider` and an object return not a function. 
+
+```js
+let mod = angular.module('profileServiceModule', []);
+mod.service('profileService', ['$http', function ($http) {
+    function getProfile() {
+        // ...
+    }
+
+    return {
+        getProfile: getProfile
+    };
+
+}]);
+export default mod = mod.name;
+```
 
 Thanks,  
 BuddyUp

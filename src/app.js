@@ -4,14 +4,14 @@ import './app.scss';
 // this imports angular
 import 'ionic-sdk/release/js/ionic.bundle';
 
-import modRoutes from './routes';
-import modControllers from './controllers';
+import modHomeRoute from './routes/home/home.module';
+import modProfileRoute from './routes/profile/profile.module';
 import modRun from './config/main.config.js';
 
 let mod = angular.module('app', [
   'ionic',
-  modControllers,
-  modRoutes,
+  modHomeRoute,
+  modProfileRoute,
 ]);
 
 // Run

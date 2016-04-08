@@ -6,7 +6,8 @@ mod.config(function($stateProvider, $urlRouterProvider) {
   .state('home', {
     url: '/home',
     templateUrl: 'templates/home.html',
-    controller: 'homeCtrl'
+    controller: 'homeCtrl',
+    c
   })
 
   $urlRouterProvider.otherwise('/home');
