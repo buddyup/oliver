@@ -15,9 +15,9 @@ profiles.json
 .DS_Store
 
 # Ionic
-# platforms/ios
-# platforms/android
-# platforms/www
+platforms/ios
+platforms/android
+platforms/www
 plugins/
 resources/
 www/names.json
