@@ -1,6 +1,8 @@
-import modProfileService from 'src/services/profile.service';
-let mod = angular.module('homeControllerModule', [])
-mod.controller('homeCtroller', function($scope, profileService) {
+// todo use the app path, e.g. from 'src/services/...'
+import modProfileService from '../../services/profile.service';
+let mod = angular.module('homeControllerModule', []);
+
+mod.controller('homeController', function($scope, profileService) {
     $scope.options = {
       loop: false,
       initialSlide: 1,

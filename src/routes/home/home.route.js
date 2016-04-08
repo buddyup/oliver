@@ -1,13 +1,16 @@
-let mod = angular.module('app.home.route', []);
+import homeControllerModule from './home.controller';
+import template from './home.template.html!text';
+
+let mod = angular.module('app.home.route', [homeControllerModule]);
 
 mod.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
   .state('home', {
     url: '/home',
-    templateUrl: 'templates/home.html',
-    controller: 'homeCtrl',
-    c
+    template: template,
+    controller: 'homeController',
+    // controllerAs: 'ctrl',  // until we test the $scope.slider works
   })
 
   $urlRouterProvider.otherwise('/home');

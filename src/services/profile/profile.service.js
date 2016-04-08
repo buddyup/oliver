@@ -1,4 +1,4 @@
-let mod = angular.module('app.profile.service.module', []);
+let mod = angular.module('profileServiceModule', []);
 
 /**
  * A model for the current profile and buddy recommendations.

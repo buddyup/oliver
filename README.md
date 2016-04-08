@@ -9,11 +9,22 @@ This app follows the style guide: https://github.com/gocardless/angularjs-style-
 
 ### Changes to the default style guide
 
+#### Controller-as syntax and watches
+Watches `$watch` require `$scope` to be injected even with the Controller-as syntax.
+
+```js
+function homeController ($scope) {
+    const crtl = this;
+    angular.extend(ctrl, {title: 'happy'});
+    $scope.$watch('ctrl.title', function () {...});
+}
+```
+
 #### Exporting and importing Modules
 All angular modules should export their `.name`.
 
 ```js
-let mod = angular.module('app.profile.service', []);
+let mod = angular.module('profileServiceModule', []);
 ...
 export default mod = mod.name;
 ```
@@ -23,7 +34,7 @@ Imports then don't have to worry about the `.name`.
 ```js
 import profileServiceModule from 'services/profile/profile.service';
 
-let mod = angular.module('app.route.home', [profileServiceModule])
+let mod = angular.module('homeControllerModule', [profileServiceModule])
 ```
 
 #### Module naming conventions 
@@ -39,7 +50,7 @@ Angular module names should be prefixed with `app.` and their type to avoid name
 | services | `'xyxService'` |
 | directives | `'bu-xyx'` or a name with a dash `'profile-card'`(BuddyUp prefixed or the [name contains a dash](https://github.com/gocardless/angularjs-style-guide/blob/master/README.md#directives)) |
 | filters | `'xyz'` |
-| templates | use es6 imports `import template from './xyz.template.html!text'`
+| templates | use es6 imports `import template from './xyz.template.html!text'` |
 
 #### Controllers
 In the controller
@@ -49,6 +60,7 @@ let mod = angular.module('xyzControllerModule', []);
 mod.controller('xyzController', function () {
     const ctrl = this;
 
+    // always and only extend the ctrl object at the end of the controller
     angular.extend(ctrl, {
         // controller objects and functions that will be watched
     });
@@ -61,12 +73,12 @@ In the route
 import template from './xyx.template.html!text';
 import xyzControllerModule from './xyz.controller';
 
-let mod = angular.module('homeRouteModule', [xyzControllerModule]);
+let mod = angular.module('xyzRouteModule', [xyzControllerModule]);
 
 mod.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider.state('home', {
-    url: '/home',
-    templateUrl: template,
+  $stateProvider.state('xyz', {
+    url: '/xyz',
+    template: template,
     controller: 'xyzController',
     controllerAs: 'ctrl'
   })
