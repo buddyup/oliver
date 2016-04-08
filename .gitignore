@@ -5,6 +5,7 @@
 
 *.xcuserstate
 node_modules
+bower_components
 
 sample_data
 
@@ -13,18 +14,15 @@ profiles.json
 
 .DS_Store
 
-platforms/
-platforms/**
+# Ionic
+# platforms/ios
+# platforms/android
+# platforms/www
 plugins/
 resources/
-bower_components/
-
 www/names.json
 www/assets/bundles/
 www/assets/dist/
-
-
-platforms/ios/www/css/ionic.app.min.css
 assets/bundles/
 assets/dist/
 webpack-stats.json
