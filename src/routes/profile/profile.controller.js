@@ -1,6 +1,6 @@
 let mod = angular.module('profileControllerModule', []);
 
-mod.controller('profileController', function($scope) {
+mod.controller('profileController', ['$scope', function($scope) {
     $scope.options = {
       loop: false,
       initialSlide: 1,
@@ -14,6 +14,6 @@ mod.controller('profileController', function($scope) {
       $scope.slider = $scope.data.slider;
     });
 
-});
+}]);
 
 export default mod = mod.name;

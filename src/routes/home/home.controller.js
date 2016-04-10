@@ -1,7 +1,8 @@
 import modProfileService from 'services/profile/profile.service';
 let mod = angular.module('homeControllerModule', [modProfileService]);
 
-mod.controller('homeController', function($scope, profileService) {
+mod.controller('homeController', [
+  '$scope', 'profileService', function($scope, profileService) {
     $scope.options = {
       loop: false,
       initialSlide: 1,
@@ -23,6 +24,6 @@ mod.controller('homeController', function($scope, profileService) {
       $scope.data.pics.push(pic_index);
     }
 
-});
+}]);
 
 export default mod = mod.name;

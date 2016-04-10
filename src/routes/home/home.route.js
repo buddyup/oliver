@@ -3,7 +3,7 @@ import template from './home.template.html';
 
 let mod = angular.module('homeRouteModule', [homeControllerModule]);
 
-mod.config(function($stateProvider, $urlRouterProvider) {
+mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('home', {
     url: '/home',
     template: template,
@@ -13,6 +13,6 @@ mod.config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/home');
 
-});
+}]);
 
 export default mod = mod.name;
