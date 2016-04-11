@@ -21,9 +21,8 @@ module.exports = {
   output: {
       path: path.resolve('./www/assets/bundles/'),
       filename: "[name]-[hash].js",
-      // publicPath: "/assets/bundles/"  // this fixes images but breaks iOS builds
+      publicPath: "assets/bundles/"  // this fixes images but breaks iOS builds
   },
-
   plugins: [
     new CleanWebpackPlugin(['bundles'], {
       root: path.resolve('./www/assets/'),
@@ -72,13 +71,13 @@ module.exports = {
       },
       {
           test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
-          loader: 'file?name=fonts/[name].[ext]'
+          loader: 'file?name=fonts/[name].[ext]&context=/assets/bundles'
       },
       {
           test: /\.(jpe?g|png|gif|svg)$/i,
           loaders: [
-            'file?name=img/[name].[ext]',
-            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+            'file?name=img/[name].[ext]&context=/assets/bundles',
+            'image-webpack?bypassOnDebug&optimizationLevel=7'
           ]
       },
     ],
