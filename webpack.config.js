@@ -39,7 +39,9 @@ module.exports = {
           test: /\.json$/,
           loader: "json"
       },
-      { test: /\.js$/, exclude: /node_modules|bower_components/, loader: "ng-annotate!babel-loader"},
+      {
+          test: /\.js$/, exclude: /node_modules|bower_components/,
+          loader: "ng-annotate!babel-loader"},
       // Extract css files
       {
           test: /\.css$/,
@@ -55,10 +57,7 @@ module.exports = {
       },
       {
           test: /\.(jpe?g|png|gif|svg)$/i,
-          loaders: [
-            'file?hash=sha512&digest=hex&name=[hash].[ext]',
-            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-          ]
+          loader: 'file?name=img/[name].[ext]',
       },
     ],
   },
