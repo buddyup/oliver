@@ -33,18 +33,20 @@ $green:                         #36465d;
     .row {
         .col {
             .item {
+
                 border: none;
-                background: $teal;
-        background-color: $teal;
+                // background: $teal;
+                // background-color: $teal;
                 // padding-bottom: 8px;
                 &.item-complex {
                     .item-content {
                         padding: 0;
                         background: $teal;
-        background-color: $teal;
-        color: $white;
-        border-color: none;
-        border: none;
+                        background-color: $teal;
+                        color: $white;
+                        border-color: none;
+                        border: none;
+
                         h2, p {
                             padding: 2px 6px 6px 6px;
                             font-size: 13px;
@@ -82,8 +84,12 @@ $green:                         #36465d;
                                 background-color: $white;
                                 background-image: none;
                                 border: 1px solid #eeeeee;
-
                             }
+                        }
+                        &.active, &.activated {
+                            background: lighten( $teal, 10% );
+                            background-color: lighten( $teal, 10% );
+
                         }
                     }
                 }
@@ -98,6 +104,11 @@ $green:                         #36465d;
         background: $teal;
         background-color: $teal;
         color: $white;
+
+        &.active, &.activated {
+            background: lighten( $teal, 10% );
+            background-color: lighten( $teal, 10% );
+        }
 
     }
 }

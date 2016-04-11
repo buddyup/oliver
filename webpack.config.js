@@ -13,8 +13,7 @@ module.exports = {
   context: __dirname,
 
   entry: {
-    app: './www/js/app'
-    // app: './src/app'
+    app: './src/app'
   },
 
   output: {
