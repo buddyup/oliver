@@ -20,6 +20,9 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', function (fak
      * Future: swap fakeAsyncBuddyLoader with Firebase service backend.
      * This is one design pattern, i.e. keeping brs.buddyRecommendations up to date,
      * Second would be to move the loadBuddies code to the controllers who want the data.
+     *
+     * side effects: adds recommended buddies to the service (brs)
+     * returns a promise so that .finally can be used to broadcast ionic event as is needed handlePullDownRefresh.
      */
     function refresh() {
         return fakeAsyncBuddyLoader.loadBuddies()

@@ -1,6 +1,3 @@
-/**
- * handles loading names.json
- */
 import sample from "lodash/sample";
 import sampleSize from "lodash/sampleSize";
 
