@@ -1,8 +1,6 @@
-import buddyRecommendationServiceModule from 'services/buddy-recommendation/buddy-recommendation.service';
+let mod = angular.module('classControllerModule', []);
 
-let mod = angular.module('profileControllerModule', [buddyRecommendationServiceModule]);
-
-mod.controller('profileController', ['$scope', 'buddyRecommendationService', function($scope, buddyRecommendationService) {
+mod.controller('classController', ['$scope', function($scope) {
     $scope.options = {
       loop: false,
       initialSlide: 0,
@@ -15,7 +13,6 @@ mod.controller('profileController', ['$scope', 'buddyRecommendationService', fun
       paginationCurrentClass: "hidden",
     };
     $scope.data = {
-      brs: buddyRecommendationService
     };
     $scope.$watch('data.slider', function(nv, ov) {
       $scope.slider = $scope.data.slider;

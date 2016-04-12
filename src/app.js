@@ -8,6 +8,7 @@ import 'ionic-sdk/release/js/ionic.bundle';
 import homeRouteModule from './routes/home/home.route';
 import profileRouteModule from './routes/profile/profile.route';
 import groupRouteModule from './routes/group/group.route';
+import classRouteModule from './routes/class/class.route';
 
 import runModule from './config/main.config';
 
@@ -16,6 +17,7 @@ let mainModule = angular.module('app', [
   homeRouteModule,
   profileRouteModule,
   groupRouteModule,
+  classRouteModule,
 ]);
 
 // Run

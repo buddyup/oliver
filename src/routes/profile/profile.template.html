@@ -4,22 +4,6 @@
     </ion-nav-bar>
     <ion-content overflow-scroll="true" class="has-header">
         <ion-slides options="options" slider="data.slider">
-          <ion-slide-page>
-            <div class="list card">
-              <div class="item item-image">
-                <img src="../../img/bio-180.png">
-              </div>
-              <div class="item item-icon-right">
-                <h2>BIO 180</h2>
-                <p>Anatomy and Physiology</p>
-                <i class="icon ion-ios-plus-outline"></i>
-              </div>
-              <a class="item item-icon-right" href="#">
-                201 Students
-                <i class="icon ion-ios-arrow-right"></i>
-              </a>
-            </div>
-          </ion-slide-page>
           <ion-slide-page ng-repeat="buddy in data.brs.buddyRecommendations track by buddy.$id">
             <div class="list card">
               <div class="item item-image">
