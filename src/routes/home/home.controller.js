@@ -7,8 +7,14 @@ mod.controller('homeController', [
       loop: false,
       initialSlide: 1,
       effect: "slide",
-      speed: 500,
-      parallax: true,
+      freeMode: true,
+      freeModeSticky: true,
+      freeModeMinimumVelocity: 1.5,
+      touchMoveStopPropagation: true,
+      paginationBulletRender: function (index, className) { return ''; },
+      slideShadows: false,
+      speed: 100,
+      parallax: false,
       paginationCurrentClass: "hidden",
     };
     $scope.data = {};
