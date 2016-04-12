@@ -20,7 +20,7 @@
               </a>
             </div>
           </ion-slide-page>
-          <ion-slide-page ng-repeat="buddy in data.brs.buddyRecommendations">
+          <ion-slide-page ng-repeat="buddy in data.brs.buddyRecommendations track by buddy.$id">
             <div class="list card">
               <div class="item item-image">
                 <img ng-src="{{ ::buddy.profile_pic_medium }}">
