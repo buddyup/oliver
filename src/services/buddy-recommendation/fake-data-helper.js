@@ -56,7 +56,7 @@ function generateUUID(){
 }
 
 /**
- * I think firebase puts the id as $id
+ * I think fire base puts the id as $id
  */
 export function addId(buddy) {
     buddy.$id = generateUUID();
