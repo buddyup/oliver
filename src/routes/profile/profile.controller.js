@@ -15,6 +15,7 @@ mod.controller('profileController', ['$scope', 'buddyRecommendationService', fun
       paginationCurrentClass: "hidden",
     };
     $scope.data = {
+      brs: buddyRecommendationService
     };
     $scope.$watch('data.slider', function(nv, ov) {
       $scope.slider = $scope.data.slider;

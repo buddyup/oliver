@@ -14,13 +14,15 @@ let mod = angular.module('buddyRecommendationServiceModule', [fakeAsyncBuddyLoad
  *      }, ... ]
  */
 mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', function (fakeAsyncBuddyLoader) {
-    var brs = {
+    const brs = {
         buddyRecommendations: [],
         loaded: false,
     };
 
     /**
-     * Future: swap fakeAsyncBuddyLoader with Firebase service backend
+     * Future: swap fakeAsyncBuddyLoader with Firebase service backend.
+     * This is one design pattern, i.e. keeping brs.buddyRecommendations up to date,
+     * Second would be to move the loadBuddies code to the controllers who want the data.
      */
     fakeAsyncBuddyLoader.loadBuddies()
     .then((buddies) => {
