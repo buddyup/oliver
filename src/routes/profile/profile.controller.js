@@ -1,6 +1,8 @@
-let mod = angular.module('profileControllerModule', []);
+import buddyRecommendationServiceModule from 'services/buddy-recommendation/buddy-recommendation.service';
 
-mod.controller('profileController', ['$scope', function($scope) {
+let mod = angular.module('profileControllerModule', [buddyRecommendationServiceModule]);
+
+mod.controller('profileController', ['$scope', 'buddyRecommendationService', function($scope, buddyRecommendationService) {
     $scope.options = {
       loop: false,
       initialSlide: 1,

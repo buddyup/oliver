@@ -1,5 +1,5 @@
-import modProfileService from 'services/profile/profile.service';
-let mod = angular.module('homeControllerModule', [modProfileService]);
+import profileServiceModule from 'services/profile/profile.service';
+let mod = angular.module('homeControllerModule', [profileServiceModule]);
 
 mod.controller('homeController', [
   '$scope', 'profileService', function($scope, profileService) {
