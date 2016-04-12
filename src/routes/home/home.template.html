@@ -4,47 +4,47 @@
         <ion-content overflow-scroll="false">
         <ion-list>
             <ion-item class="item-avatar">
-                <img ng-src="{{data.profile.buddyRecommendations[data.pics[0]]}}">
+                <img ng-src="{{data.brs.buddyRecommendations[0].profile_pic_tiny}}">
                 <h2>University of Oregon</h2>
                 <p>Devin Nelson: It's going to be on the South Campus</p>
                 <span class="badge badge-assertive">17</span>
             </ion-item>
             <ion-item class="item-avatar">
-                <img ng-src="{{data.profile.buddyRecommendations[data.pics[1]]}}">
+                <img ng-src="{{data.brs.buddyRecommendations[1].profile_pic_tiny}}">
                 <h2>Chem 102</h2>
                 <p>Michael Lusardi: 😁</p>
                 <span class="badge badge-assertive">1</span>
             </ion-item>
             <ion-item class="item-avatar">
-                <img ng-src="{{data.profile.buddyRecommendations[data.pics[2]]}}">
+                <img ng-src="{{data.brs.buddyRecommendations[2].profile_pic_tiny}}">
                 <h2>Anneke Kniestedt</h2>
                 <p>Anneke: Chapter 2 and 3 I think.</p>
                 <span class="badge badge-assertive">3</span>
             </ion-item>
             <ion-item class="item-avatar">
-                <img ng-src="{{data.profile.buddyRecommendations[data.pics[3]]}}">
+                <img ng-src="{{data.brs.buddyRecommendations[3].profile_pic_tiny}}">
                 <h2>Marc Kryntsik</h2>
                 <p>You: Thanks.</p>
             </ion-item>
             <ion-item class="item-divider">New Invites</ion-item>
             <ion-item class="item-avatar">
-                <img ng-src="{{data.profile.buddyRecommendations[data.pics[5]]}}">
+                <img ng-src="{{data.brs.buddyRecommendations[5].profile_pic_tiny}}">
                 <h2>D&amp;D Fridays</h2>
                 <p>Jared: invited you to the group.</p>
             </ion-item>
             <ion-item class="item-divider">Students</ion-item>
             <a class="item item-avatar item-icon-right" ion-item>
-                <img ng-src="{{data.profile.buddyRecommendations[data.pics[7]]}}">
+                <img ng-src="{{data.brs.buddyRecommendations[7].profile_pic_tiny}}">
                 <div class="item-text-center">Krystal Brown</div>
                 <i class="icon ion-ios-arrow-right"></i>
             </a>
             <a class="item item-avatar item-icon-right" ion-item>
-                <img ng-src="{{data.profile.buddyRecommendations[data.pics[3]]}}">
+                <img ng-src="{{data.brs.buddyRecommendations[3].profile_pic_tiny}}">
                 <div class="item-text-center">James Brown</div>
                 <i class="icon ion-ios-arrow-right"></i>
             </a>
             <a class="item item-avatar item-icon-right" ion-item>
-                <img ng-src="{{data.profile.buddyRecommendations[data.pics[8]]}}">
+                <img ng-src="{{data.brs.buddyRecommendations[8].profile_pic_tiny}}">
                 <div class="item-text-center">Julie Brown</div>
                 <i class="icon ion-ios-arrow-right"></i>
             </a>
@@ -55,65 +55,30 @@
         <ion-content overflow-scroll="false">
         <ion-list class="mini-cards">
             <div class="row">
-                <div class="col col-33">
+                <div class="col col-33" ng-repeat="buddy in data.brs.buddyRecommendations | limitTo:3:0">
                     <ion-item ui-sref="profile">
-                        <img ng-src="{{data.profile.buddyRecommendationsMedium[data.pics[0]]}}">
-                        <h2>{{data.profile.names[data.pics[0]].first_name}}<br />{{data.profile.names[data.pics[0]].last_name}}</h2>
-                    </ion-item>
-                </div>
-                <div class="col col-33">
-                    <ion-item ui-sref="profile">
-                        <img ng-src="{{data.profile.buddyRecommendationsMedium[data.pics[1]]}}">
-                        <h2>{{data.profile.names[data.pics[1]].first_name}}<br />{{data.profile.names[data.pics[1]].last_name}}</h2>
-                    </ion-item>
-                </div>
-                <div class="col col-33">
-                    <ion-item ui-sref="profile">
-                        <img ng-src="{{data.profile.buddyRecommendationsMedium[data.pics[2]]}}">
-                        <h2>{{data.profile.names[data.pics[2]].first_name}}<br />{{data.profile.names[data.pics[2]].last_name}}</h2>
+                        <img ng-src="{{ buddy.profile_pic_tiny }}">
+                        <h2>{{buddy.first_name}}<br />{{buddy.last_name}}</h2>
                     </ion-item>
                 </div>
             </div>
             <div class="row">
-                <div class="col col-33">
+                <div class="col col-33" ng-repeat="buddy in data.brs.buddyRecommendations | limitTo:3:3">
                     <ion-item ui-sref="profile">
-                        <img ng-src="{{data.profile.buddyRecommendationsMedium[data.pics[3]]}}">
-                        <h2>{{data.profile.names[data.pics[3]].first_name}}<br />{{data.profile.names[data.pics[3]].last_name}}</h2>
-                    </ion-item>
-                </div>
-                <div class="col col-33">
-                    <ion-item ui-sref="profile">
-                        <img ng-src="{{data.profile.buddyRecommendationsMedium[data.pics[4]]}}">
-                        <h2>{{data.profile.names[data.pics[4]].first_name}}<br />{{data.profile.names[data.pics[4]].last_name}}</h2>
-                    </ion-item>
-                </div>
-                <div class="col col-33">
-                    <ion-item ui-sref="profile">
-                        <img ng-src="{{data.profile.buddyRecommendationsMedium[data.pics[5]]}}">
-                        <h2>{{data.profile.names[data.pics[5]].first_name}}<br />{{data.profile.names[data.pics[5]].last_name}}</h2>
+                        <img ng-src="{{ buddy.profile_pic_tiny }}">
+                        <h2>{{buddy.first_name}}<br />{{buddy.last_name}}</h2>
                     </ion-item>
                 </div>
             </div>
             <div class="row">
-                <div class="col col-33">
+                <div class="col col-33" ng-repeat="buddy in data.brs.buddyRecommendations | limitTo:3:6">
                     <ion-item ui-sref="profile">
-                        <img ng-src="{{data.profile.buddyRecommendationsMedium[data.pics[6]]}}">
-                        <h2>{{data.profile.names[data.pics[6]].first_name}}<br />{{data.profile.names[data.pics[6]].last_name}}</h2>
-                    </ion-item>
-                </div>
-                <div class="col col-33">
-                    <ion-item ui-sref="profile">
-                        <img ng-src="{{data.profile.buddyRecommendationsMedium[data.pics[7]]}}">
-                        <h2>{{data.profile.names[data.pics[7]].first_name}}<br />{{data.profile.names[data.pics[7]].last_name}}</h2>
-                    </ion-item>
-                </div>
-                <div class="col col-33">
-                    <ion-item ui-sref="profile">
-                        <img ng-src="{{data.profile.buddyRecommendationsMedium[data.pics[8]]}}">
-                        <h2>{{data.profile.names[data.pics[8]].first_name}}<br />{{data.profile.names[data.pics[8]].last_name}}</h2>
+                        <img ng-src="{{ buddy.profile_pic_tiny }}">
+                        <h2>{{buddy.first_name}}<br />{{buddy.last_name}}</h2>
                     </ion-item>
                 </div>
             </div>
+
             <a class="item item-icon-right more" ion-item>
                 Suggested Buddies
                 <i class="icon ion-ios-arrow-right"></i>

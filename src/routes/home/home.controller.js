@@ -1,8 +1,13 @@
 import profileServiceModule from 'services/profile/profile.service';
-let mod = angular.module('homeControllerModule', [profileServiceModule]);
+import buddyRecommendationServiceModule from 'services/buddy-recommendation/buddy-recommendation.service';
+
+let mod = angular.module('homeControllerModule', [profileServiceModule, buddyRecommendationServiceModule]);
 
 mod.controller('homeController', [
-  '$scope', 'profileService', function($scope, profileService) {
+  '$scope',
+  'profileService',
+  'buddyRecommendationService',
+  function($scope, profileService, buddyRecommendationService) {
     $scope.options = {
       loop: false,
       initialSlide: 1,
@@ -17,19 +22,15 @@ mod.controller('homeController', [
       parallax: false,
       paginationCurrentClass: "hidden",
     };
-    $scope.data = {};
+
+    $scope.data = {
+      profile: profileService,
+      brs: buddyRecommendationService
+    };
+
     $scope.$watch('data.slider', function(nv, ov) {
       $scope.slider = $scope.data.slider;
     });
-    var pic_index;
-    $scope.data.pics = [];
-    $scope.data.profile = profileService;
-    for (var i = 0; i <= 16; i++) {
-      // hacky
-      pic_index = Math.floor(Math.random() * 539);
-      $scope.data.pics.push(pic_index);
-    }
-
 }]);
 
 export default mod = mod.name;
