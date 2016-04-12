@@ -53,6 +53,10 @@
       </ion-slide-page>
       <ion-slide-page>
         <ion-content overflow-scroll="false">
+        <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="handleOnPullRefresh()">
+        </ion-refresher>
         <ion-list class="mini-cards">
             <div class="row">
                 <div class="col col-33" ng-repeat="buddy in data.brs.buddyRecommendations | limitTo:3:0">
