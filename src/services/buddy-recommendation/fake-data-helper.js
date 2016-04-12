@@ -37,6 +37,6 @@ export function addYear(buddy) {
 }
 
 export function addMajor(buddy) {
-    buddy.Major = generateMajor();
+    buddy.major = generateMajor();
     return buddy;
 }

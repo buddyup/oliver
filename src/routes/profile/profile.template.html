@@ -87,6 +87,24 @@
               </label>
             </div>
           </ion-slide-page>
+          <ion-slide-page ng-repeat="buddy in data.brs.buddyRecommendations">
+            <div class="list card">
+              <div class="item item-image">
+                <img ng-src="{{ ::buddy.profile_pic_medium }}">
+              </div>
+              <div class="item emote item-icon-right">
+                <h2>{{ ::buddy.first_name }} {{ ::buddy.last_name }}</h2>
+                is studying <span>🇯🇵</span>
+                <i class="icon ion-ios-heart-outline"></i>
+              </div>
+              <div class="item">
+                {{ ::buddy.year }}&nbsp;&middot;&nbsp;{{ ::buddy.major }}
+              </div>
+              <div class="item emote">
+                Interests: <span>🚀 🚲 🚺 🇯🇵 ⚽</span>
+              </div>
+            </div>
+          </ion-slide-page>
         </ion-slides>
     </ion-content>
 </ion-view>
