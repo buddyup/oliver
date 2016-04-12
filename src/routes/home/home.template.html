@@ -56,7 +56,7 @@
         <ion-list class="mini-cards">
             <div class="row">
                 <div class="col col-33" ng-repeat="buddy in data.brs.buddyRecommendations | limitTo:3:0">
-                    <ion-item ui-sref="profile">
+                    <ion-item ui-sref="students">
                         <img ng-src="{{ buddy.profile_pic_tiny }}">
                         <h2>{{buddy.first_name}}<br />{{buddy.last_name}}</h2>
                     </ion-item>
@@ -64,7 +64,7 @@
             </div>
             <div class="row">
                 <div class="col col-33" ng-repeat="buddy in data.brs.buddyRecommendations | limitTo:3:3">
-                    <ion-item ui-sref="profile">
+                    <ion-item ui-sref="students">
                         <img ng-src="{{ buddy.profile_pic_tiny }}">
                         <h2>{{buddy.first_name}}<br />{{buddy.last_name}}</h2>
                     </ion-item>
@@ -72,14 +72,14 @@
             </div>
             <div class="row">
                 <div class="col col-33" ng-repeat="buddy in data.brs.buddyRecommendations | limitTo:3:6">
-                    <ion-item ui-sref="profile">
+                    <ion-item ui-sref="students">
                         <img ng-src="{{ buddy.profile_pic_tiny }}">
                         <h2>{{buddy.first_name}}<br />{{buddy.last_name}}</h2>
                     </ion-item>
                 </div>
             </div>
 
-            <a class="item item-icon-right more" ion-item>
+            <a class="item item-icon-right more" ui-sref="students" ion-item>
                 Suggested Buddies
                 <i class="icon ion-ios-arrow-right"></i>
             </a>
@@ -87,19 +87,19 @@
         <ion-list class="mini-cards">
             <div class="row">
                 <div class="col col-33">
-                    <ion-item ui-sref="profile">
+                    <ion-item ui-sref="students">
                         <img src="../../img/freshman-300-300.png">
                         <h2>233 Students</h2>
                     </ion-item>
                 </div>
                 <div class="col col-33">
-                    <ion-item ui-sref="profile">
+                    <ion-item ui-sref="students">
                         <img src="../../img/sophomore-300-300.png">
                         <h2>133 Students</h2>
                     </ion-item>
                 </div>
                 <div class="col col-33">
-                    <ion-item ui-sref="profile">
+                    <ion-item ui-sref="students">
                         <img src="../../img/junior-300-300.png">
                         <h2>178 Students</h2>
                     </ion-item>
@@ -113,7 +113,7 @@
         <ion-list class="mini-cards">
             <div class="row">
                 <div class="col col-33">
-                    <ion-item ui-sref="profile">
+                    <ion-item ui-sref="students">
                         <div class="mini-box">
                             Psychology
                         </div>
@@ -121,7 +121,7 @@
                     </ion-item>
                 </div>
                 <div class="col col-33">
-                    <ion-item ui-sref="profile">
+                    <ion-item ui-sref="students">
                         <div class="mini-box">
                             Biology
                         </div>
@@ -129,7 +129,7 @@
                     </ion-item>
                 </div>
                 <div class="col col-33">
-                    <ion-item ui-sref="profile">
+                    <ion-item ui-sref="students">
                         <div class="mini-box">
                             History
                         </div>
@@ -145,7 +145,7 @@
         <ion-list class="mini-cards">
             <div class="row">
                 <div class="col col-33">
-                    <ion-item ui-sref="profile">
+                    <ion-item ui-sref="students">
                         <div class="mini-box interest">
                             🚀
                         </div>
@@ -153,7 +153,7 @@
                     </ion-item>
                 </div>
                 <div class="col col-33">
-                    <ion-item ui-sref="profile">
+                    <ion-item ui-sref="students">
                         <div class="mini-box interest">
                             ⚽
                         </div>
@@ -161,7 +161,7 @@
                     </ion-item>
                 </div>
                 <div class="col col-33">
-                    <ion-item ui-sref="profile">
+                    <ion-item ui-sref="students">
                         <div class="mini-box interest">
                             🚺
                         </div>
