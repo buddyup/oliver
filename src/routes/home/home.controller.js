@@ -9,7 +9,7 @@ mod.controller('homeController', [
       effect: "slide",
       freeMode: true,
       freeModeSticky: true,
-      freeModeMinimumVelocity: 1.5,
+      freeModeMinimumVelocity: 9999,
       touchMoveStopPropagation: true,
       paginationBulletRender: function (index, className) { return ''; },
       slideShadows: false,
