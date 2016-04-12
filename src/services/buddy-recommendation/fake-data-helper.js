@@ -22,17 +22,17 @@ export function processProfiles(data) {
 }
 
 export function generateMajor() {
-    const majors = ['Psychology', 'Engineering', 'Chemistry', 'Writing', 'Literature', 'History', 'Physics'];
+    const majors = ['Psychology', 'Engineering', 'Chemistry', 'Writing', 'Literature', 'History', 'Physics', 'Mathematics', 'Business', 'Communication', 'Economics', 'Biology'];
     return sample(majors);
 }
 
-export function generateYear() {
-    const years = ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Grad Student'];
-    return sample(years);
+export function generateClassStanding() {
+    const classStandings = ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Grad Student'];
+    return sample(classStandings);
 }
 
-export function addYear(buddy) {
-    buddy.year = generateYear();
+export function addClassStanding(buddy) {
+    buddy.class_standing = generateClassStanding();
     return buddy;
 }
 

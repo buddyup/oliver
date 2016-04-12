@@ -1,4 +1,4 @@
-import {processNames, processProfiles, addMajor, addYear} from "./fake-data-helper";
+import {processNames, processProfiles, addMajor, addClassStanding} from "./fake-data-helper";
 
 import merge from "lodash/merge";
 
@@ -20,7 +20,7 @@ mod.factory('fakeAsyncBuddyLoader', ['$http', '$q', function ($http, $q) {
             const profiles = processProfiles(data[1].data);
             const buddies = merge({data: names}, {data: profiles})
                 .data
-                .map(addYear)
+                .map(addClassStanding)
                 .map(addMajor);
 
             return buddies;
