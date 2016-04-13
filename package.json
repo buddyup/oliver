@@ -6,10 +6,11 @@
     "devserver": "cp src/webpack-template-hotreload.html www/index.html && webpack-dev-server --content-base www/",
     "watch": "cp src/webpack-template-hotreload.html www/index.html && webpack-dev-server --hot --inline --content-base www/",
     "build-assets": "webpack --config webpack.prod.config.js --progress --colors",
-    "build": "./build.sh",
-    "ios": "./build.sh && ionic run ios",
-    "android": "./build.sh && ionic run android",
-    "lint": "eslint --ext .js src"
+    "build": "./bin/build.sh",
+    "ios": "./bin/build.sh && ionic run ios",
+    "android": "./bin/build.sh && ionic run android",
+    "lint": "eslint --ext .js src",
+    "startservice": "./bin/startservice.sh"
   },
   "dependencies": {},
   "devDependencies": {

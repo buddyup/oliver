@@ -139,6 +139,7 @@ You have full access to ionic under the hood, as well as some dewey-powered shor
 | `npm run build` | Build static assets and run ionic build |
 | `npm run ios` | Build static assets then `ionic run ios`  |
 | `npm run lint` | Lint the JS against eslint |
+| `npm run startservice <service name>` | Stub out a new service in the services dir |
 | -- ionic -- | Ionic-based commands.  Shouldn't be needed often, but there if you want them.
 | `ionic serve` | Run ionic's webserver (requires `npm run build-assets`) |
 | `ionic serve --lab` | Run ionic's webserver with android and ios styles (requires `npm run build-assets`) |
