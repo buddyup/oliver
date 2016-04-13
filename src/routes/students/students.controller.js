@@ -5,8 +5,8 @@ let mod = angular.module('studentsControllerModule', [buddyRecommendationService
 mod.controller('studentsController', [
   '$scope',
   'buddyRecommendationService',
-  'buddyConfig',
-  function($scope, buddyRecommendationService, buddyConfig) {
+  'buddyDetail',
+  function($scope, buddyRecommendationService, buddyDetail) {
     $scope.options = {
       loop: false,
       initialSlide: 0,
@@ -19,7 +19,8 @@ mod.controller('studentsController', [
       paginationCurrentClass: "hidden",
     };
     $scope.data = {
-      brs: buddyRecommendationService
+      brs: buddyRecommendationService,
+      buddyDetail: buddyDetail
     };
     $scope.$watch('data.slider', function(nv, ov) {
       $scope.slider = $scope.data.slider;

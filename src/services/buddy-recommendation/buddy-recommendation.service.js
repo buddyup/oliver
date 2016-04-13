@@ -1,7 +1,5 @@
 import fakeAsyncBuddyLoaderModule from "./fake-async-buddy-loader";
 import find from "lodash/find";
-import remove from "lodash/remove";
-import pull from "lodash/pull";
 
 // Future: import load from backend promise function here and use that for the data load
 // then we can swap it or dynamically switch between fake and real data
@@ -27,8 +25,8 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
      * side effects: adds recommended buddies to the service (brs)
      * returns a promise so that .finally can be used to broadcast ionic event as is needed handlePullDownRefresh.
      */
-    function refresh(studentId) {
-        return fakeAsyncBuddyLoader.loadBuddies(studentId)
+    function refresh() {
+        return fakeAsyncBuddyLoader.loadBuddies()
         .then((buddies) => {
             brs.buddyRecommendations = buddies;
             brs.loaded = true;
@@ -36,6 +34,8 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
     }
 
     /**
+     * TODO: rewrite this to look more like a DB get and avoid the side effect of populating buddyRecommendations if needed.
+     *
      * returns a promise that when resolved indicated the brs.buddyRecommendations is fulfilled.
      * @param  {optional} studentId If provided, the matching student will be at the front of the list of cards.
      */
@@ -43,9 +43,12 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
         if (studentId) {
             if (brs.buddyRecommendations.length > 0) {
                 const student = find(brs.buddyRecommendations, {$id: studentId});
-                pull(brs.buddyRecommendations, student);
-                brs.buddyRecommendations.unshift(student);
-                return $q.when();
+                if (student) {
+                    return $q.when(student);
+                } else {
+                    console.error('couldnt find the student');
+                    return $q.when();
+                }
             } else {
                 return refresh();
             }
