@@ -1,4 +1,4 @@
-<ion-view id="page3">
+<ion-view title="BuddyUp" id="page3">
     <ion-slides  options="options" slider="data.slider">
       <ion-slide-page>
         <ion-content overflow-scroll="false">
@@ -62,7 +62,7 @@
                 <div class="col col-33" ng-repeat="buddy in data.brs.buddyRecommendations | limitTo:3:0">
                     <ion-item ui-sref="students_detail({ student_id: buddy.$id })">
                         <img ng-src="{{ buddy.profile_pic_tiny }}">
-                        <h2>{{buddy.first_name}}<br />{{buddy.last_name}}</h2>
+                        <h2>{{buddy.first_name}}</h2>
                     </ion-item>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                 <div class="col col-33" ng-repeat="buddy in data.brs.buddyRecommendations | limitTo:3:3">
                     <ion-item ui-sref="students_detail({ student_id: buddy.$id })">
                         <img ng-src="{{ buddy.profile_pic_tiny }}">
-                        <h2>{{buddy.first_name}}<br />{{buddy.last_name}}</h2>
+                        <h2>{{buddy.first_name}}</h2>
                     </ion-item>
                 </div>
             </div>
@@ -78,13 +78,13 @@
                 <div class="col col-33" ng-repeat="buddy in data.brs.buddyRecommendations | limitTo:3:6">
                     <ion-item ui-sref="students_detail({ student_id: buddy.$id })">
                         <img ng-src="{{ buddy.profile_pic_tiny }}">
-                        <h2>{{buddy.first_name}}<br />{{buddy.last_name}}</h2>
+                        <h2>{{buddy.first_name}}</h2>
                     </ion-item>
                 </div>
             </div>
 
             <a class="item item-icon-right more" ui-sref="students" ion-item>
-                Suggested Buddies
+                Suggested Buddie
                 <i class="icon ion-ios-arrow-right"></i>
             </a>
         </ion-list>

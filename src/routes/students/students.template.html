@@ -1,8 +1,8 @@
-<ion-view title="" id="page5">
-    <ion-nav-bar class="bar-stable">
-        <ion-nav-back-button class="button-icon icon ion-ios-arrow-back"> Back</ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-content overflow-scroll="true" class="has-header">
+<ion-view title="{{ ::data.buddyDetail.first_name }} {{ ::data.buddyDetail.last_name }}" id="page5">
+<!--     <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button class="button-icon icon ion-ios-arrow-back"> Bck</ion-nav-back-button>
+    </ion-nav-bar> -->
+    <ion-content overflow-scroll="true" class="has-header" >
         <ion-slides options="options" slider="data.slider">
           <ion-slide-page ng-if="::data.buddyDetail">
             <div class="list card">
