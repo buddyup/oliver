@@ -26,7 +26,7 @@ mod.factory('fakeAsyncBuddyLoader', ['$http', '$q', function ($http, $q) {
 
             return buddies;
         });
-    }
+    };
 
     return {
         loadBuddies: loadBuddies,

@@ -33,6 +33,15 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
         });
     }
 
+
+    function loadInitialRecommendations () {
+        if (brs.buddyRecommendations.length > 0) {
+            return $q.when();
+        } else {
+            return refresh();
+        }
+    }
+
     /**
      * TODO: rewrite this to look more like a DB get and avoid the side effect of populating buddyRecommendations if needed.
      *
@@ -53,19 +62,18 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
                 return refresh();
             }
         } else {
-            if (brs.buddyRecommendations.length > 0) {
-                return $q.when();
-            } else {
-                return refresh();
-            }
+            return loadInitialRecommendations();
         }
     }
+
+
 
     brs = angular.extend(brs, {
         buddyRecommendations: [],
         loaded: false,
         refresh: refresh,
         fetch: fetch,
+        loadInitialRecommendations: loadInitialRecommendations,
     });
 
     return brs;

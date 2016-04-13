@@ -4,7 +4,7 @@ let mod = angular.module('profileServiceModule', []);
  * A model for the current profile.
  *
  */
-mod.factory('profileService', ['$http', function ($http) {
+mod.factory('profileService', [function () {
     var profile = {
         buddies: [],
         firstName: 'Chris',

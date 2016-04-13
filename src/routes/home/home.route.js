@@ -12,10 +12,10 @@ mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     // controllerAs: 'ctrl',  // until we test the $scope.slider works
     resolve: {
         buddyRecommendations: ['buddyRecommendationService', function (buddyRecommendationService) {
-            return buddyRecommendationService.fetch();
+            return buddyRecommendationService.loadInitialRecommendations();
         }]
     }
-  })
+  });
 
   $urlRouterProvider.otherwise('/home');
 
