@@ -1,7 +1,7 @@
 <ion-view title="BuddyUp" id="page3">
     <ion-slides  options="options" slider="data.slider">
       <ion-slide-page>
-        <ion-content overflow-scroll="false">
+        <ion-content>
         <ion-list>
             <ion-item class="item-avatar">
                 <img ng-src="{{::data.brs.buddyRecommendations[0].profile_pic_tiny}}">
@@ -183,8 +183,8 @@
             <span class="badge badge-assertive">21</span>
         </div>
       </ion-slide-page>
-      <ion-slide-page>
-        <ion-content overflow-scroll="false">
+      <ion-slide-page class="rooms">
+        <ion-content>
         <ion-list class="mini-cards">
             <div class="row">
                 <div class="col col-33" ng-repeat="class in ::data.classService.classesAsArray | limitTo:3">
