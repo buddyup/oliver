@@ -10,7 +10,8 @@
     "ios": "./bin/build.sh && ionic run ios",
     "android": "./bin/build.sh && ionic run android",
     "lint": "eslint --ext .js src",
-    "startservice": "./bin/startservice.sh"
+    "startservice": "./bin/startservice.sh",
+    "startroute": "./bin/startroute.sh"
   },
   "dependencies": {},
   "devDependencies": {

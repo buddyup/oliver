@@ -7,5 +7,5 @@ if [ -n "$1" ]; then
 
     echo "service $1 created"
 else
-    echo "service name file, usage: $ npm run startservice <service name>"
+    echo "missing service name, usage: $ npm run startservice <service name>"
 fi
