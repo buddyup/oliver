@@ -1,4 +1,5 @@
 import fakeClassBackendModule from "./fake-class-backend";
+import values from "lodash/values";
 
 let mod = angular.module('classServiceModule', [fakeClassBackendModule]);
 
@@ -8,6 +9,7 @@ mod.factory('classService', ['fakeClassBackend', '$q', function (fakeClassBacken
 
     const setData = (classes) => {
         cs.classes = classes;
+        cs.classesAsArray = values(classes);
         cs.loaded = true;
     };
 

@@ -7,8 +7,11 @@ let mod = angular.module('profileServiceModule', []);
 mod.factory('profileService', [function () {
     var profile = {
         buddies: [],
+        classes: [],
+        study_groups: [],
         firstName: 'Chris',
         lastName: 'Smith',
+        email: 'chris.smith@buddyup.org',
         bio: 'A freshman',
         year: 2020,
         loaded: true,

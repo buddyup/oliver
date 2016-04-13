@@ -187,25 +187,11 @@
         <ion-content overflow-scroll="false">
         <ion-list class="mini-cards">
             <div class="row">
-                <div class="col col-33">
+                <div class="col col-33" ng-repeat="class in ::data.classService.classesAsArray | limitTo:3">
                     <ion-item ui-sref="class">
-                        <img src="../../img/chem-102.png">
-                        <h2>CHEM 102<!--  General Chemistry --></h2>
-                        <p>78 classmates</p>
-                    </ion-item>
-                </div>
-                <div class="col col-33">
-                    <ion-item ui-sref="class">
-                        <img src="../../img/bio-180.png">
-                        <h2>BIO 121<!--  Intro to Human Anatomy and Physiology --></h2>
-                        <p>245 Students</p>
-                    </ion-item>
-                </div>
-                <div class="col col-33">
-                    <ion-item ui-sref="class">
-                        <img src="../../img/geol-103.png">
-                        <h2>GEOL 103<!--  Environmental Geology --></h2>
-                        <p>53 Students</p>
+                        <img ng-src="{{::class.pic}}">
+                        <h2>{{::class.subject_code}} {{::class.code}}</h2>
+                        <p>{{::class.students.length | number }} classmates</p>
                     </ion-item>
                 </div>
             </div>

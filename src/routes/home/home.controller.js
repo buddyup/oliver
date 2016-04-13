@@ -32,7 +32,7 @@ mod.controller('homeController', [
     $scope.data = {
       profile: profileService,
       brs: buddyRecommendationService,
-      classes: classService,
+      classService: classService,
     };
 
 

@@ -1,5 +1,9 @@
 let mod = angular.module('fakeClassBackendModule', []);
 
+
+/**
+ * We currently don't get the number of students in the user's classes payload in firebase.
+ */
 mod.factory('fakeClassBackend', ['$q', function ($q) {
 
     const classes = {
@@ -12,7 +16,8 @@ mod.factory('fakeClassBackend', ['$q', function ($q) {
         "subject_code" : "GEOL",
         "subject_icon" : "calculator",
         "subject_name" : "Geology",
-        "pic": "https://s3.amazonaws.com/uploads.hipchat.com/183747/3575947/prYQ3U9qwreXdH2/geol-103.png"
+        "pic": "https://s3.amazonaws.com/uploads.hipchat.com/183747/3575947/prYQ3U9qwreXdH2/geol-103.png",
+        "students": [{$id: "-aslkjasdkj"}, {$id: "-skjdhwewekjh"}]
       },
       "-KBtmOmRoAeCZOcV1dWF" : {
         "code" : "102",
@@ -23,7 +28,8 @@ mod.factory('fakeClassBackend', ['$q', function ($q) {
         "subject_code" : "CHEM",
         "subject_icon" : "calculator",
         "subject_name" : "Chemistry",
-        "pic": "https://s3.amazonaws.com/uploads.hipchat.com/183747/3575947/QHbWlJzEjQvHnvf/chem-102.png"
+        "pic": "https://s3.amazonaws.com/uploads.hipchat.com/183747/3575947/QHbWlJzEjQvHnvf/chem-102.png",
+        "students": [{$id: "-aslkjasdasd"}, {$id: "-aklsdhiuehw"}]
       },
       "-KCpvueUkongkAsuv2Xt" : {
         "code" : "180",
@@ -34,7 +40,8 @@ mod.factory('fakeClassBackend', ['$q', function ($q) {
         "subject_code" : "BIO",
         "subject_icon" : "paint-brush",
         "subject_name" : "Biology",
-        "pic": "https://s3.amazonaws.com/uploads.hipchat.com/183747/3575947/IqJO8PST7OLdJr1/bio-180.png"
+        "pic": "https://s3.amazonaws.com/uploads.hipchat.com/183747/3575947/IqJO8PST7OLdJr1/bio-180.png",
+        "students": [{$id: "-aslkjasdasd"}, {$id: "-aklsdhiuehw"}, {$id: "-aklsjdasjdalkjsdalksj"}]
       }
     };
 
