@@ -1,13 +1,19 @@
 import profileServiceModule from 'services/profile/profile.service';
+import classServiceModule from 'services/class/class.service';
 import buddyRecommendationServiceModule from 'services/buddy-recommendation/buddy-recommendation.service';
 
-let mod = angular.module('homeControllerModule', [profileServiceModule, buddyRecommendationServiceModule]);
+let mod = angular.module('homeControllerModule', [
+  profileServiceModule,
+  buddyRecommendationServiceModule,
+  classServiceModule
+]);
 
 mod.controller('homeController', [
   '$scope',
   'profileService',
   'buddyRecommendationService',
-  function($scope, profileService, buddyRecommendationService) {
+  'classService',
+  function($scope, profileService, buddyRecommendationService, classService) {
     $scope.options = {
       loop: false,
       initialSlide: 1,
@@ -25,7 +31,8 @@ mod.controller('homeController', [
 
     $scope.data = {
       profile: profileService,
-      brs: buddyRecommendationService
+      brs: buddyRecommendationService,
+      classes: classService,
     };
 
 
