@@ -34,7 +34,7 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
     }
 
 
-    function loadInitialRecommendations () {
+    function populateInitialRecommendations () {
         if (brs.buddyRecommendations.length > 0) {
             return $q.when();
         } else {
@@ -62,7 +62,7 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
                 return refresh();
             }
         } else {
-            return loadInitialRecommendations();
+            return populateInitialRecommendations();
         }
     }
 
@@ -73,7 +73,7 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
         loaded: false,
         refresh: refresh,
         fetch: fetch,
-        loadInitialRecommendations: loadInitialRecommendations,
+        populateInitialRecommendations: populateInitialRecommendations,
     });
 
     return brs;

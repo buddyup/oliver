@@ -11,8 +11,9 @@ mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     controller: 'homeController',
     // controllerAs: 'ctrl',  // until we test the $scope.slider works
     resolve: {
-        buddyRecommendations: ['buddyRecommendationService', function (buddyRecommendationService) {
-            return buddyRecommendationService.loadInitialRecommendations();
+        // this doesn't return the recommendations, instead they're loaded into the buddyReceommendationService
+        prefetchBuddyRecommendations: ['buddyRecommendationService', function (buddyRecommendationService) {
+            return buddyRecommendationService.populateInitialRecommendations();
         }]
     }
   });
