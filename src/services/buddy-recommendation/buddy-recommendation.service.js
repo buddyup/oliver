@@ -1,4 +1,7 @@
 import fakeAsyncBuddyLoaderModule from "./fake-async-buddy-loader";
+import find from "lodash/find";
+import remove from "lodash/remove";
+import pull from "lodash/pull";
 
 // Future: import load from backend promise function here and use that for the data load
 // then we can swap it or dynamically switch between fake and real data
@@ -13,7 +16,7 @@ let mod = angular.module('buddyRecommendationServiceModule', [fakeAsyncBuddyLoad
  *         first_name, last_name, profile_pic_medium, profile_pic_tiny, bio, year, major, interests
  *      }, ... ]
  */
-mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', function (fakeAsyncBuddyLoader) {
+mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', function (fakeAsyncBuddyLoader, $q) {
     let brs = {};
 
     /**
@@ -24,23 +27,42 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', function (fak
      * side effects: adds recommended buddies to the service (brs)
      * returns a promise so that .finally can be used to broadcast ionic event as is needed handlePullDownRefresh.
      */
-    function refresh() {
-        return fakeAsyncBuddyLoader.loadBuddies()
+    function refresh(studentId) {
+        return fakeAsyncBuddyLoader.loadBuddies(studentId)
         .then((buddies) => {
             brs.buddyRecommendations = buddies;
             brs.loaded = true;
         });
     }
 
-    function init() {
-        refresh();
+    /**
+     * returns a promise that when resolved indicated the brs.buddyRecommendations is fulfilled.
+     * @param  {optional} studentId If provided, the matching student will be at the front of the list of cards.
+     */
+    function fetch(studentId) {
+        if (studentId) {
+            if (brs.buddyRecommendations.length > 0) {
+                const student = find(brs.buddyRecommendations, {$id: studentId});
+                pull(brs.buddyRecommendations, student);
+                brs.buddyRecommendations.unshift(student);
+                return $q.when();
+            } else {
+                return refresh();
+            }
+        } else {
+            if (brs.buddyRecommendations.length > 0) {
+                return $q.when();
+            } else {
+                return refresh();
+            }
+        }
     }
-    init();
 
     brs = angular.extend(brs, {
         buddyRecommendations: [],
         loaded: false,
         refresh: refresh,
+        fetch: fetch,
     });
 
     return brs;

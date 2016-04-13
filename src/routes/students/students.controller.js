@@ -2,7 +2,11 @@ import buddyRecommendationServiceModule from 'services/buddy-recommendation/budd
 
 let mod = angular.module('studentsControllerModule', [buddyRecommendationServiceModule]);
 
-mod.controller('studentsController', ['$scope', 'buddyRecommendationService', function($scope, buddyRecommendationService) {
+mod.controller('studentsController', [
+  '$scope',
+  'buddyRecommendationService',
+  'buddyConfig',
+  function($scope, buddyRecommendationService, buddyConfig) {
     $scope.options = {
       loop: false,
       initialSlide: 0,
