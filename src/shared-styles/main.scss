@@ -4,9 +4,13 @@ $black:                       #222;
 $gray:                        #efefef;
 $drk_blue:                    #36465d;
 
-#page3, #page5 {
+#page3 {
     background-color: $white;
     background: $white;
+}
+#page5 {
+    background-color: $teal;
+    background: $teal;
 }
 .bar {
     border-top: 0;
@@ -116,7 +120,7 @@ $drk_blue:                    #36465d;
 
     }
 }
-.home-slide {
+.has-teal-background {
     background: $teal;
     
     .mini-cards {
@@ -194,4 +198,7 @@ $drk_blue:                    #36465d;
     position: absolute;
     top: 0;
     height: 100%;
+}
+.scroll-refresher .ionic-refresher-content {
+    color: $white;
 }
