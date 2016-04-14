@@ -134,6 +134,11 @@ $green:                         #36465d;
                             h2, p {
                                 color: #000;
                             }
+                            &.active, &.activated {
+                                background: #efefef;
+                                background-color: #efefef;
+
+                            }
                         }
                     }
                 }
@@ -144,6 +149,11 @@ $green:                         #36465d;
             background: $white;
             background-color: $white;
             color: #000;
+
+            &.active, &.activated {
+            background: #efefef;
+            background-color: #efefef;
+        }
         }
     }
 }
