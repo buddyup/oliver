@@ -23,12 +23,6 @@ let mainModule = angular.module('app', [
 // Run
 mainModule.run(runModule);
 
-// mainModule.config(['$ionicConfigProvider', function($ionicConfigProvider) {
-//   if (!ionic.Platform.isIOS()) {
-//     $ionicConfigProvider.scrolling.jsScrolling(false);
-//   }
-// }]);
-
 // Bootstrap
 angular.element(document).ready(function() {
   angular.bootstrap(document.querySelector('[data-main-app]'), [

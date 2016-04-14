@@ -1,10 +1,12 @@
 $teal:                        #3abcd3 !default;
-$white:                         #fff;
-$green:                         #36465d;
+$white:                       #fff;
+$black:                       #222;
+$gray:                        #efefef;
+$drk_blue:                    #36465d;
 
 #page3, #page5 {
-    background-color: $teal;
-    background: $teal;
+    background-color: $white;
+    background: $white;
 }
 .bar {
     border-top: 0;
@@ -36,24 +38,22 @@ $green:                         #36465d;
     .row {
         .col {
             .item {
-
                 border: none;
-                // background: $teal;
-                // background-color: $teal;
-                // padding-bottom: 8px;
+                
                 &.item-complex {
+                    
                     .item-content {
                         padding: 0;
-                        background: $teal;
-                        background-color: $teal;
-                        color: $white;
+                        background: $white;
+                        background-color: $white;
+                        color: $black;
                         border-color: none;
                         border: none;
 
                         h2, p {
                             padding: 2px 6px 6px 6px;
                             font-size: 13px;
-                            color: $white;
+                            color: $black;
                             text-align: center;
                         }
                         p {
@@ -65,8 +65,8 @@ $green:                         #36465d;
                         .mini-box {
                             font-size: 13px;
                             font-weight: bold;
-                            background: $green;
-                            background-color: $green;
+                            background: $drk_blue;
+                            background-color: $drk_blue;
                             background-image: none;
                             color: $white;
                             text-align: center;
@@ -90,8 +90,8 @@ $green:                         #36465d;
                             }
                         }
                         &.active, &.activated {
-                            background: lighten( $teal, 10% );
-                            background-color: lighten( $teal, 10% );
+                            background: $gray;
+                            background-color: $gray;
 
                         }
                     }
@@ -103,41 +103,43 @@ $green:                         #36465d;
         border-top: none;
         font-size: 18px;
         border-bottom-width: 6px;
-        border-color: $white;
-        background: $teal;
-        background-color: $teal;
-        color: $white;
+        border-color: $gray;
+        background: $white;
+        background-color: $white;
+        color: $black;
 
         &.active, &.activated {
-            background: lighten( $teal, 10% );
-            background-color: lighten( $teal, 10% );
+            background: $gray;
+            background-color: $gray;
+
         }
 
     }
 }
-.rooms {
-    background: $white;
+.home-slide {
+    background: $teal;
+    
     .mini-cards {
         .row {
             .col {
                 .item {
 
                     &.item-complex {
+                        
                         .item-content {
                             padding: 0;
-                            background: $white;
-                            background-color: $white;
-                            color: #000;
+                            background: $teal;
+                            background-color: $teal;
+                            color: $white;
                             border-color: none;
                             border: none;
 
                             h2, p {
-                                color: #000;
+                                color: $white;
                             }
                             &.active, &.activated {
-                                background: #efefef;
-                                background-color: #efefef;
-
+                                background: lighten( $teal, 10% );
+                                background-color: lighten( $teal, 10% );
                             }
                         }
                     }
@@ -145,15 +147,15 @@ $green:                         #36465d;
             }
         }
         a.more {
-            border-color: #efefef;
-            background: $white;
-            background-color: $white;
-            color: #000;
+            border-color: $white;
+            background: $teal;
+            background-color: $teal;
+            color: $white;
 
             &.active, &.activated {
-            background: #efefef;
-            background-color: #efefef;
-        }
+                background: lighten( $teal, 10% );
+                background-color: lighten( $teal, 10% );
+            }
         }
     }
 }
@@ -162,7 +164,6 @@ $green:                         #36465d;
 
         &.emote {
             span {
-                // font-size: 39px;
                 vertical-align: middle;
                 line-height: 1;
             }
@@ -178,8 +179,7 @@ $green:                         #36465d;
     left: 10px;
     z-index: 9999;
 }
-.item-text-center
-{
+.item-text-center {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -195,6 +195,3 @@ $green:                         #36465d;
     top: 0;
     height: 100%;
 }
-// .overflow-scroll {
-//     overflow-y: auto !important;
-// }
