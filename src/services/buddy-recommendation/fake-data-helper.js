@@ -1,7 +1,7 @@
 import sample from "lodash/sample";
 import sampleSize from "lodash/sampleSize";
 
-const MAX_NUMBER_OF_PROFILES = 100;
+const MAX_NUMBER_OF_PROFILES = 500;
 
 export function processNames(data) {
     return sampleSize(data.names, MAX_NUMBER_OF_PROFILES);
