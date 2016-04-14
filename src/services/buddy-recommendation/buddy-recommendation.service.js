@@ -1,5 +1,8 @@
 import fakeAsyncBuddyLoaderModule from "./fake-async-buddy-loader";
 import findIndex from "lodash/findIndex";
+import reduce from "lodash/reduce";
+import sortBy from "lodash/sortBy";
+import map from "lodash/map";
 
 // Future: import load from backend promise function here and use that for the data load
 // then we can swap it or dynamically switch between fake and real data
@@ -7,7 +10,10 @@ import findIndex from "lodash/findIndex";
 let mod = angular.module('buddyRecommendationServiceModule', [fakeAsyncBuddyLoaderModule]);
 
 /**
- * A model for the current profile and buddy recommendations.
+ *
+ * A model for a school's students and buddy recommendations.
+ *
+ * TODO: rename to studentsService
  *
  * proposed data model for buddy recommendation:
  *     [{
@@ -16,6 +22,18 @@ let mod = angular.module('buddyRecommendationServiceModule', [fakeAsyncBuddyLoad
  */
 mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', function (fakeAsyncBuddyLoader, $q) {
     let brs = {};
+
+    /**
+     * build a hash/map/mutex of the students keyed by $id.
+     * @param  {array} students
+     * returns an object hash
+     */
+    function _createStudentMap(students) {
+        return reduce(students, (acc, n) => {
+            acc[n.$id || n.id] = n;
+            return acc;
+        }, {});
+    }
 
     /**
      * Future: swap fakeAsyncBuddyLoader with Firebase service backend.
@@ -28,7 +46,9 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
     function refresh() {
         return fakeAsyncBuddyLoader.loadBuddies()
         .then((buddies) => {
-            brs.buddyRecommendations = buddies;
+            brs.studentMap = _createStudentMap(buddies);
+            brs.students = buddies;
+            brs.buddyRecommendations = sortBy(buddies, 'recommendationRanking');
             brs.loaded = true;
         });
     }
@@ -74,6 +94,8 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
 
     brs = angular.extend(brs, {
         buddyRecommendations: [],
+        students: [],
+        studentMap: {},
         loaded: false,
         refresh: refresh,
         fetch: fetch,

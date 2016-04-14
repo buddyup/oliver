@@ -1,9 +1,9 @@
 <ion-view title="Students" id="page3">
     <ion-content>
         <ion-list>
-            <a class="item item-avatar item-icon-right" ion-item collection-repeat="student in studentlistctrl.brs.buddyRecommendations | orderBy:'first_name'" ui-sref="students_detail({ student_id: student.$id })">
-                <img ng-src="{{student.profile_pic_tiny}}">
-                <div class="item-text-center">{{student.first_name}} {{student.last_name}}</div>
+            <a class="item item-avatar item-icon-right" ion-item collection-repeat="studentId in studentlistctrl.studentIds" ui-sref="students_detail({ student_id: studentId })">
+                <img ng-src="{{ studentlistctrl.studentMap[studentId].profile_pic_tiny }}">
+                <div class="item-text-center">{{studentlistctrl.studentMap[studentId].first_name}} {{studentlistctrl.studentMap[studentId].last_name}}</div>
                 <i class="icon ion-ios-arrow-right"></i>
             </a>
         </ion-list>
