@@ -1,3 +1,7 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 $teal:                        #3abcd3 !default;
 $white:                       #fff;
 $black:                       #222;
@@ -43,9 +47,9 @@ $drk_blue:                    #36465d;
         .col {
             .item {
                 border: none;
-                
+
                 &.item-complex {
-                    
+
                     .item-content {
                         padding: 0;
                         background: $white;
@@ -122,14 +126,14 @@ $drk_blue:                    #36465d;
 }
 .has-teal-background {
     background: $teal;
-    
+
     .mini-cards {
         .row {
             .col {
                 .item {
 
                     &.item-complex {
-                        
+
                         .item-content {
                             padding: 0;
                             background: $teal;

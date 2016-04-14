@@ -21,6 +21,11 @@ mod.controller('studentsController', [
       speed: 100,
       parallax: false,
       paginationCurrentClass: "hidden",
+      // handle large lists
+      preloadImages: false,
+      lazyLoading: true,
+      lazyLoadingInPrevNext: true,
+      lazyLoadingOnTransitionStart: true,
     };
 
     $scope.data = {

@@ -15,6 +15,7 @@ mod.controller('homeController', [
   'classService',
   function($scope, profileService, buddyRecommendationService, classService) {
     $scope.options = {
+      onTransitionEnd: handleonTransitionEnd,
       loop: false,
       initialSlide: 1,
       effect: "slide",
@@ -28,6 +29,18 @@ mod.controller('homeController', [
       parallax: false,
       paginationCurrentClass: "hidden",
     };
+
+    function handleonTransitionEnd (swiper) {
+      if (swiper.activeIndex === 0) {
+        $scope.$emit('onTitleChange', 'Chats');
+      }
+      if (swiper.activeIndex === 1) {
+        $scope.$emit('onTitleChange', 'BuddyUp');
+      }
+      if (swiper.activeIndex === 2) {
+        $scope.$emit('onTitleChange', 'Classes & Groups');
+      }
+    }
 
     $scope.data = {
       profile: profileService,
@@ -46,6 +59,7 @@ mod.controller('homeController', [
     $scope.$watch('data.slider', function(nv, ov) {
       $scope.slider = $scope.data.slider;
     });
+
 }]);
 
 export default mod = mod.name;

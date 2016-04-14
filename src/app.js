@@ -10,6 +10,9 @@ import studentsRouteModule from './routes/students';
 import groupRouteModule from './routes/group/group.route';
 import classRouteModule from './routes/class/class.route';
 
+// components
+import navControllerModule from "./components/nav/nav.controller";
+
 import runModule from './config/main.config';
 
 let mainModule = angular.module('app', [
@@ -18,6 +21,7 @@ let mainModule = angular.module('app', [
   studentsRouteModule,
   groupRouteModule,
   classRouteModule,
+  navControllerModule,
 ]);
 
 // Run
