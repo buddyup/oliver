@@ -12,11 +12,14 @@ mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     url: '/students-list',
     template: template,
     controller: 'studentsListController as studentlistctrl',
+    params: {
+      orderBy: 'first_name'  // optional param
+    },
     resolve: {
-        studentIds: ['buddyRecommendationService', function (buddyRecommendationService) {
+        studentIds: ['buddyRecommendationService', '$stateParams', function (buddyRecommendationService, $stateParams) {
             return buddyRecommendationService.fetch().then(() => {
               // Note (Aleck): I timed the map(sortBy(...)) with 500 students and it averaged between 6 and 10 ms.
-              return map(sortBy(buddyRecommendationService.students, 'first_name'), '$id');
+              return map(sortBy(buddyRecommendationService.students, $stateParams.orderBy), '$id');
             });
         }]
     }
