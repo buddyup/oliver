@@ -6,7 +6,8 @@ mod.controller('studentsController', [
   '$scope',
   'buddyRecommendationService',
   'buddyDetailIndex',
-  function($scope, buddyRecommendationService, buddyDetailIndex) {
+  'studentIds',
+  function($scope, buddyRecommendationService, buddyDetailIndex, studentIds) {
     if (typeof buddyDetailIndex === 'undefined' || buddyDetailIndex === -1) {
       buddyDetailIndex = 0;
     }
@@ -24,12 +25,9 @@ mod.controller('studentsController', [
 
     $scope.data = {
       brs: buddyRecommendationService,
+      studentIds: studentIds,
+      studentMap: buddyRecommendationService.studentMap,
     };
-    $scope.$watch('data.slider', function(nv, ov) {
-      $scope.slider = $scope.data.slider;
-    });
-
-
 }]);
 
 export default mod = mod.name;

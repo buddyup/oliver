@@ -5,7 +5,8 @@ let mod = angular.module('studentsListControllerModule', [buddyRecommendationSer
 mod.controller('studentsListController', [
   'buddyRecommendationService',
   'studentIds',
-  function(buddyRecommendationService, studentIds) {
+  '$stateParams',
+  function(buddyRecommendationService, studentIds, $stateParams) {
     /**
      * This uses the Controller As syntax. Anything needed in the view should be placed on `ctrl` and is accessible
      * in the view as `studentlistctrl`;
@@ -16,6 +17,7 @@ mod.controller('studentsListController', [
         brs: buddyRecommendationService,
         studentIds: studentIds,
         studentMap: buddyRecommendationService.studentMap,
+        orderBy: $stateParams.orderBy,
     });
 }]);
 

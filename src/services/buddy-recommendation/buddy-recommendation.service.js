@@ -83,7 +83,7 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
                     return $q.when();
                 }
             } else {
-                return refresh();
+                return populateInitialRecommendations();
             }
         } else {
             return populateInitialRecommendations();
