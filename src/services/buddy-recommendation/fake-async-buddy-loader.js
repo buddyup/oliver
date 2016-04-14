@@ -1,4 +1,4 @@
-import {processNames, processProfiles, addMajor, addClassStanding, addId} from "./fake-data-helper";
+import {processNames, processProfiles, addMajor, addClassStanding, addId, addRanking} from "./fake-data-helper";
 
 import merge from "lodash/merge";
 
@@ -22,7 +22,8 @@ mod.factory('fakeAsyncBuddyLoader', ['$http', '$q', function ($http, $q) {
                 .data
                 .map(addClassStanding)
                 .map(addMajor)
-                .map(addId);
+                .map(addId)
+                .map(addRanking);
 
             return buddies;
         });

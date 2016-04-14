@@ -1,5 +1,7 @@
 import sample from "lodash/sample";
 import sampleSize from "lodash/sampleSize";
+import random from "lodash/random";
+
 
 const MAX_NUMBER_OF_PROFILES = 500;
 
@@ -35,6 +37,11 @@ export function addClassStanding(buddy) {
 
 export function addMajor(buddy) {
     buddy.major = generateMajor();
+    return buddy;
+}
+
+export function addRanking(buddy) {
+    buddy.recommendationRanking = random(1, 100000, true);
     return buddy;
 }
 
