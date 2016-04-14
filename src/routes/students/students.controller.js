@@ -18,13 +18,15 @@ mod.controller('studentsController', [
       parallax: false,
       paginationCurrentClass: "hidden",
     };
+
     $scope.data = {
       brs: buddyRecommendationService,
-      buddyDetail: buddyDetail
+      buddyDetail: buddyDetail,
     };
     $scope.$watch('data.slider', function(nv, ov) {
       $scope.slider = $scope.data.slider;
     });
+
 
 }]);
 

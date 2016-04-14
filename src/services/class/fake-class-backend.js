@@ -50,7 +50,7 @@ mod.factory('fakeClassBackend', ['$q', function ($q) {
      *
      */
     const $loaded = () => {
-        return $q.when(classes)
+        return $q.when(classes);
     };
 
 
