@@ -1,13 +1,11 @@
-<ion-view title="BuddyUp" id="page3">
+<ion-view title="Students" id="page3">
     <ion-content>
         <ion-list>
-            <ion-item class="item-divider">Students</ion-item>
             <a class="item item-avatar item-icon-right" ion-item collection-repeat="student in studentlistctrl.brs.buddyRecommendations" ui-sref="students_detail({ student_id: student.$id })">
                 <img ng-src="{{student.profile_pic_tiny}}">
                 <div class="item-text-center">{{student.first_name}} {{student.last_name}}</div>
                 <i class="icon ion-ios-arrow-right"></i>
             </a>
-            <a class="item item-avatar item-icon-right" ion-item>
         </ion-list>
     </ion-content>
 </ion-view>
