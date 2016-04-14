@@ -2,7 +2,7 @@ import buddyRecommendationServiceModule from 'services/buddy-recommendation/budd
 import studentsControllerModule from './students.controller';
 import template from './students.template.html';
 
-let mod = angular.module('studentsRouteModule', [studentsControllerModule, buddyRecommendationServiceModule]);
+let mod = angular.module('studentsCardRouteModule', [studentsControllerModule, buddyRecommendationServiceModule]);
 
 mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $stateProvider

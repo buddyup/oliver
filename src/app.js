@@ -6,7 +6,7 @@ import 'ionic-sdk/release/js/ionic.bundle';
 
 // routes
 import homeRouteModule from './routes/home/home.route';
-import studentsRouteModule from './routes/students/students.route';
+import studentsRouteModule from './routes/students';
 import groupRouteModule from './routes/group/group.route';
 import classRouteModule from './routes/class/class.route';
 
