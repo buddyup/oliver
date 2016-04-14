@@ -5,11 +5,14 @@ let mod = angular.module('studentsControllerModule', [buddyRecommendationService
 mod.controller('studentsController', [
   '$scope',
   'buddyRecommendationService',
-  'buddyDetail',
-  function($scope, buddyRecommendationService, buddyDetail) {
+  'buddyDetailIndex',
+  function($scope, buddyRecommendationService, buddyDetailIndex) {
+    if (typeof buddyDetailIndex === 'undefined' || buddyDetailIndex === -1) {
+      buddyDetailIndex = 0;
+    }
     $scope.options = {
       loop: false,
-      initialSlide: 0,
+      initialSlide: buddyDetailIndex,
       effect: "slide",
       touchMoveStopPropagation: true,
       paginationBulletRender: function (index, className) { return ''; },
@@ -21,7 +24,6 @@ mod.controller('studentsController', [
 
     $scope.data = {
       brs: buddyRecommendationService,
-      buddyDetail: buddyDetail,
     };
     $scope.$watch('data.slider', function(nv, ov) {
       $scope.slider = $scope.data.slider;

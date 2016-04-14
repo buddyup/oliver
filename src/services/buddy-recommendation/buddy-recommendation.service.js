@@ -1,5 +1,5 @@
 import fakeAsyncBuddyLoaderModule from "./fake-async-buddy-loader";
-import find from "lodash/find";
+import findIndex from "lodash/findIndex";
 
 // Future: import load from backend promise function here and use that for the data load
 // then we can swap it or dynamically switch between fake and real data
@@ -54,11 +54,12 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
     function fetch(studentId) {
         if (studentId) {
             if (brs.buddyRecommendations.length > 0) {
-                const student = find(brs.buddyRecommendations, {$id: studentId});
-                if (student) {
-                    return $q.when(student);
+                const index = findIndex(brs.buddyRecommendations, {$id: studentId});
+                if (index !== -1) {
+                    return $q.when(index);
                 } else {
                     console.error('couldnt find the student');
+                    // TODO: fetch the buddy from DB and insert into the list
                     return $q.when();
                 }
             } else {

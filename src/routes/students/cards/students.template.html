@@ -4,24 +4,6 @@
     </ion-nav-bar> -->
     <ion-content overflow-scroll="true" class="has-header" >
         <ion-slides options="options" slider="data.slider">
-          <ion-slide-page ng-if="::data.buddyDetail">
-            <div class="list card">
-              <div class="item item-image">
-                <img ng-src="{{ ::data.buddyDetail.profile_pic_medium }}">
-              </div>
-              <div class="item emote item-icon-right">
-                <h2>{{ ::data.buddyDetail.first_name }} {{ ::data.buddyDetail.last_name }}</h2>
-                is studying <span>🇯🇵</span>
-                <i class="icon ion-ios-heart-outline"></i>
-              </div>
-              <div class="item">
-                {{ ::data.buddyDetail.class_standing }}&nbsp;&middot;&nbsp;{{ ::data.buddyDetail.major }}
-              </div>
-              <div class="item emote">
-                Interests: <span>🚀 🚲 🚺 🇯🇵 ⚽</span>
-              </div>
-            </div>
-          </ion-slide-page>
           <ion-slide-page ng-repeat="buddy in data.brs.buddyRecommendations track by buddy.$id" ng-if="::data.buddyDetail.$id !== buddy.$id">
             <div class="list card">
               <div class="item item-image">

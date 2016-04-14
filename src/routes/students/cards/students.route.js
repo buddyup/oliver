@@ -11,7 +11,7 @@ mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     template: template,
     controller: 'studentsController',
     resolve: {
-        buddyDetail: ['buddyRecommendationService', function (buddyRecommendationService) {
+        buddyDetailIndex: ['buddyRecommendationService', function (buddyRecommendationService) {
             return buddyRecommendationService.fetch();
         }]
     }
@@ -23,7 +23,7 @@ mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     template: template,
     controller: 'studentsController',
     resolve: {
-        buddyDetail: ['$stateParams', 'buddyRecommendationService', function ($stateParams, buddyRecommendationService) {
+        buddyDetailIndex: ['$stateParams', 'buddyRecommendationService', function ($stateParams, buddyRecommendationService) {
             return buddyRecommendationService.fetch($stateParams.student_id);
         }]
     }
