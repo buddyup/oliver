@@ -34,6 +34,9 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
     }
 
 
+    /**
+     * returns a promise that when resolved indicated the brs.buddyRecommendations is fulfilled
+     */
     function populateInitialRecommendations () {
         if (brs.buddyRecommendations.length > 0) {
             return $q.when();
@@ -46,7 +49,7 @@ mod.factory('buddyRecommendationService', ['fakeAsyncBuddyLoader', '$q', functio
      * TODO: rewrite this to look more like a DB get and avoid the side effect of populating buddyRecommendations if needed.
      *
      * returns a promise that when resolved indicated the brs.buddyRecommendations is fulfilled.
-     * @param  {optional} studentId If provided, the matching student will be at the front of the list of cards.
+     * @param  {optional} studentId If provided, the matching student will returned.
      */
     function fetch(studentId) {
         if (studentId) {
