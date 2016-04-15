@@ -4,7 +4,7 @@
     </ion-nav-bar> -->
     <ion-content overflow-scroll="true" class="has-header" >
         <ion-slides options="options" slider="data.slider">
-          <ion-slide-page ng-repeat="studentId in ::data.studentIds">
+          <ion-slide-page ng-repeat="studentId in data.studentIds">
             <div class="list card">
               <div class="item item-image">
                 <img ng-src="{{::data.studentMap[studentId].profile_pic_medium}}">
