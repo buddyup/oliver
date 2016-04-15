@@ -1,21 +1,57 @@
 <ion-view title="Students" id="page5">
 <!--     <ion-nav-bar class="bar-stable">
-        <ion-nav-back-button class="button-icon icon ion-ios-arrow-back"> Bck</ion-nav-back-button>
+        <ion-nav-back-button class="button-icon icon ion-ios-arrow-back"> B ck</ion-nav-back-button>
     </ion-nav-bar> -->
     <ion-content overflow-scroll="true" class="has-header" >
         <ion-slides options="options" slider="data.slider">
-          <ion-slide-page ng-repeat="studentId in data.studentIds">
+          <ion-slide-page>
             <div class="list card">
               <div class="item item-image">
-                <img ng-src="{{::data.studentMap[studentId].profile_pic_medium}}">
+                <img ng-src="{{data.studentMap[data.studentIds[data.cardStartIndex]].profile_pic_medium}}">
               </div>
               <div class="item emote item-icon-right">
-                <h2>{{::data.studentMap[studentId].first_name}} {{::data.studentMap[studentId].last_name}}</h2>
+                <h2>{{data.studentMap[data.studentIds[data.cardStartIndex]].first_name}} {{data.studentMap[data.studentIds[data.cardStartIndex]].last_name}}</h2>
                 is studying <span>🇯🇵</span>
                 <i class="icon ion-ios-heart-outline"></i>
               </div>
               <div class="item">
-                {{::data.studentMap[studentId].class_standing}}&nbsp;&middot;&nbsp;{{::data.studentMap[studentId].major}}
+                {{data.studentMap[data.studentIds[data.cardStartIndex]].class_standing}}&nbsp;&middot;&nbsp;{{data.studentMap[data.studentIds[data.cardStartIndex]].major}}
+              </div>
+              <div class="item emote">
+                Interests: <span>🚀 🚲 🚺 🇯🇵 ⚽</span>
+              </div>
+            </div>
+          </ion-slide-page>
+          <ion-slide-page>
+            <div class="list card">
+              <div class="item item-image">
+                <img ng-src="{{data.studentMap[data.studentIds[data.cardMiddleIndex]].profile_pic_medium}}">
+              </div>
+              <div class="item emote item-icon-right">
+                <h2>{{data.studentMap[data.studentIds[data.cardMiddleIndex]].first_name}} {{data.studentMap[data.studentIds[data.cardMiddleIndex]].last_name}}</h2>
+                is studying <span>🇯🇵</span>
+                <i class="icon ion-ios-heart-outline"></i>
+              </div>
+              <div class="item">
+                {{data.studentMap[data.studentIds[data.cardMiddleIndex]].class_standing}}&nbsp;&middot;&nbsp;{{data.studentMap[data.studentIds[data.cardMiddleIndex]].major}}
+              </div>
+              <div class="item emote">
+                Interests: <span>🚀 🚲 🚺 🇯🇵 ⚽</span>
+              </div>
+            </div>
+          </ion-slide-page>
+          <ion-slide-page>
+            <div class="list card">
+              <div class="item item-image">
+                <img ng-src="{{data.studentMap[data.studentIds[data.cardEndIndex]].profile_pic_medium}}">
+              </div>
+              <div class="item emote item-icon-right">
+                <h2>{{data.studentMap[data.studentIds[data.cardEndIndex]].first_name}} {{data.studentMap[data.studentIds[data.cardEndIndex]].last_name}}</h2>
+                is studying <span>🇯🇵</span>
+                <i class="icon ion-ios-heart-outline"></i>
+              </div>
+              <div class="item">
+                {{data.studentMap[data.studentIds[data.cardEndIndex]].class_standing}}&nbsp;&middot;&nbsp;{{data.studentMap[data.studentIds[data.cardEndIndex]].major}}
               </div>
               <div class="item emote">
                 Interests: <span>🚀 🚲 🚺 🇯🇵 ⚽</span>
