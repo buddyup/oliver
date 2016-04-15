@@ -49,16 +49,11 @@ mod.controller('homeController', [
     };
 
 
-
     $scope.handleOnPullRefresh = function () {
       buddyRecommendationService.refresh().finally(() => {
         $scope.$broadcast('scroll.refreshComplete');
       });
     };
-
-    $scope.$watch('data.slider', function(nv, ov) {
-      $scope.slider = $scope.data.slider;
-    });
 
 }]);
 
