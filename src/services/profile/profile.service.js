@@ -1,24 +1,39 @@
-let mod = angular.module('profileServiceModule', []);
+import fakeProfileServiceBackendModule from "./fake-profile-backend";
+
+let mod = angular.module('profileServiceModule', [fakeProfileServiceBackendModule]);
 
 /**
  * A model for the current profile.
  *
  */
-mod.factory('profileService', [function () {
-    var profile = {
-        buddies: [],
-        classes: [],
-        study_groups: [],
-        firstName: 'Chris',
-        lastName: 'Smith',
-        email: 'chris.smith@buddyup.org',
-        bio: 'A freshman',
-        year: 2020,
-        loaded: true,
-        class_standing: 'Freshman',
-    };
+mod.factory('profileService', ['$q', '$timeout', 'fakeProfileServiceBackend', function ($q, $timeout, fakeProfileServiceBackend) {
+    var ps = {};
 
-    return profile;
+    /**
+     * hits the backend and loads the profile for the user
+     *
+     * TODO hit cahce/localstorage first
+     */
+    function loadProfile() {
+        if (ps.loaded) {
+            return $q.when(ps.profile);
+        } else {
+            return fakeProfileServiceBackend.$loaded()
+            .then((userProfile) => {
+                angular.extend(ps.profile, userProfile);
+                ps.loaded = true;
+                return ps.profile;
+            });
+        }
+    }
+
+
+    angular.extend(ps, {
+        loadProfile: loadProfile,
+        profile: {},
+        loaded: false,
+    })
+    return ps;
 
 }]);
 

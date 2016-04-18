@@ -17,7 +17,8 @@ mod.factory('fakeClassBackend', ['$q', function ($q) {
         "subject_icon" : "calculator",
         "subject_name" : "Geology",
         "pic": "https://s3.amazonaws.com/uploads.hipchat.com/183747/3575947/prYQ3U9qwreXdH2/geol-103.png",
-        "students": [{$id: "-aslkjasdkj"}, {$id: "-skjdhwewekjh"}]
+        "students": [{$id: "-aslkjasdkj"}, {$id: "-skjdhwewekjh"}],
+        "news_feed": {},
       },
       "-KBtmOmRoAeCZOcV1dWF" : {
         "code" : "102",
@@ -29,7 +30,24 @@ mod.factory('fakeClassBackend', ['$q', function ($q) {
         "subject_icon" : "calculator",
         "subject_name" : "Chemistry",
         "pic": "https://s3.amazonaws.com/uploads.hipchat.com/183747/3575947/QHbWlJzEjQvHnvf/chem-102.png",
-        "students": [{$id: "-aslkjasdasd"}, {$id: "-aklsdhiuehw"}]
+        "students": [{$id: "-aslkjasdasd"}, {$id: "-aklsdhiuehw"}],
+        "news_feed": {
+            "-KBoQVSaksjhdajkshd": {
+                creator: "-aslkjasdasd",
+                created_at: 1456873539178,
+                first_name: "Chris",
+                last_name: "Smith",
+                type: "chat_message",
+                data: {
+                    body: "Hi everyone, what's on the midterm this Friday?",
+                    class_id: "-KBtmOmRoAeCZOcV1dWF",
+                    first_name: "Chris",
+                    last_name: "Smith",
+                    sender: "-aslkjasdasd",
+                },
+                profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-tiny.jpg",
+            }
+        },
       },
       "-KCpvueUkongkAsuv2Xt" : {
         "code" : "180",
@@ -41,7 +59,24 @@ mod.factory('fakeClassBackend', ['$q', function ($q) {
         "subject_icon" : "paint-brush",
         "subject_name" : "Biology",
         "pic": "https://s3.amazonaws.com/uploads.hipchat.com/183747/3575947/IqJO8PST7OLdJr1/bio-180.png",
-        "students": [{$id: "-aslkjasdasd"}, {$id: "-aklsdhiuehw"}, {$id: "-aklsjdasjdalkjsdalksj"}]
+        "students": [{$id: "-aslkjasdasd"}, {$id: "-aklsdhiuehw"}, {$id: "-aklsjdasjdalkjsdalksj"}],
+        "news_feed": {
+            "-KBoQVSaksjhdajkshd": {
+                creator: "-aslkjasdasd",
+                created_at: 1456873539178,
+                first_name: "Chris",
+                last_name: "Smith",
+                type: "chat_message",
+                data: {
+                    body: "Anyone want to meet to study on Thusday?",
+                    class_id: "-KBtmOmRoAeCZOcV1dWF",
+                    first_name: "Chris",
+                    last_name: "Smith",
+                    sender: "-aslkjasdasd",
+                },
+                profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-tiny.jpg",
+            }
+        },
       }
     };
 

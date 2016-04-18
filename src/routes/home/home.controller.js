@@ -29,6 +29,7 @@ mod.controller('homeController', [
       parallax: false,
       paginationCurrentClass: "hidden",
     };
+    console.log(profileService)
 
     function handleonTransitionEnd (swiper) {
       if (swiper.activeIndex === 0) {
@@ -43,7 +44,7 @@ mod.controller('homeController', [
     }
 
     $scope.data = {
-      profile: profileService,
+      profile: profileService.profile,
       brs: buddyRecommendationService,
       classService: classService,
     };

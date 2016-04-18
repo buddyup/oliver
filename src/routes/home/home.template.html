@@ -4,27 +4,22 @@
         <ion-content>
         <ion-list>
             <ion-item class="item-avatar">
-                <img ng-src="{{::data.brs.buddyRecommendations[0].profile_pic_tiny}}">
-                <h2>University of Oregon</h2>
-                <p>Devin Nelson: It's going to be on the South Campus</p>
-                <span class="badge badge-assertive">17</span>
+                <img ng-src="{{data.profile.school.pic}}">
+                <h2>{{data.profile.school.name}}</h2>
+                <p>{{data.profile.school.last_message.first_name}} {{data.profile.school.last_message.last_name}}: {{data.profile.school.last_message.data.body}}</p>
+                <span class="badge badge-assertive">{{data.profile.school.number_unread_messages}}</span>
             </ion-item>
-            <ion-item class="item-avatar">
-                <img ng-src="{{::data.brs.buddyRecommendations[1].profile_pic_tiny}}">
-                <h2>Chem 102</h2>
-                <p>Michael Lusardi: 😁</p>
-                <span class="badge badge-assertive">1</span>
+            <ion-item class="item-avatar" ng-repeat="class in data.profile.classesAsArray">
+                <img ng-src="{{::class.pic}}">
+                <h2>{{::class.subject_code}} {{::class.code}}</h2>
+                <p>{{::class.last_message.first_name}} {{::class.last_message.last_name}}: {{::class.last_message.data.body}}</p>
+                <span class="badge badge-assertive">{{::class.number_unread_messages}}</span>
             </ion-item>
             <ion-item class="item-avatar">
                 <img ng-src="{{::data.brs.buddyRecommendations[2].profile_pic_tiny}}">
                 <h2>Anneke Kniestedt</h2>
                 <p>Anneke: Chapter 2 and 3 I think.</p>
                 <span class="badge badge-assertive">3</span>
-            </ion-item>
-            <ion-item class="item-avatar">
-                <img ng-src="{{::data.brs.buddyRecommendations[3].profile_pic_tiny}}">
-                <h2>Marc Kryntsik</h2>
-                <p>You: Thanks.</p>
             </ion-item>
             <ion-item class="item-divider">New Invites</ion-item>
             <ion-item class="item-avatar">
