@@ -75,6 +75,8 @@ mod.factory('fakeProfileServiceBackend', ['$q', function ($q) {
                 "last_name" : "Kniestedt",
                 "user_id" : "-KBogDiHDlb0ZwZ-V418",
                 "number_unread_messages": 3,
+                // add this
+                profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/9ae4fd0a1980607accfa7c2028f2e34484d0b7e3-tiny.jpg",
                 last_message: {
                     creator: "-KBogDiHDlb0ZwZ-V418",
                     created_at: 1456873539178,
