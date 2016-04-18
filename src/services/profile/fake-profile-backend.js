@@ -93,12 +93,41 @@ mod.factory('fakeProfileServiceBackend', ['$q', function ($q) {
                 }
             }
         };
+        const groupInvites = {
+            "-alksjdasdlkjasdklj": {
+                id: "-alksjdasdlkjasdklj",
+                type: "group_invite",
+                data: {
+                    first_name: "Carolyn",
+                    last_name: "Howser",
+                    sender: "-Kahjsdjhaskjhakjhs",
+                    group_name: "D&D Fridays",
+                },
+                profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/23f045722f8e7720b0d6df86be5e4451b9d8e338-tiny.jpg",
+            }
+        };
+        const buddyInvites = {
+            "-ajksuiiuewhwiueryiwueyriu": {
+                id: "-ajksuiiuewhwiueryiwueyriu",
+                type: "buddy_invite",
+                data: {
+                    first_name: "Carolyn",
+                    last_name: "Howser",
+                    sender: "-Kahjsdjhaskjhakjhs",
+                },
+                profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/23f045722f8e7720b0d6df86be5e4451b9d8e338-tiny.jpg",
+            }
+        };
 
         const userProfile = {
             buddies: buddies,
             buddiesAsArray: values(buddies),
             classes: classes,
             classesAsArray: values(classes),
+            groupInvites: groupInvites,
+            groupInvitesAsArray: values(groupInvites),
+            buddyInvites: buddyInvites,
+            buddyInvitesAsArray: values(buddyInvites),
             study_groups: [],
             firstName: 'Chris',
             lastName: 'Smith',
