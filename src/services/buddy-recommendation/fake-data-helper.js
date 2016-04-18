@@ -3,7 +3,7 @@ import sampleSize from "lodash/sampleSize";
 import random from "lodash/random";
 
 
-const MAX_NUMBER_OF_PROFILES = 500;
+const MAX_NUMBER_OF_PROFILES = 100;
 
 export function processNames(data) {
     return sampleSize(data.names, MAX_NUMBER_OF_PROFILES);
