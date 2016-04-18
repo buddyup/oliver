@@ -12,7 +12,6 @@ import classRouteModule from './routes/class/class.route';
 
 // components
 import navControllerModule from "./components/nav/nav.controller";
-import infiniteSliderDirectiveModule from "./components/infinite-slide-pager/infinite-slide-pager.directive";
 
 import runModule from './config/main.config';
 
@@ -25,7 +24,6 @@ let mainModule = angular.module('app', [
   classRouteModule,
   // components
   navControllerModule,
-  infiniteSliderDirectiveModule,
 ]);
 
 // Run
