@@ -60,6 +60,30 @@ const generateID = generateIDfn();
  * I think fire base puts the id as $id
  */
 export function addId(buddy) {
-    buddy.$id = generateID();
+    if (!buddy.$id) {
+        const id = generateID();
+        buddy.$id = id;
+        buddy.id = id;
+    }
     return buddy;
 }
+
+/**
+ * Adds a few students needed for the fake chat data and fake profile data
+ */
+export const persistentStudents = [
+    {
+        first_name: "Anneke",
+        last_name: "Kniestedt",
+        id: "-KBogDiHDlb0ZwZ-V418",
+        $id: "-KBogDiHDlb0ZwZ-V418",
+        profile_pic_tiny: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/9ae4fd0a1980607accfa7c2028f2e34484d0b7e3-tiny.jpg",
+    },
+    {
+        id: "-aklsdhiuehw",
+        $id: "-aklsdhiuehw",
+        first_name: "Michael",
+        last_name: "Lusardi",
+        profile_pic_tiny: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/d8c6d3b0919b3e4fcbdce7ba015fbc0beacb3149-tiny.jpg",
+    }
+];
