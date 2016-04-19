@@ -1,20 +1,22 @@
-<ion-view title="Invite from XYZ" id="page3">
+<ion-view title="Carolyn Howser" id="page3">
     <ion-content>
         <ion-list>
             <a class="item item-text-wrap item-avatar item-icon-right" ion-item>
                 <img ng-src="https://buddyup-core.s3.amazonaws.com:443/profile_pics/23f045722f8e7720b0d6df86be5e4451b9d8e338-tiny.jpg">
-                <h2>First Name Last Name</h2>
-                <p>I invite you to a party!</p>
+                <h2>Carolyn Howser</h2>
+                <p>Carolyn wants to Buddy Up!</p>
+            </a>
+            <a class="item item-text-wrap item-avatar item-icon-right" ion-item>
+                <img ng-src="https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-tiny.jpg">
+                <h2>You + Carolyn are now Buddies.</h2>
+                <p>Start talking!</p>
             </a>
         </ion-list>
     </ion-content>
-    <form name="sendMessageForm" id="sendMessageForm" class="item " ng-submit="chatctrl.handlePostChat(chatctrl.message)" novalidate>
-      <div class="send_container">
-        <textarea ng-model="chatctrl.message" value="" placeholder="Post a message..." required minlength="1" maxlength="1500" msd-elastic ng-click="$event.preventDefault();"></textarea>
-        <button class="post_button button button button-calm button-clear button-small button-footer" type="submit"
-          ng-disabled="!chatctrl.message || chatctrl.message === ''">
-          post
-        </button>
-      </div>
-    </form>
+    <ion-footer-bar >
+  <div class="button-bar">
+  <a class="button button-default">Ignore for now</a>
+  <a class="button button-positive">Accept to Chat</a>
+</div>
+</ion-footer-bar>
 </ion-view>
