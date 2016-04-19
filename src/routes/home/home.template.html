@@ -9,7 +9,7 @@
                 <p>{{data.profile.school.last_message.first_name}} {{data.profile.school.last_message.last_name}}: {{data.profile.school.last_message.data.body}}</p>
                 <span class="badge badge-assertive">{{data.profile.school.number_unread_messages}}</span>
             </ion-item>
-            <ion-item class="item-avatar" ng-repeat="class in data.profile.classesAsArray">
+            <ion-item class="item-avatar" ng-repeat="class in data.profile.classesAsArray" ui-sref="chat({ type: 'class', id: class.id })">
                 <img ng-src="{{::class.pic}}">
                 <h2>{{::class.subject_code}} {{::class.code}}</h2>
                 <p>{{::class.last_message.first_name}} {{::class.last_message.last_name}}: {{::class.last_message.data.body}}</p>

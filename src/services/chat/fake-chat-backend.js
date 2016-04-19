@@ -31,7 +31,7 @@ mod.factory('fakeChatServiceBackend', ['$q', function ($q) {
                         last_name: "Lusardi",
                         sender: "-aklsdhiuehw",
                     },
-                    profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/1a541d2d2a90039862ae2cccaa856b8bf7e179c9-tiny.jpg",
+                    profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/d8c6d3b0919b3e4fcbdce7ba015fbc0beacb3149-tiny.jpg",
                 },{
                     creator: "-aklsdhiuehw",
                     created_at: 1456893539178,
@@ -45,7 +45,7 @@ mod.factory('fakeChatServiceBackend', ['$q', function ($q) {
                         last_name: "Lusardi",
                         sender: "-aklsdhiuehw",
                     },
-                    profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/1a541d2d2a90039862ae2cccaa856b8bf7e179c9-tiny.jpg",
+                    profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/d8c6d3b0919b3e4fcbdce7ba015fbc0beacb3149-tiny.jpg",
                 },
             ]
           },

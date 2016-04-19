@@ -13,7 +13,7 @@ mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     template: template,
     controller: 'studentsController',
     params: {
-      orderBy: 'recommendationRanking'
+      orderBy: 'recommendationRanking'  // optional param, here it's kept out of the url
     },
     resolve: {
         studentIds: ['buddyRecommendationService', '$stateParams', function (buddyRecommendationService, $stateParams) {
