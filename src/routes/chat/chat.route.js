@@ -8,13 +8,9 @@ let mod = angular.module('chatListRouteModule', [chatServiceModule, chatControll
 mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('chat', {
-    url: '/chat',
+    url: '/chat?type&id',
     template: template,
     controller: 'chatController as chatctrl',
-    params: {
-      type: null,
-      id: null,
-    },
     resolve: {
         chat: ['chatService', '$stateParams', function (chatService, $stateParams) {
             return chatService.loadChat($stateParams);

@@ -62,7 +62,7 @@ mod.factory('fakeChatServiceBackend', ['$q', function ($q) {
                 "number_unread_messages": 3,
                 // add this
                 profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/9ae4fd0a1980607accfa7c2028f2e34484d0b7e3-tiny.jpg",
-                feed: {
+                feed: [{
                     creator: "-KBogDiHDlb0ZwZ-V418",
                     created_at: 1456873539178,
                     first_name: "Anneke",
@@ -75,7 +75,7 @@ mod.factory('fakeChatServiceBackend', ['$q', function ($q) {
                         sender: "-KBogDiHDlb0ZwZ-V418",
                     },
                     profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/9ae4fd0a1980607accfa7c2028f2e34484d0b7e3-tiny.jpg",
-                }
+                }]
             }
 
         },

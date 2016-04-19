@@ -29,7 +29,6 @@ mod.controller('homeController', [
       parallax: false,
       paginationCurrentClass: "hidden",
     };
-    console.log(profileService)
 
     function handleonTransitionEnd (swiper) {
       if (swiper.activeIndex === 0) {
