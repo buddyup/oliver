@@ -22,12 +22,12 @@
                 <span class="badge badge-assertive">{{::buddy.number_unread_messages}}</span>
             </ion-item>
             <ion-item class="item-divider">New Invites</ion-item>
-            <ion-item class="item-avatar" ng-repeat="invite in data.profile.buddyInvitesAsArray">
+            <ion-item class="item-avatar" ng-repeat="invite in data.profile.buddyInvitesAsArray" ui-sref="invite">
                 <img ng-src="{{::invite.profile_pic_tiny_url}}">
                 <h2>{{::invite.data.first_name}} {{::invite.data.last_name}}</h2>
                 <p>{{::invite.data.first_name}} wants to buddy up!</p>
             </ion-item>
-            <ion-item class="item-avatar" ng-repeat="invite in data.profile.groupInvitesAsArray">
+            <ion-item class="item-avatar" ng-repeat="invite in data.profile.groupInvitesAsArray" ui-sref="invite">
                 <img ng-src="{{::invite.profile_pic_tiny_url}}">
                 <h2>{{::invite.data.group_name}}</h2>
                 <p>{{::invite.data.first_name}}: invited you to the group.</p>
