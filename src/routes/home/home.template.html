@@ -15,7 +15,7 @@
                 <p>{{::class.last_message.first_name}} {{::class.last_message.last_name}}: {{::class.last_message.data.body}}</p>
                 <span class="badge badge-assertive">{{::class.number_unread_messages}}</span>
             </ion-item>
-            <ion-item class="item-avatar" ng-repeat="buddy in data.profile.buddiesAsArray">
+            <ion-item class="item-avatar" ng-repeat="buddy in data.profile.buddiesAsArray" ui-sref="chat({ type: 'privateMessage', id: buddy.user_id })">
                 <img ng-src="{{::buddy.profile_pic_tiny_url}}">
                 <h2>{{::buddy.first_name}} {{::buddy.last_name}}</h2>
                 <p>{{::buddy.first_name}}: {{::buddy.last_message.data.body}}</p>

@@ -16,7 +16,6 @@ mod.controller('chatController', [
         chatService: chatService,
         chat: chat,
     });
-    console.log(this)
 }]);
 
 export default mod = mod.name;
