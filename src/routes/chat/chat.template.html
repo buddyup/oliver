@@ -1,0 +1,11 @@
+<ion-view title="{{::chatctrl.chat.displayName }}" id="page3">
+    <ion-content>
+        <ion-list>
+            <a class="item item-avatar item-icon-right" ion-item collection-repeat="message in chatctrl.chat.data.feed" >
+                <img ng-src="{{ message.profile_pic_tiny_url }}">
+                <h2>{{message.first_name}} {{message.last_name}}</h2>
+                <p>{{message.data.body}}</p>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>

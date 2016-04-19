@@ -3,7 +3,7 @@
       <ion-slide-page>
         <ion-content>
         <ion-list>
-            <ion-item class="item-avatar">
+            <ion-item class="item-avatar" ui-sref="chat({ type: 'school', id: data.profile.school.id })">
                 <img ng-src="{{data.profile.school.pic}}">
                 <h2>{{data.profile.school.name}}</h2>
                 <p>{{data.profile.school.last_message.first_name}} {{data.profile.school.last_message.last_name}}: {{data.profile.school.last_message.data.body}}</p>

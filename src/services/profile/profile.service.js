@@ -6,7 +6,7 @@ let mod = angular.module('profileServiceModule', [fakeProfileServiceBackendModul
  * A model for the current profile.
  *
  */
-mod.factory('profileService', ['$q', '$timeout', 'fakeProfileServiceBackend', function ($q, $timeout, fakeProfileServiceBackend) {
+mod.factory('profileService', ['$q', 'fakeProfileServiceBackend', function ($q, fakeProfileServiceBackend) {
     var ps = {};
 
     /**

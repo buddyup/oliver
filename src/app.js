@@ -9,6 +9,7 @@ import homeRouteModule from './routes/home/home.route';
 import studentsRouteModule from './routes/students';
 import groupRouteModule from './routes/group/group.route';
 import classRouteModule from './routes/class/class.route';
+import chatRouteModule from './routes/chat/chat.route';
 
 // components
 import navControllerModule from "./components/nav/nav.controller";
@@ -22,6 +23,7 @@ let mainModule = angular.module('app', [
   studentsRouteModule,
   groupRouteModule,
   classRouteModule,
+  chatRouteModule,
   // components
   navControllerModule,
 ]);
