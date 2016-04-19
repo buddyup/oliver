@@ -78,6 +78,7 @@ export const persistentStudents = [
         id: "-KBogDiHDlb0ZwZ-V418",
         $id: "-KBogDiHDlb0ZwZ-V418",
         profile_pic_tiny: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/9ae4fd0a1980607accfa7c2028f2e34484d0b7e3-tiny.jpg",
+        profile_pic_medium: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/9ae4fd0a1980607accfa7c2028f2e34484d0b7e3-medium.jpg",
     },
     {
         id: "-aklsdhiuehw",
@@ -85,5 +86,6 @@ export const persistentStudents = [
         first_name: "Michael",
         last_name: "Lusardi",
         profile_pic_tiny: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/d8c6d3b0919b3e4fcbdce7ba015fbc0beacb3149-tiny.jpg",
+        profile_pic_medium: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/d8c6d3b0919b3e4fcbdce7ba015fbc0beacb3149-medium.jpg",
     }
 ];

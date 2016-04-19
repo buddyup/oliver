@@ -31,23 +31,24 @@ mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
   })
   // not using a nested students here because then the resolve is executed twice and I want to use the same controller
   // for the time being
-  .state('students_detail', {
-    url: '/students/:student_id',
+  .state('student_card', {
+    url: '/students/:student_id?orderBy&showOnly',
     template: template,
     controller: 'studentsController',
-    params: {
-      orderBy: 'recommendationRanking'
-    },
     resolve: {
         studentIds: ['buddyRecommendationService', '$stateParams', function (buddyRecommendationService, $stateParams) {
             return buddyRecommendationService.fetch()
             .then(() => {
               // Note (Aleck): I timed the map(sortBy(...)) with 500 students and it averaged between 6 and 10 ms.
               // Todo: consider moving this sort into the service as filtering will be coming down the pipe.
-              return map(sortBy(buddyRecommendationService.students, $stateParams.orderBy), '$id');
+              const orderBy = $stateParams.orderBy || 'recommendationRanking';
+              return map(sortBy(buddyRecommendationService.students, orderBy), '$id');
             });
         }],
         buddyDetailIndex: ['$stateParams', 'buddyRecommendationService', 'studentIds', function ($stateParams, buddyRecommendationService, studentIds) {
+            if ($stateParams.limit) {
+
+            }
             return studentIds.indexOf($stateParams.student_id);
         }]
     }

@@ -28,10 +28,32 @@ mod.controller('studentsController', [
       lazyLoadingOnTransitionStart: true,
     };
 
+
+    /**
+     * on the image click, go to full screen
+     */
+    function handleImageClick() {
+      $scope.data.showCard = !$scope.data.showCard;
+      if ($scope.data.showCard) {
+        $scope.slider.params.allowSwipeToNext = true;
+        $scope.slider.params.allowSwipeToPrev = true;
+      } else {
+        $scope.slider.params.allowSwipeToNext = false;
+        $scope.slider.params.allowSwipeToPrev = false;
+      }
+    }
+
+    $scope.$watch('data.slider', function(nv, ov) {
+      $scope.slider = $scope.data.slider;
+    });
+
+
     $scope.data = {
       brs: buddyRecommendationService,
       studentIds: studentIds,
       studentMap: buddyRecommendationService.studentMap,
+      showCard: true,
+      handleImageClick: handleImageClick,
     };
 }]);
 

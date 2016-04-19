@@ -5,7 +5,7 @@
     <ion-content overflow-scroll="true" class="has-header" >
         <ion-slides options="options" slider="data.slider">
           <ion-slide-page ng-repeat="studentId in data.studentIds">
-            <div class="list card">
+            <div class="list" ng-class="{card: data.showCard }" ng-click="data.handleImageClick()">
               <div class="item item-image">
                 <img ng-src="{{::data.studentMap[studentId].profile_pic_medium}}">
               </div>
@@ -14,10 +14,10 @@
                 is studying <span>🇯🇵</span>
                 <i class="icon ion-ios-heart-outline"></i>
               </div>
-              <div class="item">
+              <div class="item" ng-if="!data.showCard">
                 {{::data.studentMap[studentId].class_standing}}&nbsp;&middot;&nbsp;{{::data.studentMap[studentId].major}}
               </div>
-              <div class="item emote">
+              <div class="item emote" ng-if="!data.showCard">
                 Interests: <span>🚀 🚲 🚺 🇯🇵 ⚽</span>
               </div>
             </div>
