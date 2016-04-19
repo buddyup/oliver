@@ -1,6 +1,7 @@
 import chatServiceModule from "services/chat/chat.service";
 import chatControllerModule from "./chat.controller";
 import template from './chat.template.html';
+import "./chat.styles.scss";
 
 let mod = angular.module('chatListRouteModule', [chatServiceModule, chatControllerModule]);
 

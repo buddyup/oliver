@@ -1,11 +1,20 @@
 <ion-view title="{{::chatctrl.chat.displayName }}" id="page3">
     <ion-content>
         <ion-list>
-            <a class="item item-avatar item-icon-right" ion-item collection-repeat="message in chatctrl.chat.data.feed" >
+            <a class="item item-text-wrap item-avatar item-icon-right" ion-item collection-repeat="message in chatctrl.chat.data.feed" >
                 <img ng-src="{{ message.profile_pic_tiny_url }}">
                 <h2>{{message.first_name}} {{message.last_name}}</h2>
                 <p>{{message.data.body}}</p>
             </a>
         </ion-list>
     </ion-content>
+    <form name="sendMessageForm" id="sendMessageForm" class="item " ng-submit="sendMessageHandler(sendMessageForm)" novalidate ng-style="inputStyle()" >
+      <div class="send_container">
+        <textarea ng-model="input.message" value="" placeholder="Post a message..." required minlength="1" maxlength="1500" msd-elastic ng-click="$event.preventDefault();"></textarea>
+        <button class="post_button button button button-calm button-clear button-small button-footer" type="submit"
+          ng-disabled="!input.message || input.message === ''">
+          post
+        </button>
+      </div>
+    </form>
 </ion-view>
