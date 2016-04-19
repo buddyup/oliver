@@ -3,6 +3,7 @@ import './shared-styles/app.scss';
 
 // this imports angular and all ionic libs
 import 'ionic-sdk/release/js/ionic.bundle';
+import "angular-elastic";
 
 // routes
 import homeRouteModule from './routes/home/home.route';
@@ -18,6 +19,7 @@ import runModule from './config/main.config';
 
 let mainModule = angular.module('app', [
   'ionic',
+  'monospaced.elastic',
   // routes
   homeRouteModule,
   studentsRouteModule,
