@@ -8,11 +8,11 @@
             </a>
         </ion-list>
     </ion-content>
-    <form name="sendMessageForm" id="sendMessageForm" class="item " ng-submit="sendMessageHandler(sendMessageForm)" novalidate ng-style="inputStyle()" >
+    <form name="sendMessageForm" id="sendMessageForm" class="item " ng-submit="chatctrl.handlePostChat(chatctrl.message)" novalidate>
       <div class="send_container">
-        <textarea ng-model="input.message" value="" placeholder="Post a message..." required minlength="1" maxlength="1500" msd-elastic ng-click="$event.preventDefault();"></textarea>
+        <textarea ng-model="chatctrl.message" value="" placeholder="Post a message..." required minlength="1" maxlength="1500" msd-elastic ng-click="$event.preventDefault();"></textarea>
         <button class="post_button button button button-calm button-clear button-small button-footer" type="submit"
-          ng-disabled="!input.message || input.message === ''">
+          ng-disabled="!chatctrl.message || chatctrl.message === ''">
           post
         </button>
       </div>

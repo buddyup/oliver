@@ -1,5 +1,6 @@
 import values from "lodash/values";
 import get from "lodash/get";
+import now from "lodash/now";
 
 let mod = angular.module('fakeChatServiceBackendModule', []);
 
@@ -101,7 +102,6 @@ mod.factory('fakeChatServiceBackend', ['$q', function ($q) {
                     type: "chat_message",
                     data: {
                         body: "Hello beautiful people, I just created the MECha, group. Please join if you're interested.",
-                        class_id: "-KBtmOmRoAeCZOcV1dWF",
                         first_name: "Chris",
                         last_name: "Smith",
                         sender: "-aslkjasdasd",
@@ -111,6 +111,40 @@ mod.factory('fakeChatServiceBackend', ['$q', function ($q) {
             }
         }
     };
+
+
+    /**
+     * helper to create messages for the feeds
+     *
+     * @param {object} params: {
+     *     type: ['school' | 'class' | 'group' | 'privateMessage'],
+     *     id: <chat type id>,
+     *     user_id: <user's id>,
+     *     message: <the messeage to push on the chat>
+     * }
+     */
+    function createMessage(params) {
+        const {user, id, type, message} = params;
+        const data = {
+            body: message || "",
+            first_name: user.first_name || user.firstName,
+            last_name: user.last_name || user.lastName,
+            sender: user.id || user.$id || user.user_id,
+        };
+        if (type === 'class') {
+            data.class_id = id;
+        }
+        return {
+            creator: user.id || user.$id || user.user_id,
+            created_at: now(),
+            first_name: user.first_name || user.firstName,
+            last_name: user.last_name || user.lastName,
+            type: "chat_message",
+            data: data,
+            profile_pic_tiny_url: user.profile_pic_url_tiny,
+        };
+    }
+
     /**
      * mimic classes firebase backend
      */
@@ -121,7 +155,6 @@ mod.factory('fakeChatServiceBackend', ['$q', function ($q) {
             type: params.type,
             $id: params.id,
             id: params.id,
-
         };
         if (params.type === 'school') {
             chat.displayName = data.name;
@@ -135,8 +168,19 @@ mod.factory('fakeChatServiceBackend', ['$q', function ($q) {
         return $q.when(chat);
     }
 
+    /**
+     * Pushes a new message to a chat
+     */
+    function push(params) {
+        const data = get(fakeChatFeedsByType, [params.type, params.id]);
+        const message = createMessage(params);
+        data.feed.push(message);
+        return $q.when('success');
+    }
+
     return {
         $loaded: $loaded,
+        push: push,
     };
 
 }]);
