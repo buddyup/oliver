@@ -1,10 +1,13 @@
+import buddyRecommendationServiceModule from 'services/buddy-recommendation/buddy-recommendation.service';
+import randomChats from "./random-chats";
 import values from "lodash/values";
 import get from "lodash/get";
 import now from "lodash/now";
+import sample from "lodash/sample";
 
-let mod = angular.module('fakeChatServiceBackendModule', []);
+let mod = angular.module('fakeChatServiceBackendModule', [buddyRecommendationServiceModule]);
 
-mod.factory('fakeChatServiceBackend', ['$q', function ($q) {
+mod.factory('fakeChatServiceBackend', ['$q', 'buddyRecommendationService', function ($q, buddyRecommendationService) {
 
     const fakeChatFeedsByType = {
         class: {
@@ -141,8 +144,19 @@ mod.factory('fakeChatServiceBackend', ['$q', function ($q) {
             last_name: user.last_name || user.lastName,
             type: "chat_message",
             data: data,
-            profile_pic_tiny_url: user.profile_pic_url_tiny,
+            profile_pic_tiny_url: user.profile_pic_url_tiny || user.profile_pic_tiny,
         };
+    }
+
+    function generateRandomMessag(students, type, id) {
+        const message = sample(randomChats);
+        const student = sample(students);
+        return createMessage({
+            user: student,
+            message: message,
+            id: id,
+            type: type,
+        });
     }
 
     /**
@@ -165,7 +179,14 @@ mod.factory('fakeChatServiceBackend', ['$q', function ($q) {
         } else if (params.type === 'privateMessage') {
             chat.displayName = `${data.first_name} ${data.last_name}`;
         }
-        return $q.when(chat);
+        return buddyRecommendationService.populateInitialRecommendations()
+        .then(() => {
+            const data = get(fakeChatFeedsByType, ['school', 'osu_edu']);
+            for (var i = 20; i >= 0; i--) {
+                data.feed.unshift(generateRandomMessag(buddyRecommendationService.students, 'school', 'osu_edu'));
+            }
+            return $q.when(chat);
+        });
     }
 
     /**
