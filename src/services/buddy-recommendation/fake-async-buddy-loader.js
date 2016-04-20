@@ -24,7 +24,6 @@ mod.factory('fakeAsyncBuddyLoader', ['$http', '$q', function ($http, $q) {
      *
      */
     const loadBuddies = () => {
-        console.log('loading buddies')
         return $q.all([namesPromise, profilesPromise]).then((data) => {
             const names = processNames(data[0].data);
             const profiles = processProfiles(data[1].data);

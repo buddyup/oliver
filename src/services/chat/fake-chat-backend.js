@@ -128,16 +128,16 @@ mod.factory('fakeChatServiceBackend', ['$q', 'buddyRecommendationService', funct
                 feed: [{
                     creator: "-aslkjasdasd",
                     created_at: 1456873539178,
-                    first_name: "Chris",
-                    last_name: "Smith",
+                    first_name: "Brian",
+                    last_name: "Forrester",
                     type: "chat_message",
                     data: {
                         body: "Hello beautiful people, I just created the MECha, group. Please join if you're interested.",
-                        first_name: "Chris",
-                        last_name: "Smith",
+                        first_name: "Brian",
+                        last_name: "Forrester",
                         sender: "-aslkjasdasd",
                     },
-                    profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-tiny.jpg",
+                    profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/d7acc31753cfaa7eb7d25dc79e916e0527922ba2-tiny.jpg",
                 }]
             }
         }

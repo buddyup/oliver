@@ -83,17 +83,17 @@ mod.factory('fakeProfileServiceBackend', ['$q', function ($q) {
             last_message: {
                 creator: "-aslkjasdasd",
                 created_at: 1456873539178,
-                first_name: "Chris",
-                last_name: "Smith",
+                first_name: "Brian",
+                last_name: "Forrester",
                 type: "chat_message",
                 data: {
                     body: "Hello beautiful people, I just created the MECha, group. Please join if you're interested.",
                     class_id: "-KBtmOmRoAeCZOcV1dWF",
-                    first_name: "Chris",
-                    last_name: "Smith",
+                    first_name: "Brian",
+                    last_name: "Forrester",
                     sender: "-aslkjasdasd",
                 },
-                profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-tiny.jpg",
+                profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/d7acc31753cfaa7eb7d25dc79e916e0527922ba2-tiny.jpg",
             }
         };
 
@@ -157,12 +157,12 @@ mod.factory('fakeProfileServiceBackend', ['$q', function ($q) {
             buddyInvites: buddyInvites,
             buddyInvitesAsArray: values(buddyInvites),
             study_groups: [],
-            firstName: 'Chris',
-            first_name: 'Chris',
-            lastName: 'Smith',
-            last_name: 'Smith',
-            email: 'chris.smith@buddyup.org',
-            bio: 'A freshman rock head',
+            firstName: 'Brian',
+            first_name: 'Brian',
+            lastName: 'Forrester',
+            last_name: 'Forrester',
+            email: 'brian@buddyup.org',
+            bio: 'A freshman rocker',
             year: 2020,
             $id: '-aslkjasdasd',
             id: '-aslkjasdasd',
@@ -170,10 +170,10 @@ mod.factory('fakeProfileServiceBackend', ['$q', function ($q) {
             major: 'Electrical Engineering',
             class_standing: 'Freshman',
             school: school,
-            profile_pic_url_tiny: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-tiny.jpg",
-            profile_pic_tiny: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-tiny.jpg",
-            profile_pic_url_medium: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-medium.jpg",
-            profile_pic_medium: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-medium.jpg",
+            profile_pic_url_tiny: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/d7acc31753cfaa7eb7d25dc79e916e0527922ba2-tiny.jpg",
+            profile_pic_tiny: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/d7acc31753cfaa7eb7d25dc79e916e0527922ba2-tiny.jpg",
+            profile_pic_url_medium: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/d7acc31753cfaa7eb7d25dc79e916e0527922ba2-medium.jpg",
+            profile_pic_medium: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/d7acc31753cfaa7eb7d25dc79e916e0527922ba2-medium.jpg",
         };
 
         return $q.when(userProfile);

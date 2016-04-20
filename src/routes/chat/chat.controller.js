@@ -7,7 +7,8 @@ mod.controller('chatController', [
   'chatService',
   'profileService',
   'chat',
-  function(chatService, profileService, chat) {
+  'profile',
+  function(chatService, profileService, chat, profile) {
     /**
      * This uses the Controller As syntax. Anything needed in the view should be placed on `ctrl` and is accessible
      * in the view as `chatctrl`;
@@ -15,6 +16,7 @@ mod.controller('chatController', [
     const ctrl = this;
 
     function handlePostChat(message) {
+      // have profile
       profileService.loadProfile()
       .then((profile) => {
         const chatPayload = {
@@ -38,6 +40,7 @@ mod.controller('chatController', [
         chat: chat,
         message: "",
         handlePostChat: handlePostChat,
+        profile: profile,
     });
 }]);
 
