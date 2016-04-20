@@ -177,18 +177,13 @@ $drk_blue:                    #36465d;
         }
     }
 }
-.card {
-    .item {
-
-        &.emote {
-            span {
-                vertical-align: middle;
-                line-height: 1;
-            }
-            i.icon {
-                color: $teal;
-            }
-        }
+.emote {
+    span {
+        vertical-align: middle;
+        line-height: 1;
+    }
+    i.icon {
+        color: $teal;
     }
 }
 .chat-light {
