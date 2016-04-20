@@ -12,16 +12,16 @@
               <div class="item emote item-icon-right">
                 <h2>{{::data.studentMap[studentId].first_name}} {{::data.studentMap[studentId].last_name}}</h2>
                 is studying <span>🇯🇵</span>
-                <i class="icon ion-ios-chatbubble" ng-if="data.has(data.profile.buddies, studentId)"></i>
+                <i class="icon ion-ios-chatbubble" ng-show="data.has(data.profile.buddies, studentId)"></i>
               </div>
-              <div class="item" ng-if="!data.showCard">
+              <div class="item" ng-show="!data.showCard">
                 {{::data.studentMap[studentId].class_standing}}&nbsp;&middot;&nbsp;{{::data.studentMap[studentId].major}}
               </div>
-              <div class="item emote" ng-if="!data.showCard">
+              <div class="item emote" ng-show="!data.showCard">
                 Interests: <span>🚀 🚲 🚺 🇯🇵 ⚽</span>
               </div>
             </div>
-            <ion-footer-bar ng-if="!data.showCard && !data.has(data.profile.buddies, studentId)">
+            <ion-footer-bar ng-show="!data.showCard && !data.has(data.profile.buddies, studentId)">
               <div class="button-bar">
                 <a class="button button-default" ng-click="data.handleImageClick()">Cancel</a>
                 <a class="button button-positive" ng-click="data.handleBuddyUpClick(studentId)">BuddyUp</a>
