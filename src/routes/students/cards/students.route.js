@@ -32,7 +32,7 @@ mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
   // not using a nested students here because then the resolve is executed twice and I want to use the same controller
   // for the time being
   .state('student_card', {
-    url: '/students/:student_id?orderBy&showOnly',
+    url: '/students/:student_id?orderBy',
     template: template,
     controller: 'studentsController',
     resolve: {
@@ -46,9 +46,6 @@ mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             });
         }],
         buddyDetailIndex: ['$stateParams', 'buddyRecommendationService', 'studentIds', function ($stateParams, buddyRecommendationService, studentIds) {
-            if ($stateParams.limit) {
-
-            }
             return studentIds.indexOf($stateParams.student_id);
         }]
     }

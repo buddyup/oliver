@@ -51,7 +51,7 @@ function generateIDfn() {
     return function generateID(){
         idSeed = idSeed + 1;
         return `-KBogDiHDlb0ZwD-A${idSeed}`;
-    }
+    };
 }
 
 const generateID = generateIDfn();

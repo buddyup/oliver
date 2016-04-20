@@ -47,7 +47,7 @@ mod.factory('chatService', ['$q', 'fakeChatServiceBackend', function ($q, fakeCh
         loadChat: loadChat,
         postChat: postChat,
         chat: {},
-    })
+    });
     return cs;
 
 }]);

@@ -31,6 +31,8 @@ mod.controller('studentsController', [
 
     /**
      * on the image click, go to full screen
+     *
+     * TODO: this might have a debounce issue on iOS, could need to be a new view
      */
     function handleImageClick() {
       $scope.data.showCard = !$scope.data.showCard;

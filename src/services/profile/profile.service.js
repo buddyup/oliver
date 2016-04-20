@@ -32,7 +32,7 @@ mod.factory('profileService', ['$q', 'fakeProfileServiceBackend', function ($q, 
         loadProfile: loadProfile,
         profile: {},
         loaded: false,
-    })
+    });
     return ps;
 
 }]);
