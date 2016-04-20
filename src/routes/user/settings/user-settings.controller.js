@@ -1,6 +1,6 @@
-let mod = angular.module('settingsControllerModule', []);
+let mod = angular.module('userSettingsControllerModule', []);
 
-mod.controller('settingsController', [
+mod.controller('userSettingsController', [
   function() {
     /**
      * This uses the Controller As syntax. Anything needed in the view should be placed on `ctrl` and is accessible
