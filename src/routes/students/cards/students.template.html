@@ -5,8 +5,8 @@
     <ion-content overflow-scroll="true" class="has-header" >
         <ion-slides options="options" slider="data.slider">
           <ion-slide-page ng-repeat="studentId in data.studentIds">
-            <div class="list" ng-class="{card: data.showCard }" ng-click="data.handleImageClick()">
-              <div class="item item-image">
+            <div class="list" ng-class="{card: data.showCard }">
+              <div class="item item-image" ng-click="data.handleImageClick()">
                 <img ng-src="{{::data.studentMap[studentId].profile_pic_medium}}">
               </div>
               <div class="item emote item-icon-right">
