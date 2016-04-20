@@ -38,8 +38,13 @@ $drk_blue:                    #36465d;
             border: transparent;
         }
         .buttons-right {
+            
             button {
-                font-size: 20px;
+                font-size: 17px;
+                
+                &.ion-person {
+                    font-size: 20px;
+                }
             }
         }
     }
