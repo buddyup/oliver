@@ -11,7 +11,7 @@ mod.controller('studentProfileController', [
     const ctrl = this;
 
     /**
-     * makes a buddy request and updates view
+     * makes a buddy request and updates view, todo move to the service
      */
     function handleBuddyUpClick() {
         profile.buddies[student.id] = student;

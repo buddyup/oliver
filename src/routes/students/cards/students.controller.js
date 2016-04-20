@@ -1,4 +1,5 @@
 import buddyRecommendationServiceModule from 'services/buddy-recommendation/buddy-recommendation.service';
+import has from "lodash/has";
 
 let mod = angular.module('studentsControllerModule', [buddyRecommendationServiceModule]);
 
@@ -7,7 +8,8 @@ mod.controller('studentsController', [
   'buddyRecommendationService',
   'buddyDetailIndex',
   'studentIds',
-  function($scope, buddyRecommendationService, buddyDetailIndex, studentIds) {
+  'profile',
+  function($scope, buddyRecommendationService, buddyDetailIndex, studentIds, profile) {
     if (typeof buddyDetailIndex === 'undefined' || buddyDetailIndex === -1) {
       buddyDetailIndex = 0;
     }
@@ -34,7 +36,8 @@ mod.controller('studentsController', [
      *
      * TODO: this might have a debounce issue on iOS, could need to be a new view
      */
-    function handleImageClick() {
+    function handleImageClick(studentId) {
+      $scope.data.clickedStudentId = studentId;
       $scope.data.showCard = !$scope.data.showCard;
       if ($scope.data.showCard) {
         $scope.slider.params.allowSwipeToNext = true;
@@ -43,6 +46,14 @@ mod.controller('studentsController', [
         $scope.slider.params.allowSwipeToNext = false;
         $scope.slider.params.allowSwipeToPrev = false;
       }
+    }
+
+    /**
+     * makes a buddy request and updates view, todo move to the service
+     */
+    function handleBuddyUpClick() {
+        profile.buddies[$scope.data.clickedStudentId] = $scope.data.studentMap[$scope.data.clickedStudentId];
+        profile.buddiesAsArray.push($scope.data.studentMap[$scope.data.clickedStudentId]);
     }
 
     $scope.$watch('data.slider', function(nv, ov) {
@@ -56,6 +67,10 @@ mod.controller('studentsController', [
       studentMap: buddyRecommendationService.studentMap,
       showCard: true,
       handleImageClick: handleImageClick,
+      handleBuddyUpClick: handleBuddyUpClick,
+      profile: profile,
+      has: has,
+      clickedStudentId: null,
     };
 }]);
 

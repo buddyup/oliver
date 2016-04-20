@@ -1,10 +1,11 @@
 import buddyRecommendationServiceModule from 'services/buddy-recommendation/buddy-recommendation.service';
+import profileServiceModule from "services/profile/profile.service";
 import studentsControllerModule from './students.controller';
 import template from './students.template.html';
 import map from "lodash/map";
 import sortBy from "lodash/sortBy";
 
-let mod = angular.module('studentsCardRouteModule', [studentsControllerModule, buddyRecommendationServiceModule]);
+let mod = angular.module('studentsCardRouteModule', [studentsControllerModule, buddyRecommendationServiceModule, profileServiceModule]);
 
 mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -26,6 +27,9 @@ mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         }],
         buddyDetailIndex: ['buddyRecommendationService', '$q', function (buddyRecommendationService, $q) {
             return $q.when();
+        }],
+        profile: ['profileService', function (profileService) {
+          return profileService.loadProfile();
         }]
     }
   })
@@ -47,6 +51,9 @@ mod.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         }],
         buddyDetailIndex: ['$stateParams', 'buddyRecommendationService', 'studentIds', function ($stateParams, buddyRecommendationService, studentIds) {
             return studentIds.indexOf($stateParams.student_id);
+        }],
+        profile: ['profileService', function (profileService) {
+          return profileService.loadProfile();
         }]
     }
   });
