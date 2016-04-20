@@ -53,6 +53,34 @@ mod.factory('fakeChatServiceBackend', ['$q', 'buddyRecommendationService', funct
                 },
             ]
           },
+          "-KCpvueUkongkAsuv2Xt" : {
+            "code" : "180",
+            "course_id" : "-KCpvueUkongkAsuv2Xt",
+            "id" : "-KCpvueUkongkAsuv2Xt",
+            "name" : "Biology for humans",
+            "school_id" : "buddyup_org",
+            "subject_code" : "BIO",
+            "subject_icon" : "paint-brush",
+            "subject_name" : "Biology",
+            "pic": "https://s3.amazonaws.com/uploads.hipchat.com/183747/3575947/IqJO8PST7OLdJr1/bio-180.png",
+            "students": [{$id: "-aslkjasdasd"}, {$id: "-aklsdhiuehw"}, {$id: "-aklsjdasjdalkjsdalksj"}],
+            "feed": [{
+                    creator: "-aslkjasdasd",
+                    created_at: 1456873539178,
+                    first_name: "Chris",
+                    last_name: "Smith",
+                    type: "chat_message",
+                    data: {
+                        body: "Anyone want to meet to study on Thusday?",
+                        class_id: "-KBtmOmRoAeCZOcV1dWF",
+                        first_name: "Chris",
+                        last_name: "Smith",
+                        sender: "-aslkjasdasd",
+                    },
+                    profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-tiny.jpg",
+                },
+            ]
+        }
         },
         group: {
 
@@ -148,7 +176,7 @@ mod.factory('fakeChatServiceBackend', ['$q', 'buddyRecommendationService', funct
         };
     }
 
-    function generateRandomMessag(students, type, id) {
+    function generateRandomMessage(students, type, id) {
         const message = sample(randomChats);
         const student = sample(students);
         return createMessage({
@@ -181,9 +209,14 @@ mod.factory('fakeChatServiceBackend', ['$q', 'buddyRecommendationService', funct
         }
         return buddyRecommendationService.populateInitialRecommendations()
         .then(() => {
-            const data = get(fakeChatFeedsByType, ['school', 'osu_edu']);
+            const school = get(fakeChatFeedsByType, ['school', 'osu_edu']);
+            const chemClass = get(fakeChatFeedsByType, ['class', '-KBtmOmRoAeCZOcV1dWF']);
+            console.log('adding chats')
             for (var i = 20; i >= 0; i--) {
-                data.feed.unshift(generateRandomMessag(buddyRecommendationService.students, 'school', 'osu_edu'));
+                school.feed.unshift(generateRandomMessage(buddyRecommendationService.students, 'school', 'osu_edu'));
+            }
+            for (i = 5; i >= 0; i--) {
+                chemClass.feed.unshift(generateRandomMessage(buddyRecommendationService.students, 'class', '-KBtmOmRoAeCZOcV1dWF'));
             }
             return $q.when(chat);
         });

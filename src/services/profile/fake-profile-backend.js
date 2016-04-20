@@ -37,6 +37,34 @@ mod.factory('fakeProfileServiceBackend', ['$q', function ($q) {
                 profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/1a541d2d2a90039862ae2cccaa856b8bf7e179c9-tiny.jpg",
             }
           },
+          "-KCpvueUkongkAsuv2Xt" : {
+            "code" : "180",
+            "course_id" : "-KCpvueUkongkAsuv2Xt",
+            "id" : "-KCpvueUkongkAsuv2Xt",
+            "name" : "Biology for humans",
+            "school_id" : "buddyup_org",
+            "subject_code" : "BIO",
+            "subject_icon" : "calculator",
+            "subject_name" : "Biology",
+            "pic": "https://s3.amazonaws.com/uploads.hipchat.com/183747/3575947/IqJO8PST7OLdJr1/bio-180.png",
+            "students": [{$id: "-aslkjasdasd"}, {$id: "-aklsdhiuehw"}],
+            "number_unread_messages": 1,
+            "last_message": {
+                creator: "-aklsdhiuehw",
+                created_at: 1456873539178,
+                first_name: "Michael",
+                last_name: "Lusardi",
+                type: "chat_message",
+                data: {
+                    body: "Midterm on Thursday",
+                    class_id: "-KCpvueUkongkAsuv2Xt",
+                    first_name: "Michael",
+                    last_name: "Lusardi",
+                    sender: "-aklsdhiuehw",
+                },
+                profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/1a541d2d2a90039862ae2cccaa856b8bf7e179c9-tiny.jpg",
+            }
+          },
         };
 
         const school = {
