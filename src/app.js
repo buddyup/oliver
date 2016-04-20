@@ -12,7 +12,7 @@ import groupRouteModule from './routes/group/group.route';
 import classRouteModule from './routes/class/class.route';
 import chatRouteModule from './routes/chat/chat.route';
 import inviteRouteModule from './routes/invite/invite.route';
-import userRouteModule from './routes/user/user.route';
+import userRouteModule from './routes/user';
 import settingsRouteModule from './routes/settings/settings.route';
 import editRouteModule from './routes/edit/edit.route';
 
