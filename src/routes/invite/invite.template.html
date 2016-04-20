@@ -6,17 +6,17 @@
                 <h2>Carolyn Howser</h2>
                 <p>Carolyn wants to Buddy Up!</p>
             </a>
-            <a class="item item-text-wrap item-avatar item-icon-right" ion-item>
-                <img ng-src="https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-tiny.jpg">
+            <a class="item item-text-wrap item-avatar item-icon-right" ion-item ng-if="invitectrl.buddyAccepted">
+                <img ng-src="https://buddyup-core.s3.amazonaws.com:443/profile_pics/d7acc31753cfaa7eb7d25dc79e916e0527922ba2-tiny.jpg">
                 <h2>You + Carolyn are now Buddies.</h2>
                 <p>Start talking!</p>
             </a>
         </ion-list>
     </ion-content>
-    <ion-footer-bar >
+    <ion-footer-bar ng-if="invitectrl.showFooter">
       <div class="button-bar">
-        <a class="button button-default">Ignore for now</a>
-        <a class="button button-positive">BuddyUp</a>
+        <a class="button button-default" ng-click="invitectrl.handleIgnoreClick()">Ignore for now</a>
+        <a class="button button-positive" ng-click="invitectrl.handleBuddyUpClick()">BuddyUp</a>
       </div>
     </ion-footer-bar>
 </ion-view>

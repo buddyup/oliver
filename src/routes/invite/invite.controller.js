@@ -9,9 +9,20 @@ mod.controller('inviteController', [
      */
     const ctrl = this;
 
+    function handleIgnoreClick() {
+        ctrl.showFooter = false;
+    }
 
+    function handleBuddyUpClick() {
+        ctrl.showFooter = false;
+        ctrl.buddyAccepted = true;
+    }
 
     angular.extend(ctrl, {
+        showFooter: true,
+        handleIgnoreClick: handleIgnoreClick,
+        handleBuddyUpClick: handleBuddyUpClick,
+        buddyAccepted: false,
     });
 }]);
 
