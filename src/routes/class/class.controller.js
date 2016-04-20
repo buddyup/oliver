@@ -12,11 +12,17 @@ mod.controller('classController', ['$scope', function($scope) {
       parallax: false,
       paginationCurrentClass: "hidden",
     };
+
+    /**
+     * fake add a class, ng-click sets these to true in the view
+     * TODO add in the chat, profile, and class services to update with an added class.
+     */
     $scope.data = {
       geolAdded: false,
       chemAdded: false,
       bioAdded: false,
     };
+
     $scope.$watch('data.slider', function(nv, ov) {
       $scope.slider = $scope.data.slider;
     });
