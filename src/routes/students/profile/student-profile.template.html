@@ -7,7 +7,11 @@
           <div class="item emote item-icon-right">
             <h2>{{::spCtrl.student.first_name}} {{::spCtrl.student.last_name}}</h2>
             is studying <span>🇯🇵</span>
-            <i class="icon ion-ios-chatbubble" ng-if="spCtrl.isBuddy"></i>
+            <i
+              class="icon ion-ios-chatbubble"
+              ng-if="spCtrl.isBuddy"
+              ui-sref="chat({ type: 'privateMessage', id: spCtrl.student.id })"
+            ></i>
           </div>
           <div class="item">
             {{::spCtrl.student.class_standing}}&nbsp;&middot;&nbsp;{{::spCtrl.student.major}}

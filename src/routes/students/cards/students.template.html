@@ -12,7 +12,11 @@
               <div class="item emote item-icon-right">
                 <h2>{{::data.studentMap[studentId].first_name}} {{::data.studentMap[studentId].last_name}}</h2>
                 is studying <span>🇯🇵</span>
-                <i class="icon ion-ios-chatbubble" ng-show="data.has(data.profile.buddies, studentId)"></i>
+                <i
+                  class="icon ion-ios-chatbubble"
+                  ng-show="data.has(data.profile.buddies, studentId)"
+                  ui-sref="chat({ type: 'privateMessage', id: studentId })"
+                ></i>
               </div>
               <div class="item" ng-show="!data.showCard">
                 {{::data.studentMap[studentId].class_standing}}&nbsp;&middot;&nbsp;{{::data.studentMap[studentId].major}}
