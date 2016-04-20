@@ -186,7 +186,7 @@ mod.factory('fakeChatServiceBackend', ['$q', 'buddyRecommendationService', funct
             type: type,
         });
     }
-
+    let randomChatsGenerated = false;
     /**
      * mimic classes firebase backend
      */
@@ -209,14 +209,16 @@ mod.factory('fakeChatServiceBackend', ['$q', 'buddyRecommendationService', funct
         }
         return buddyRecommendationService.populateInitialRecommendations()
         .then(() => {
-            const school = get(fakeChatFeedsByType, ['school', 'osu_edu']);
-            const chemClass = get(fakeChatFeedsByType, ['class', '-KBtmOmRoAeCZOcV1dWF']);
-            console.log('adding chats')
-            for (var i = 20; i >= 0; i--) {
-                school.feed.unshift(generateRandomMessage(buddyRecommendationService.students, 'school', 'osu_edu'));
-            }
-            for (i = 5; i >= 0; i--) {
-                chemClass.feed.unshift(generateRandomMessage(buddyRecommendationService.students, 'class', '-KBtmOmRoAeCZOcV1dWF'));
+            if (!randomChatsGenerated) {
+                const school = get(fakeChatFeedsByType, ['school', 'osu_edu']);
+                const chemClass = get(fakeChatFeedsByType, ['class', '-KBtmOmRoAeCZOcV1dWF']);
+                for (var i = 20; i >= 0; i--) {
+                    school.feed.unshift(generateRandomMessage(buddyRecommendationService.students, 'school', 'osu_edu'));
+                }
+                for (i = 5; i >= 0; i--) {
+                    chemClass.feed.unshift(generateRandomMessage(buddyRecommendationService.students, 'class', '-KBtmOmRoAeCZOcV1dWF'));
+                }
+                randomChatsGenerated = true;
             }
             return $q.when(chat);
         });
