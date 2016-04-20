@@ -9,10 +9,9 @@
               <div class="item item-image">
                 <img ng-src="{{::data.studentMap[studentId].profile_pic_medium}}">
               </div>
-              <div class="item emote item-icon-right">
+              <div class="item item-icon-right">
                 <h2>{{::data.studentMap[studentId].first_name}} {{::data.studentMap[studentId].last_name}}</h2>
                 is studying <span>🇯🇵</span>
-                <i class="icon ion-ios-heart-outline"></i>
               </div>
               <div class="item" ng-if="!data.showCard">
                 {{::data.studentMap[studentId].class_standing}}&nbsp;&middot;&nbsp;{{::data.studentMap[studentId].major}}
@@ -24,4 +23,10 @@
           </ion-slide-page>
         </ion-slides>
     </ion-content>
+    <ion-footer-bar ng-if="!data.showCard">
+      <div class="button-bar">
+        <a class="button button-default">Cancel</a>
+        <a class="button button-positive">BuddyUp</a>
+      </div>
+    </ion-footer-bar>
 </ion-view>
