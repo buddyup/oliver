@@ -20,19 +20,19 @@
                 <span class="badge badge-assertive" ng-if="::class.number_unread_messages">{{::class.number_unread_messages}}</span>
             </ion-item>
             <ion-item class="item-avatar" ng-repeat="buddy in data.profile.buddiesAsArray" ui-sref="chat({ type: 'privateMessage', id: buddy.user_id })">
-                <img ng-src="{{::buddy.profile_pic_tiny_url}}">
+                <img ng-src="{{::buddy.profile_pic_tiny_url || buddy.profile_pic_tiny}}">
                 <h2>{{::buddy.first_name}} {{::buddy.last_name}}</h2>
                 <p>{{::buddy.first_name}}: {{::buddy.last_message.data.body}}</p>
                 <span class="badge badge-assertive" ng-if="::buddy.number_unread_messages">{{::buddy.number_unread_messages}}</span>
             </ion-item>
             <ion-item class="item-divider">New Invites</ion-item>
             <ion-item class="item-avatar" ng-repeat="invite in data.profile.buddyInvitesAsArray" ui-sref="invite">
-                <img ng-src="{{::invite.profile_pic_tiny_url}}">
+                <img ng-src="{{::invite.profile_pic_tiny_url || buddy.profile_pic_tiny}}">
                 <h2>{{::invite.data.first_name}} {{::invite.data.last_name}}</h2>
                 <p>{{::invite.data.first_name}} wants to buddy up!</p>
             </ion-item>
             <ion-item class="item-avatar" ng-repeat="invite in data.profile.groupInvitesAsArray" ui-sref="invite">
-                <img ng-src="{{::invite.profile_pic_tiny_url}}">
+                <img ng-src="{{::invite.profile_pic_tiny_url || buddy.profile_pic_tiny}}">
                 <h2>{{::invite.data.group_name}}</h2>
                 <p>{{::invite.data.first_name}}: invited you to the group.</p>
             </ion-item>

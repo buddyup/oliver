@@ -7,7 +7,7 @@
           <div class="item emote item-icon-right">
             <h2>{{::spCtrl.student.first_name}} {{::spCtrl.student.last_name}}</h2>
             is studying <span>🇯🇵</span>
-            <i class="icon ion-ios-chatbubble"></i>
+            <i class="icon ion-ios-chatbubble" ng-if="spCtrl.isBuddy"></i>
           </div>
           <div class="item">
             {{::spCtrl.student.class_standing}}&nbsp;&middot;&nbsp;{{::spCtrl.student.major}}
@@ -17,10 +17,12 @@
           </div>
         </div>
     </ion-content>
-    <ion-footer-bar >
+    <ion-footer-bar ng-if="!spCtrl.isBuddy">
       <div class="button-bar">
-        <a class="button button-default">Cancel</a>
-        <a class="button button-positive">BuddyUp</a>
+        <a
+          class="button button-positive"
+          ng-click="spCtrl.handleBuddyUpClick()"
+        >BuddyUp</a>
       </div>
     </ion-footer-bar>
 </ion-view>
