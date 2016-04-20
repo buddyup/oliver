@@ -13,6 +13,7 @@ import classRouteModule from './routes/class/class.route';
 import chatRouteModule from './routes/chat/chat.route';
 import inviteRouteModule from './routes/invite/invite.route';
 import userRouteModule from './routes/user/user.route';
+import settingsRouteModule from './routes/settings/settings.route';
 
 // components
 import navControllerModule from "./components/nav/nav.controller";
@@ -30,6 +31,7 @@ let mainModule = angular.module('app', [
   chatRouteModule,
   inviteRouteModule,
   userRouteModule,
+  settingsRouteModule,
   // components
   navControllerModule,
 ]);
