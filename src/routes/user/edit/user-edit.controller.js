@@ -1,6 +1,6 @@
-let mod = angular.module('editControllerModule', []);
+let mod = angular.module('userEditControllerModule', []);
 
-mod.controller('editController', [
+mod.controller('userEditController', [
   function() {
     /**
      * This uses the Controller As syntax. Anything needed in the view should be placed on `ctrl` and is accessible
