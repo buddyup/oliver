@@ -36,8 +36,7 @@ mod.controller('studentsController', [
      *
      * TODO: this might have a debounce issue on iOS, could need to be a new view
      */
-    function handleImageClick(studentId) {
-      $scope.data.clickedStudentId = studentId;
+    function handleImageClick() {
       $scope.data.showCard = !$scope.data.showCard;
       if ($scope.data.showCard) {
         $scope.slider.params.allowSwipeToNext = true;
@@ -51,9 +50,9 @@ mod.controller('studentsController', [
     /**
      * makes a buddy request and updates view, todo move to the service
      */
-    function handleBuddyUpClick() {
-        profile.buddies[$scope.data.clickedStudentId] = $scope.data.studentMap[$scope.data.clickedStudentId];
-        profile.buddiesAsArray.push($scope.data.studentMap[$scope.data.clickedStudentId]);
+    function handleBuddyUpClick(studentId) {
+        profile.buddies[studentId] = $scope.data.studentMap[studentId];
+        profile.buddiesAsArray.push($scope.data.studentMap[studentId]);
     }
 
     $scope.$watch('data.slider', function(nv, ov) {
@@ -70,7 +69,6 @@ mod.controller('studentsController', [
       handleBuddyUpClick: handleBuddyUpClick,
       profile: profile,
       has: has,
-      clickedStudentId: null,
     };
 }]);
 

@@ -5,7 +5,7 @@
     <ion-content overflow-scroll="true" class="has-header" >
         <ion-slides options="options" slider="data.slider">
           <ion-slide-page ng-repeat="studentId in data.studentIds">
-            <div class="list" ng-class="{card: data.showCard }" ng-click="data.handleImageClick(studentId)">
+            <div class="list" ng-class="{card: data.showCard }" ng-click="data.handleImageClick()">
               <div class="item item-image">
                 <img ng-src="{{::data.studentMap[studentId].profile_pic_medium}}">
               </div>
@@ -24,7 +24,7 @@
             <ion-footer-bar ng-if="!data.showCard && !data.has(data.profile.buddies, studentId)">
               <div class="button-bar">
                 <a class="button button-default" ng-click="data.handleImageClick()">Cancel</a>
-                <a class="button button-positive" ng-click="data.handleBuddyUpClick()">BuddyUp</a>
+                <a class="button button-positive" ng-click="data.handleBuddyUpClick(studentId)">BuddyUp</a>
               </div>
             </ion-footer-bar>
           </ion-slide-page>
