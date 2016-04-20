@@ -7,12 +7,12 @@ import "angular-elastic";
 
 // routes
 import homeRouteModule from './routes/home/home.route';
-import studentsRouteModule from './routes/students';
+import studentsRoutesModule from './routes/students';
 import groupRouteModule from './routes/group/group.route';
 import classRouteModule from './routes/class/class.route';
 import chatRouteModule from './routes/chat/chat.route';
 import inviteRouteModule from './routes/invite/invite.route';
-import userRouteModule from './routes/user';
+import userRoutesModule from './routes/user';
 
 // components
 import navControllerModule from "./components/nav/nav.controller";
@@ -24,12 +24,12 @@ let mainModule = angular.module('app', [
   'monospaced.elastic',
   // routes
   homeRouteModule,
-  studentsRouteModule,
+  studentsRoutesModule,
   groupRouteModule,
   classRouteModule,
   chatRouteModule,
   inviteRouteModule,
-  userRouteModule,
+  userRoutesModule,
 
   // components
   navControllerModule,
