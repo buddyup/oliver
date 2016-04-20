@@ -32,10 +32,15 @@ $drk_blue:                    #36465d;
             font-weight: bold;
             top: 2px;
         }
-        .button {
+        .button, button {
             color: $white;
             background: transparent;
             border: transparent;
+        }
+        .buttons-right {
+            button {
+                font-size: 20px;
+            }
         }
     }
 }
