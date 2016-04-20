@@ -13,6 +13,9 @@ mod.controller('classController', ['$scope', function($scope) {
       paginationCurrentClass: "hidden",
     };
     $scope.data = {
+      geolAdded: false,
+      chemAdded: false,
+      bioAdded: false,
     };
     $scope.$watch('data.slider', function(nv, ov) {
       $scope.slider = $scope.data.slider;
