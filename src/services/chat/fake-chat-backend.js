@@ -234,9 +234,37 @@ mod.factory('fakeChatServiceBackend', ['$q', 'buddyRecommendationService', funct
         return $q.when('success');
     }
 
+
+    /**
+     * creates a new chat in the fakeChatFeedsByType
+     */
+    function createChat(params) {
+        if (!get(fakeChatFeedsByType, [params.type, params.id])) {
+            if (params.type === 'privateMessage') {
+                fakeChatFeedsByType[params.type][params.id] = {
+                    "first_name" : params.first_name,
+                    "last_name" : params.last_name,
+                    "user_id" : params.id,
+                    "number_unread_messages": 0,
+                    profile_pic_tiny_url: params.profile_pic_tiny_url,
+                    feed: []
+                };
+            }
+        }
+        const data = get(fakeChatFeedsByType, [params.type, params.id]);
+        const chat = {
+            data: data,
+            type: params.type,
+            $id: params.id,
+            id: params.id,
+        };
+        return $q.when(chat);
+    }
+
     return {
         $loaded: $loaded,
         push: push,
+        createChat: createChat,
     };
 
 }]);

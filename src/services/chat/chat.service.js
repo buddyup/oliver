@@ -29,6 +29,13 @@ mod.factory('chatService', ['$q', 'fakeChatServiceBackend', function ($q, fakeCh
     }
 
     /**
+     * Creates a new chat when the user joins/creates a class, group, or buddies up.
+     */
+    function createChat(params) {
+        return fakeChatServiceBackend.createChat(params);
+    }
+
+    /**
      * @param {object} params: {
      *     type: ['school' | 'class' | 'group' | 'privateMessage'],
      *     id: <chat type id>,
@@ -46,6 +53,7 @@ mod.factory('chatService', ['$q', 'fakeChatServiceBackend', function ($q, fakeCh
     angular.extend(cs, {
         loadChat: loadChat,
         postChat: postChat,
+        createChat: createChat,
         chat: {},
     });
     return cs;

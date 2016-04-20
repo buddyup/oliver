@@ -1,15 +1,17 @@
 import buddyRecommendationServiceModule from 'services/buddy-recommendation/buddy-recommendation.service';
+import chatServiceModule from "services/chat/chat.service";
 import has from "lodash/has";
 
-let mod = angular.module('studentsControllerModule', [buddyRecommendationServiceModule]);
+let mod = angular.module('studentsControllerModule', [buddyRecommendationServiceModule, chatServiceModule]);
 
 mod.controller('studentsController', [
   '$scope',
   'buddyRecommendationService',
+  'chatService',
   'buddyDetailIndex',
   'studentIds',
   'profile',
-  function($scope, buddyRecommendationService, buddyDetailIndex, studentIds, profile) {
+  function($scope, buddyRecommendationService, chatService, buddyDetailIndex, studentIds, profile) {
     if (typeof buddyDetailIndex === 'undefined' || buddyDetailIndex === -1) {
       buddyDetailIndex = 0;
     }
@@ -53,6 +55,16 @@ mod.controller('studentsController', [
     function handleBuddyUpClick(studentId) {
         profile.buddies[studentId] = $scope.data.studentMap[studentId];
         profile.buddiesAsArray.push($scope.data.studentMap[studentId]);
+        const buddy = $scope.data.studentMap[studentId];
+        const chat = {
+          type: 'privateMessage',
+          id: studentId,
+          first_name: buddy.first_name,
+          last_name: buddy.last_name,
+          user_id: studentId,
+          profile_pic_tiny_url: buddy.profile_pic_tiny,
+        };
+        chatService.createChat(chat);
     }
 
     $scope.$watch('data.slider', function(nv, ov) {

@@ -22,7 +22,7 @@
             <ion-item class="item-avatar" ng-repeat="buddy in data.profile.buddiesAsArray" ui-sref="chat({ type: 'privateMessage', id: buddy.user_id })">
                 <img ng-src="{{::buddy.profile_pic_tiny_url || buddy.profile_pic_tiny}}">
                 <h2>{{::buddy.first_name}} {{::buddy.last_name}}</h2>
-                <p>{{::buddy.first_name}}: {{::buddy.last_message.data.body}}</p>
+                <p ng-if="::buddy.last_message.data.body">{{::buddy.first_name}}: {{::buddy.last_message.data.body}}</p>
                 <span class="badge badge-assertive" ng-if="::buddy.number_unread_messages">{{::buddy.number_unread_messages}}</span>
             </ion-item>
             <ion-item class="item-divider">New Invites</ion-item>

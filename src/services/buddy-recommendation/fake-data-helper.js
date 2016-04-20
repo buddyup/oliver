@@ -60,11 +60,15 @@ const generateID = generateIDfn();
  * I think fire base puts the id as $id
  */
 export function addId(buddy) {
+    let id;
     if (!buddy.$id) {
-        const id = generateID();
-        buddy.$id = id;
-        buddy.id = id;
+        id = generateID();
+    } else {
+        id = buddy.$id;
     }
+    buddy.$id = id;
+    buddy.id = id;
+    buddy.user_id = id;
     return buddy;
 }
 
