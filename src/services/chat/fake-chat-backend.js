@@ -65,19 +65,19 @@ mod.factory('fakeChatServiceBackend', ['$q', 'buddyRecommendationService', funct
             "pic": "https://s3.amazonaws.com/uploads.hipchat.com/183747/3575947/IqJO8PST7OLdJr1/bio-180.png",
             "students": [{$id: "-aslkjasdasd"}, {$id: "-aklsdhiuehw"}, {$id: "-aklsjdasjdalkjsdalksj"}],
             "feed": [{
-                    creator: "-aslkjasdasd",
+                    creator: "-aklsdhiuehw",
                     created_at: 1456873539178,
-                    first_name: "Chris",
-                    last_name: "Smith",
+                    first_name: "Michael",
+                    last_name: "Lusardi",
                     type: "chat_message",
                     data: {
-                        body: "Anyone want to meet to study on Thusday?",
+                        body: "Midterm on Thusday?",
                         class_id: "-KBtmOmRoAeCZOcV1dWF",
-                        first_name: "Chris",
-                        last_name: "Smith",
-                        sender: "-aslkjasdasd",
+                        first_name: "Michael",
+                        last_name: "Lusardi",
+                        sender: "-aklsdhiuehw",
                     },
-                    profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-tiny.jpg",
+                    profile_pic_tiny_url: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/d8c6d3b0919b3e4fcbdce7ba015fbc0beacb3149-tiny.jpg",
                 },
             ]
         }
