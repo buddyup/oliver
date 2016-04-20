@@ -1,7 +1,11 @@
 <ion-view title="{{::chatctrl.chat.displayName }}" id="page3">
     <ion-content>
         <ion-list>
-            <a class="item item-text-wrap item-avatar item-icon-right" ion-item collection-repeat="message in chatctrl.chat.data.feed" >
+            <a
+              class="item item-text-wrap item-avatar item-icon-right"
+              ion-item
+              collection-repeat="message in chatctrl.chat.data.feed"
+              ui-sref="student_profile({ student_id: message.data.sender })">
                 <img ng-src="{{ message.profile_pic_tiny_url }}">
                 <h2>{{message.first_name}} {{message.last_name}}</h2>
                 <p>{{message.data.body}}</p>

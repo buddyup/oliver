@@ -130,17 +130,22 @@ mod.factory('fakeProfileServiceBackend', ['$q', function ($q) {
             buddyInvitesAsArray: values(buddyInvites),
             study_groups: [],
             firstName: 'Chris',
+            first_name: 'Chris',
             lastName: 'Smith',
+            last_name: 'Smith',
             email: 'chris.smith@buddyup.org',
             bio: 'A freshman rock head',
             year: 2020,
             $id: '-aslkjasdasd',
             id: '-aslkjasdasd',
             loaded: true,
+            major: 'Electrical Engineering',
             class_standing: 'Freshman',
             school: school,
             profile_pic_url_tiny: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-tiny.jpg",
+            profile_pic_tiny: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-tiny.jpg",
             profile_pic_url_medium: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-medium.jpg",
+            profile_pic_medium: "https://buddyup-core.s3.amazonaws.com:443/profile_pics/2c7c45b480468b86053a04dd7b587313fcf0dcc5-medium.jpg",
         };
 
         return $q.when(userProfile);
