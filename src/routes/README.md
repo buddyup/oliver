@@ -9,6 +9,7 @@ src/
             home.route.js
             home.controller.e2e.js
             home.template.html
+            home.styles.scss
         ...
 
 ```
