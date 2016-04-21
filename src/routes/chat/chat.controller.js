@@ -34,12 +34,16 @@ mod.controller('chatController', [
         console.error(error);
       });
     }
+    function handleFixClick() {
+      ctrl.showthefix = !ctrl.showthefix;
+    }
 
     angular.extend(ctrl, {
         chatService: chatService,
         chat: chat,
         message: "",
         handlePostChat: handlePostChat,
+        handleFixClick: handleFixClick,
         profile: profile,
     });
 }]);

@@ -1,5 +1,5 @@
 .has-chat {
-  margin-bottom: 50px;
+  margin-bottom: 46px;
 }
 
 #sendMessageForm {
@@ -7,6 +7,8 @@
   bottom: 0;
   position: fixed;
   width: 100%;
+  margin: 0;
+  border: none;
 
   input, textarea, .item-input, .item-input-wrapper {
     background-color: #f4f4f4 !important;
@@ -24,6 +26,25 @@
     text-transform: uppercase;
     min-height: 28px;
   }
+  .add-button {
+  font-size: 20px;
+  }
+}
+.the-fix-is-in {
+  position: absolute;
+    bottom: 45px;
+    width: 100%;
+    background-color: #f4f4f4;
+    border-top: 1px solid #c5d2d8;
+    z-index: 99999;
+
+    .col {
+      text-align: center;
+
+      .button-small {
+        font-size: 29px;
+      }
+    }
 }
 #sendMessageForm .send_container {
   width: 100%;
@@ -35,13 +56,16 @@
 }
 #sendMessageForm textarea {
    resize: none;
-   width: 83%;
+   width: 71%;
    overflow: hidden;
    padding: 8px;
    border: 1px solid #bac6cc;
    background-color: #FFF !important;
    border-radius: 4px;
    height: 34px;
+   position: absolute;
+   top: 5px;
+   left: 40px;
 }
 #sendMessageForm .post_button {
   background-color: #f4f4f4;
