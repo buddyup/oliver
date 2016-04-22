@@ -14,23 +14,26 @@
     </ion-content>
     <div class="the-fix-is-in" ng-show="chatctrl.showthefix">
       <div class="row">
-        <div class="col col-33"><button class="button button-small button-light ion-radio-waves"></button>
+        <div class="col col-33"><button class="button button-small button-light ion-radio-waves" ng-click="chatctrl.handleFixClick('I\'m down to study')"></button>
         </div>
-        <div class="col col-33"><button class="button button-small button-light ion-camera"></button>
+        <div class="col col-33"><button class="button button-small button-light ion-camera" ng-click="chatctrl.handleFixClick()"></button>
         </div>
-        <div class="col col-33"><button class="button button-small button-light ion-happy"></button>
+        <div class="col col-33"><button class="button button-small button-light ion-happy" ng-click="chatctrl.handleFixClick()"></button>
         </div>
       </div>
     </div>
     <form name="sendMessageForm" id="sendMessageForm" class="item " ng-submit="chatctrl.handlePostChat(chatctrl.message)" novalidate>
       <div class="send_container">
         <button 
+          type="button"
           class="button button-positive button-small add-button" 
           ng-class="{'ion-plus-circled': !chatctrl.showthefix, 'ion-minus-circled': chatctrl.showthefix } "
           ng-click="chatctrl.handleFixClick()"
         ></button>
         <textarea ng-model="chatctrl.message" value="" placeholder="Post a message..." required minlength="1" maxlength="1500" msd-elastic ng-click="$event.preventDefault();"></textarea>
-        <button class="post_button button button button-calm button-clear button-small button-footer" type="submit"
+        <button 
+          class="post_button button button button-calm button-clear button-small button-footer" 
+          type="submit"
           ng-disabled="!chatctrl.message || chatctrl.message === ''">
           post
         </button>

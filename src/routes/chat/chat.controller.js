@@ -34,8 +34,11 @@ mod.controller('chatController', [
         console.error(error);
       });
     }
-    function handleFixClick() {
+    function handleFixClick(message) {
       ctrl.showthefix = !ctrl.showthefix;
+      if (message) {
+        handlePostChat(message);
+      }
     }
 
     angular.extend(ctrl, {
