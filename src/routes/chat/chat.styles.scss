@@ -1,0 +1,79 @@
+.has-chat {
+  margin-bottom: 46px;
+}
+
+#sendMessageForm {
+  padding: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  border: none;
+
+  input, textarea, .item-input, .item-input-wrapper {
+    background-color: #f4f4f4 !important;
+  }
+  .post_button {
+    background-color: #f4f4f4;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    position: absolute;
+    bottom: 9px;
+    right: 11px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    min-height: 28px;
+  }
+  .add-button {
+  font-size: 20px;
+  }
+}
+.the-fix-is-in {
+  position: absolute;
+    bottom: 45px;
+    width: 100%;
+    background-color: #f4f4f4;
+    border-top: 1px solid #c5d2d8;
+    z-index: 99999;
+
+    .col {
+      text-align: center;
+
+      .button-small {
+        font-size: 29px;
+      }
+    }
+}
+#sendMessageForm .send_container {
+  width: 100%;
+  position: relative;
+  background-color: #f4f4f4;
+  border-top: 1px solid #c5d2d8;
+  padding: 7px;
+  z-index: 9999;
+}
+#sendMessageForm textarea {
+   resize: none;
+   width: 71%;
+   overflow: hidden;
+   padding: 8px;
+   border: 1px solid #bac6cc;
+   background-color: #FFF !important;
+   border-radius: 4px;
+   height: 34px;
+   position: absolute;
+   top: 5px;
+   left: 40px;
+}
+#sendMessageForm .post_button {
+  background-color: #f4f4f4;
+  padding: 0;
+  border-radius: 0;
+  border: 0;
+  position: absolute;
+  bottom: 9px;
+  right: 11px;
+  font-size: 16px;
+}

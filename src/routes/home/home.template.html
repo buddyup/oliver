@@ -1,0 +1,223 @@
+<ion-view  id="page3">
+    <ion-nav-buttons side="right">
+      <button class="button ion-person" ui-sref="user">
+      </button>
+    </ion-nav-buttons>
+    <ion-slides  options="options" slider="data.slider">
+      <ion-slide-page>
+        <ion-content>
+        <ion-list>
+            <ion-item class="item-avatar" ui-sref="chat({ type: 'school', id: data.profile.school.id })">
+                <img ng-src="{{data.profile.school.pic}}">
+                <h2>{{data.profile.school.name}}</h2>
+                <p>{{data.profile.school.last_message.first_name}} {{data.profile.school.last_message.last_name}}: {{data.profile.school.last_message.data.body}}</p>
+                <span class="badge badge-assertive" ng-if="data.profile.school.number_unread_messages">{{data.profile.school.number_unread_messages}}</span>
+            </ion-item>
+            <ion-item class="item-avatar" ng-repeat="class in data.profile.classesAsArray" ui-sref="chat({ type: 'class', id: class.id })">
+                <img ng-src="{{::class.pic}}">
+                <h2>{{::class.subject_code}} {{::class.code}}</h2>
+                <p>{{::class.last_message.first_name}} {{::class.last_message.last_name}}: {{::class.last_message.data.body}}</p>
+                <span class="badge badge-assertive" ng-if="::class.number_unread_messages">{{::class.number_unread_messages}}</span>
+            </ion-item>
+            <ion-item class="item-avatar" ng-repeat="buddy in data.profile.buddiesAsArray" ui-sref="chat({ type: 'privateMessage', id: buddy.user_id })">
+                <img ng-src="{{::buddy.profile_pic_tiny_url || buddy.profile_pic_tiny}}">
+                <h2>{{::buddy.first_name}} {{::buddy.last_name}}</h2>
+                <p ng-if="::buddy.last_message.data.body">{{::buddy.first_name}}: {{::buddy.last_message.data.body}}</p>
+                <span class="badge badge-assertive" ng-if="::buddy.number_unread_messages">{{::buddy.number_unread_messages}}</span>
+            </ion-item>
+            <ion-item class="item-divider">New Invites</ion-item>
+            <ion-item class="item-avatar" ng-repeat="invite in data.profile.buddyInvitesAsArray" ui-sref="invite">
+                <img ng-src="{{::invite.profile_pic_tiny_url || buddy.profile_pic_tiny}}">
+                <h2>{{::invite.data.first_name}} {{::invite.data.last_name}}</h2>
+                <p>{{::invite.data.first_name}} wants to buddy up!</p>
+            </ion-item>
+            <ion-item class="item-avatar" ng-repeat="invite in data.profile.groupInvitesAsArray" ui-sref="invite">
+                <img ng-src="{{::invite.profile_pic_tiny_url || buddy.profile_pic_tiny}}">
+                <h2>{{::invite.data.group_name}}</h2>
+                <p>{{::invite.data.first_name}}: invited you to the group.</p>
+            </ion-item>
+        </ion-list>
+        </ion-content>
+      </ion-slide-page>
+      <ion-slide-page class="has-teal-background">
+        <ion-content>
+        <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="handleOnPullRefresh()">
+        </ion-refresher>
+        <ion-list class="mini-cards">
+            <div class="row">
+                <div class="col col-33" ng-repeat="buddy in data.brs.buddyRecommendations | limitTo:3:0">
+                    <ion-item ui-sref="student_card(::{ student_id: buddy.$id })">
+                        <img ng-src="{{::buddy.profile_pic_tiny}}">
+                        <h2>{{::buddy.first_name}}</h2>
+                    </ion-item>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-33" ng-repeat="buddy in data.brs.buddyRecommendations | limitTo:3:3">
+                    <ion-item ui-sref="student_card(::{ student_id: buddy.$id })">
+                        <img ng-src="{{::buddy.profile_pic_tiny}}">
+                        <h2>{{::buddy.first_name}}</h2>
+                    </ion-item>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-33" ng-repeat="buddy in data.brs.buddyRecommendations | limitTo:3:6">
+                    <ion-item ui-sref="student_card(::{ student_id: buddy.$id })">
+                        <img ng-src="{{::buddy.profile_pic_tiny}}">
+                        <h2>{{::buddy.first_name}}</h2>
+                    </ion-item>
+                </div>
+            </div>
+
+            <a class="item item-icon-right more" ui-sref="students-list" ion-item>
+                Students
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+        </ion-list>
+        <ion-list class="mini-cards">
+            <div class="row">
+                <div class="col col-33">
+                    <ion-item ui-sref="students-list">
+                        <img src="../../img/freshman-300-300.png">
+                        <h2>233 Students</h2>
+                    </ion-item>
+                </div>
+                <div class="col col-33">
+                    <ion-item ui-sref="students-list">
+                        <img src="../../img/sophomore-300-300.png">
+                        <h2>133 Students</h2>
+                    </ion-item>
+                </div>
+                <div class="col col-33">
+                    <ion-item ui-sref="students-list">
+                        <img src="../../img/junior-300-300.png">
+                        <h2>178 Students</h2>
+                    </ion-item>
+                </div>
+            </div>
+            <a class="item item-icon-right more" ui-sref="class-standing" ion-item>
+                Class standings
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+        </ion-list>
+        <ion-list class="mini-cards">
+            <div class="row">
+                <div class="col col-33">
+                    <ion-item ui-sref="students-list">
+                        <div class="mini-box">
+                            Psychology
+                        </div>
+                        <h2>133 Students</h2>
+                    </ion-item>
+                </div>
+                <div class="col col-33">
+                    <ion-item ui-sref="students-list">
+                        <div class="mini-box">
+                            Biology
+                        </div>
+                        <h2>33 Students</h2>
+                    </ion-item>
+                </div>
+                <div class="col col-33">
+                    <ion-item ui-sref="students-list">
+                        <div class="mini-box">
+                            History
+                        </div>
+                        <h2>17 Students</h2>
+                    </ion-item>
+                </div>
+            </div>
+            <a class="item item-icon-right more" ui-sref="major" ion-item>
+                Majors
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+        </ion-list>
+        <ion-list class="mini-cards">
+            <div class="row">
+                <div class="col col-33">
+                    <ion-item ui-sref="students-list">
+                        <div class="mini-box interest">
+                            🚀
+                        </div>
+                        <h2>11 Students</h2>
+                    </ion-item>
+                </div>
+                <div class="col col-33">
+                    <ion-item ui-sref="students-list">
+                        <div class="mini-box interest">
+                            ⚽
+                        </div>
+                        <h2>89 Students</h2>
+                    </ion-item>
+                </div>
+                <div class="col col-33">
+                    <ion-item ui-sref="students-list">
+                        <div class="mini-box interest">
+                            🚺
+                        </div>
+                        <h2>43 Students</h2>
+                    </ion-item>
+                </div>
+            </div>
+            <a class="item item-icon-right more" ui-sref="students-list" ion-item>
+                Interests
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+        </ion-list>
+        </ion-content>
+        <div class="chat-light">
+            <span class="badge badge-assertive">19</span>
+        </div>
+      </ion-slide-page>
+      <ion-slide-page>
+        <ion-content>
+        <ion-list class="mini-cards">
+            <div class="row">
+                <div class="col col-33" ng-repeat="class in ::data.classService.classesAsArray | limitTo:3">
+                    <ion-item ui-sref="class">
+                        <img ng-src="{{::class.pic}}">
+                        <h2>{{::class.subject_code}} {{::class.code}}</h2>
+                        <p>{{::class.students.length | number }} classmates</p>
+                    </ion-item>
+                </div>
+            </div>
+            <a class="item item-icon-right more" ui-sref="class" ion-item>
+                Classes
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+        </ion-list>
+        <ion-list class="mini-cards">
+            <div class="row">
+                <div class="col col-33">
+                    <ion-item ui-sref="group">
+                        <img src="../../img/MENChA.png">
+                        <h2>MECha</h2>
+                        <p>42 Members</p>
+                    </ion-item>
+                </div>
+                <div class="col col-33">
+                    <ion-item ui-sref="group">
+                        <img src="../../img/international-students.png">
+                        <h2>Intl Students</h2>
+                        <p>132 Members</p>
+                    </ion-item>
+                </div>
+                <div class="col col-33">
+                    <ion-item ui-sref="group">
+                        <img src="../../img/hikers.png">
+                        <h2>Hikers</h2>
+                        <p>14 Members</p>
+                    </ion-item>
+                </div>
+            </div>
+            <a class="item item-icon-right more" ui-sref="group" ion-item>
+                Groups
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+        </ion-list>
+        </ion-content>
+      </ion-slide-page>
+    </ion-slides>
+</ion-view>

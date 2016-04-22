@@ -1,0 +1,29 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "modules": true
+        }
+    },
+    "rules": {
+        "semi": 2,
+        "curly": 2,
+        "eqeqeq": 2,
+        "dot-notation": 1,
+        "comma-dangle": 0,
+        "no-console": 1,
+        "no-unused-vars": 1
+    },
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "globals": {
+        "angular": true,
+        "cordova": true,
+        "ionic": true,
+        "StatusBar": true
+    },
+    "extends": "eslint:recommended"
+}

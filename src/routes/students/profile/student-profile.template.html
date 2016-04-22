@@ -1,0 +1,32 @@
+<ion-view title="{{::spCtrl.student.first_name}} {{::spCtrl.student.last_name}}" id="page5">
+    <ion-content overflow-scroll="true" class="has-header" >
+        <div class="list">
+          <div class="item item-image">
+            <img ng-src="{{::spCtrl.student.profile_pic_medium}}">
+          </div>
+          <div class="item emote item-icon-right">
+            <h2>{{::spCtrl.student.first_name}} {{::spCtrl.student.last_name}}</h2>
+            is studying <span>🇯🇵</span>
+            <i
+              class="icon ion-ios-chatbubble"
+              ng-if="spCtrl.isBuddy"
+              ui-sref="chat({ type: 'privateMessage', id: spCtrl.student.id })"
+            ></i>
+          </div>
+          <div class="item">
+            {{::spCtrl.student.class_standing}}&nbsp;&middot;&nbsp;{{::spCtrl.student.major}}
+          </div>
+          <div class="item emote">
+            Interests: <span>🚀 🚲 🚺 🇯🇵 ⚽</span>
+          </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar ng-if="!spCtrl.isBuddy">
+      <div class="button-bar">
+        <a
+          class="button button-positive"
+          ng-click="spCtrl.handleBuddyUpClick()"
+        >BuddyUp</a>
+      </div>
+    </ion-footer-bar>
+</ion-view>
